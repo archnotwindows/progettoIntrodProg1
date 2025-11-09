@@ -1,0 +1,102 @@
+ELIA:  modulo 1
+
+
+LORENZO GIUDICE: modulo
+
+
+PHARREL: modulo 2
+
+
+
+DENIS: modulo 4
+
+
+
+
+
+TODO:
+🧩 Divisione in 4 parti indipendenti
+1. Modulo “Menu e Navigazione”
+
+Responsabile: Persona 1
+Funzioni principali:
+
+Gestione Menu Iniziale:
+
+- Nuova Partita (chiama setup del giocatore)
+- Carica Salvataggio
+- Trucchi (attivabile con codice Konami)
+- Gestione Menu del Villaggio (lista opzioni, input utente, validazione)
+- Mostra schermate e messaggi di avviso (“sei sicuro di uscire?” ecc.)
+
+Input/Output:
+
+Input da tastiera (scanf/getchar)
+
+Output di stringhe (printf)
+
+Restituisce solo la scelta del giocatore (un numero o codice)
+
+🧱 Indipendente perché non deve conoscere la logica del gioco, solo visualizzare e ricevere input.
+
+2. Modulo “Giocatore e Salvataggi”
+
+Responsabile: Persona 2
+Funzioni principali:
+
+Struttura Giocatore (punti vita, monete, oggetti, missioni completate)
+
+Funzioni per:
+
+- Creare un nuovo giocatore
+- Ripristinare salute
+- Aggiornare statistiche
+- Salvare e caricare (in memoria o simulato)
+- Gestione della lista dei salvataggi (array dinamico o lista)
+
+Input/Output:
+
+Riceve comandi (es. “salva”, “carica”, “riposa”)
+
+Restituisce struttura aggiornata o elenco salvataggi
+
+🧱 Indipendente perché non serve la logica delle missioni o del menu; può essere testato da solo.
+
+3. Modulo “Missioni e Dungeon”
+
+Responsabile: Persona 3
+Funzioni principali:
+
+Generazione procedurale del dungeon:
+
+- Lanci del dado per creare stanze
+- Tabelle missioni (Palude, Magione, Grotta)
+- Funzioni di utilità comuni (lancio dadi, generazione numeri casuali, ecc.)
+- Implementazione del negozio e degli oggetti
+- Logica “missione completata”
+
+Input/Output:
+
+Riceve un Giocatore come input
+
+Restituisce Giocatore aggiornato (vita, monete, oggetti)
+
+Output testuale delle azioni svolte
+
+🧱 Indipendente perché basta simulare il giocatore; non serve collegarsi al menu o ai salvataggi.
+
+4. Modulo “Missione Finale e Utility”
+
+Responsabile: Persona 4
+Funzioni principali:
+
+- Implementazione dello scontro con il Signore Oscuro (rock–paper–scissors)
+- Implementazione sequenza di Padovan (funzione ricorsiva)
+
+Input/Output:
+
+Riceve un Giocatore e comandi
+
+Restituisce risultato (vittoria/sconfitta) e Giocatore aggiornato
+
+🧱 Indipendente perché non serve conoscere i menu o le altre missioni.
