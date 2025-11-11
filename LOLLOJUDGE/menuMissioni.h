@@ -2,6 +2,10 @@
 
 #include <stdlib.h>
 
+#include "systemclear.h"
+
+#include <time.h>
+
 void Menu(){
 
 
@@ -20,7 +24,7 @@ void Menu(){
    
 
     if(scelta ==1){
-        system("clear");
+        puliscischermo();
 
         int sceltammissione;
         printf("Menu di missione \n");
@@ -31,13 +35,13 @@ void Menu(){
 
 
         if(sceltammissione == 1){
-            system("clear");
+           puliscischermo();
            
             srand(time(NULL));
 
-            
-
             int risdado = rand() % 6 + 1;
+
+            printf("è uscito: %d\n",risdado);
 
 
 
