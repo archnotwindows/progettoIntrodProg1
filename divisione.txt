@@ -23,8 +23,9 @@ Funzioni principali:
 
 Gestione Menu Iniziale:
 
-- Nuova Partita (chiama setup del giocatore)
-- Carica Salvataggio
+- DONE Nuova Partita (chiama setup del giocatore)
+- DONE crea salvataggio di default
+- DONE Carica Salvataggio (ma serve il carica una partita)
 - Trucchi (attivabile con codice Konami)
 - Gestione Menu del Villaggio (lista opzioni, input utente, validazione)
 - Mostra schermate e messaggi di avviso (“sei sicuro di uscire?” ecc.)
