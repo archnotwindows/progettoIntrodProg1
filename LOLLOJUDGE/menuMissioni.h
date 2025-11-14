@@ -43,6 +43,14 @@ void Menu(){
 
             printf("è uscito: %d\n",risdado);
 
+            struct dadiPaludePutrescente
+            {
+                
+                
+            };
+            
+
+
 
 
         }
