@@ -43,14 +43,31 @@ void nuovoGioco(){
     else if ( action == 2 ){
         int nSalvataggio;
 
-        listaSalvataggi();
-        printf("scegli un salvataggio da caricare: ");
+        int elenco = listaSalvataggi();
+        printf("scegli un salvataggio da caricare [1-%d]: ", elenco);
         scanf("%d", &nSalvataggio);
-        
-        printf("messaggio temporaneo, il codice esegue bene\n");
-        // TODO: CARICA UNA PARTITA
-        // TODO: implementa i trucchi
-    
+
+        if ( nSalvataggio > elenco ){
+            printf("salvataggio non esistente!");
+            listaSalvataggi();
+        }
+        else if ( nSalvataggio <= elenco && nSalvataggio > 0 ){
+            int azione;
+
+            printf("\n1) carica Salvataggio\n");
+            printf("2) elimina salvataggio\n");
+            printf("Scegli l'azione da compiere [1/2] ");
+            scanf("%d", &azione);
+            
+            if ( azione == 1 ) printf("OK TODO: impplementare carica salvataggio\n");
+            if ( azione == 2 ){
+                int decisione;
+                printf("sicuro di voler eliminare il salvataggio? (1 = si / 2 = no) ");
+                scanf("%d", &decisione);
+                if ( decisione == 1 ) printf("ok TODO: implementare elimina salvataggio\n");
+                if ( decisione == 2 ) return;
+            }
+        }
     }
 
     return;

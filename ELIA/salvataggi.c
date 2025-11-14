@@ -55,7 +55,7 @@ void nuovoSalvataggio(char* nomeFile, char* data){
 
 
 
-void listaSalvataggi(){
+int listaSalvataggi(){
     // listo una dir con ls/dir
     FILE *out;
     char riga[256];      // char per una riga
@@ -111,6 +111,6 @@ void listaSalvataggi(){
 
     PCLOSE(out);
 
-    return;
+    return elenco-1;
     
 }

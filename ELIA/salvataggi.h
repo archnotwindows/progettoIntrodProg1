@@ -2,6 +2,6 @@
 #define SALVATAGGIO_H
 
 void nuovoSalvataggio(char* nomeFile, char* data);
-void listaSalvataggi();
+int listaSalvataggi();
 
 #endif 
