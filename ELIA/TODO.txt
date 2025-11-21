@@ -1,0 +1,3 @@
+- trucchi codice Konami
+- carica salvataggi
+- elimina un file salvataggio
