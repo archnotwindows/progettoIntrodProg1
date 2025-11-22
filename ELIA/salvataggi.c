@@ -114,3 +114,35 @@ int listaSalvataggi(){
     return elenco-1;
     
 }
+
+
+bool triggherTrucchi(char tasto){
+    static int contatore = 0; // static salva il valore tra le chiamate
+    const char codice[] = "wwssadadba"; 
+
+    // 1. CONTROLLO SE IL TASTO E' GIUSTO
+    if ( tasto == codice[contatore] ){
+        contatore++; 
+        //printf("(DEBUG: Tasto OK, contatore: %d)\n", contatore);
+
+        // CONTROLLO VITTORIA (Solo se il tasto era giusto)
+        if ( contatore == strlen(codice) ){
+            contatore = 0;
+            return true;  
+        }
+    }
+
+    // GESTIONE ERRORE (Se il tasto era sbagliato)
+    else {
+        // Se ho sbagliato, ma ho premuto 'w' (l'inizio della sequenza),
+        // ricomincio da 1 invece che da 0.
+        if ( tasto == 'w' ){
+            contatore = 1;
+        }
+        else{
+            contatore = 0;
+        }
+    }
+    
+    return false;
+}

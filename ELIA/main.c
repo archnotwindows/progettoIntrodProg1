@@ -14,7 +14,6 @@ scegli un'opzione:
 */
 
 int main(void) {
-    bool trucchiAttivi = false;
     nuovoGioco();
     return 0;
 }
