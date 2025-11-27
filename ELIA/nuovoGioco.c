@@ -7,7 +7,8 @@
 
 
 void stampaMenu(bool trucchiAttivi){
-    pulisciSchermo();
+    //pulisciSchermo();
+
 
     if ( trucchiAttivi == true ){
         printf("+ - - - - - - - - - - - - - - - - - - - - - - - - - +\n");
@@ -18,6 +19,7 @@ void stampaMenu(bool trucchiAttivi){
         printf("| 4) esci                                           |\n");  
         printf("+ - - - - - - - - - - - - - - - - - - - - - - - - - +\n");
     }
+    
     else if ( trucchiAttivi == false ){
         printf("+ - - - - - - - - - - - - - - - - - - - - - - - - - +\n");
         printf("|            La Fuga dal while(1)                   |\n");
@@ -62,9 +64,9 @@ void nuovoGioco(){
             char nomeFile[80];
             char percorsoFile[200];
             char data[80];
-            strftime(nomeFile, sizeof(nomeFile), "%d-%m-%Y_%H-%M:%S", infoTempo);
-            sprintf(percorsoFile, "../salvataggi/%s.txt", nomeFile);
-            strftime(data, sizeof(data), "%d-%m-%Y %H-%M:%S", infoTempo);
+            strftime(nomeFile, sizeof(nomeFile), "%d-%m-%Y_%H-%M-%S", infoTempo);
+            sprintf(percorsoFile, "salvataggi/%s.txt", nomeFile);
+            strftime(data, sizeof(data), "%d-%m-%Y %H-%M-%S", infoTempo);
             //printf("%s\n", nomeFile);
 
             nuovoSalvataggio(percorsoFile, data);
@@ -82,7 +84,12 @@ void nuovoGioco(){
 
                 printf("\n1) carica Salvataggio\n");
                 printf("2) elimina salvataggio\n");
-                printf("Scegli l'azione da compiere [1/2] ");
+                if ( trucchiAttivi == true ){
+                    printf("3) Modifica salvataggio\n");
+                    printf("Scegli l'azione da compiere [1/3] ");
+                }
+                else
+                    printf("Scegli l'azione da compiere [1/2] ");
                 scanf("%d", &azione);
                                 
                 if ( azione == 1 ){
@@ -93,8 +100,15 @@ void nuovoGioco(){
                     int decisione;
                     printf("sicuro di voler eliminare il salvataggio? (1 = si / 2 = no) ");
                     scanf("%d", &decisione);
-                    if ( decisione == 1 ) printf("ok TODO: implementare elimina salvataggio\n");
-                    if ( decisione == 2 ) return;
+                    if ( decisione == 1 ){
+                        eliminaSalvataggio(nSalvataggio);
+                    } 
+                    if ( decisione == 2 ) continue;
+                }
+
+                if ( azione == 3 && trucchiAttivi == true){
+                    printf("ok");
+                    modificaSalvataggio(nSalvataggio);
                 }
             }
         }
