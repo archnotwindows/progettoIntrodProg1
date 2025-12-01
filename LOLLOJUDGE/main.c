@@ -1,19 +1,15 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
+#include "giocatore.h"      
 #include "menuMissioni.h"
-
-
 
 int main(){
 
 
-    Menu();
+    Giocatore g = {20, 0, 0, false};
+
+
+    Menu(&g);
+
     return 0;
 }
-
-
-
-
-

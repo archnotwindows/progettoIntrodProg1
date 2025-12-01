@@ -1,13 +1,13 @@
-// Definiamo com'è fatta una riga della tabella
+
 struct RigaDungeon {
-    char nome[30];      // Es: "Goblin"
-    char tipo;          // 'C' = Combattimento, 'T' = Trappola
-    int colpo_fatale;   // Quanto devi fare col dado per vincere
-    int danno_nemico;   // Quanto male ti fa se perdi
-    int monete_vittoria;// Quanti soldi vinci
+    char nome[30];      
+    char tipo;          
+    int colpo_fatale;   
+    int danno_nemico;   
+    int monete_vittoria;
 };
 
-// Ricopiamo ESATTAMENTE la Tabella 2 del PDF qui:
+
 struct RigaDungeon Palude[6] = {
     // Nome             Tipo  ColpoFatale Danno Monete
     {"Cane Selvaggio",  'C',      2,        1,    0}, // Dado 1 (indice 0)

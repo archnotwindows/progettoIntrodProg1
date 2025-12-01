@@ -1,6 +1,15 @@
+#include <stdbool.h>
+
+
+#ifndef GIOCATORE_H
+#define GIOCATORE_H
+
 typedef struct {
     int vita;       // La vita (max 20)
     int monete;     // I soldi
     int attacco;    // Bonus attacco (es. spada +1)
-    int missione_palude_finta; // 0 = no, 1 = si (per ricordarsi se l'hai finita)
+    bool missione_palude_finta; 
 } Giocatore;
+
+
+#endif
