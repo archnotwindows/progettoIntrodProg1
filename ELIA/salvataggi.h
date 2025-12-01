@@ -9,4 +9,4 @@ bool triggherTrucchi(char tasto);
 void eliminaSalvataggio(int numeroDaEliminare);
 void modificaSalvataggio(int numeroDaModificare);
     
-#endif 
+#endif
