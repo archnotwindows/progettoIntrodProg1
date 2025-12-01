@@ -4,9 +4,14 @@
 
 #include "systemclear.h"
 
+#include "missione1espdun.h"
+
 #include <time.h>
 
-void Menu(){
+
+
+
+void Menu(Giocatore* giocatore_ptr){
 
 
 
@@ -37,17 +42,8 @@ void Menu(){
         if(sceltammissione == 1){
            puliscischermo();
            
-            srand(time(NULL));
+            esploraStanzaDungeon(giocatore_ptr);
 
-            int risdado = rand() % 6 + 1;
-
-            printf("è uscito: %d\n",risdado);
-
-            struct dadiPaludePutrescente
-            {
-                
-                
-            };
             
 
 
