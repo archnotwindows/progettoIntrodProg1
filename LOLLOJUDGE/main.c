@@ -6,7 +6,7 @@
 int main(){
 
 
-    Giocatore g = {20, 0, 0, false};
+    Giocatore g = {20, 60, 0, false};
 
 
     Menu(&g);
