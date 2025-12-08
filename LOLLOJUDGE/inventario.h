@@ -1,10 +1,8 @@
-#include <stdio.h>
+#ifndef INVENTARIO_H
+#define INVENTARIO_H
 
+#include "giocatore.h"
 
+void Inventario(Giocatore* giocatore_ptr);
 
-void Inventario(Giocatore* giocatore_ptr){
-    printf("----- Inventario Giocatore -----\n");
-    printf("Punti Vita: %d\n", giocatore_ptr->vita);
-    printf("Monete: %d\n", giocatore_ptr->monete);
-    printf("-------------------------------\n");
-}
+#endif
