@@ -3,7 +3,7 @@
 #include "missione1espdun.h"
 #include "tabellemissioni.h"
 
-// Funzione ausiliaria per lanciare un dado a 6 facce
+// Funzione per lanciare un dado a 6 facce
 int lanciaDado() {
     return rand() % 6 + 1;
 }
@@ -17,6 +17,8 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
     const int MAX_STANZE = 10;
 
     for (int i = 1; i <= MAX_STANZE; i++) {
+
+        
         // Controllo vittoria immediata
         if (generali_sconfitti >= obiettivo_richiesto) {
             printf("\n>>> MISSIONE COMPLETATA! Hai sconfitto 3 Generali Orco! <<<\n");
