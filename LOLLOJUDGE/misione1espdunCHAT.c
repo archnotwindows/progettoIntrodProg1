@@ -38,7 +38,7 @@ const RigaDungeon TabellaPalude[6] = {
 
 // --- 3. FUNZIONI DI UTILITÀ ---
 
-// Lancia un dado a 6 facce (restituisce 1-6)
+// Lancia un dado che restituisce tra 1 e 6
 int lanciaDado() {
     return rand() % 6 + 1;
 }
@@ -71,7 +71,7 @@ void missionePaludePutrescente(Giocatore* g) {
         printf("\n--- STANZA %d/%d (Generali sconfitti: %d/%d) ---\n", 
                i, MAX_STANZE, generali_sconfitti, OBIETTIVO);
 
-        // --- LOGICA DI FORZATURA [cite: 113, 114] ---
+        // --- LOGICA DI FORZATURA ---
         int indice_scelto;
         int stanze_rimanenti = MAX_STANZE - i + 1;
         int generali_mancanti = OBIETTIVO - generali_sconfitti;
@@ -107,7 +107,7 @@ void missionePaludePutrescente(Giocatore* g) {
         else if (stanza.tipo == TIPO_COMBATTIMENTO) {
             int nemico_vivo = 1;
             
-            // Ciclo di combattimento [cite: 124]
+            // Ciclo di combattimento 
             while (nemico_vivo && g->vita > 0) {
                 printf("  [INVIO] per attaccare (Vita: %d)...", g->vita);
                 while(getchar() != '\n'); // Pausa per input utente
@@ -158,13 +158,13 @@ void missionePaludePutrescente(Giocatore* g) {
     }
 }
 
-// --- 4. MAIN (Per testare il programma) ---
+// --- 4. MAIN ---
 int main() {
     srand(time(NULL)); // Inizializza il generatore casuale
 
-    // Creiamo un giocatore di test
+    // Creiamo un giocatore 
     Giocatore eroe;
-    eroe.vita = 20;       // [cite: 22]
+    eroe.vita = 20;       
     eroe.monete = 0;
     eroe.ha_spada = 0;    // Metti a 1 per testare col bonus spada
     eroe.missioni_completate = 0;
