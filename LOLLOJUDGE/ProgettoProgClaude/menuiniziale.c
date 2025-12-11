@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "menuiniziale.h"
 #include "menuvillaggio.h"
@@ -65,9 +66,9 @@ void menuTrucchi() {
     }
     
     printf("\nSeleziona [1-%d]: ", num_salvataggi);
-    int scelta;
-    scanf("%d", &scelta);
-    while(getchar() != '\n');
+    char buf[100];
+    fgets(buf, 100, stdin);
+    int scelta = atoi(buf);
     
     if (scelta < 1 || scelta > num_salvataggi || !salvataggi[scelta - 1].attivo) {
         printf("Salvataggio non valido.\n");
@@ -101,6 +102,7 @@ void menuTrucchi() {
 }
 
 void menuIniziale() {
+    
     while (1) {
         puliscischermo();
         printf("===== MENU PRINCIPALE =====\n");
@@ -135,24 +137,31 @@ void menuIniziale() {
                         break;
                     }
                 }
+                
                 if (match) {
                     trucchi_sbloccati = 1;
                     pos_konami = 0;
                     memset(buffer_konami, 0, 11);
-                    continue;
+                    printf("\n!!! TRUCCHI SBLOCCATI !!!\n");
+                    // Qui il continue va bene perché vogliamo ricaricare il menu con l'opzione 3
+                    continue; 
                 }
+                
+                // Shift del buffer se non c'è match
                 for (int i = 0; i < 10; i++) {
                     buffer_konami[i] = buffer_konami[i + 1];
                 }
                 pos_konami = 10;
             }
-            continue;
+            // HO RIMOSSO IL "continue" QUI! 
+            // Ora il codice scende giù e controlla se hai premuto "1" o "2"
         }
         
         int scelta = atoi(input);
         
         if (scelta == 1) {
             // Nuova Partita
+            // Assicurati che la struct sia inizializzata correttamente secondo il tuo header
             Giocatore g = {20, 0, 0, false, false, false, false, false, false, false};
             puliscischermo();
             printf("Nuova avventura iniziata!\n");
