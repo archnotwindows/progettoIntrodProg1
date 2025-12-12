@@ -5,7 +5,6 @@
 #include "missione1espdun.h"
 #include "missione2espdun.h"
 #include "missione3espdun.h"
-#include "missionefinale.h"
 #include "inventario.h"
 #include "negozio.h"
 
@@ -20,7 +19,7 @@ void Menu(Giocatore* giocatore_ptr){
     printf("===== Menu Selezione Missione =====\n");
     
     int opzione_numero = 1;
-    int mappa_opzioni[4] = {0}; // Mappa per tracciare quale numero corrisponde a quale missione
+    int mappa_opzioni[3] = {0}; // Mappa per tracciare quale numero corrisponde a quale missione
     
     if (!giocatore_ptr->missione_palude_completata) {
         printf("%d. Palude Putrescente\n", opzione_numero);
@@ -41,9 +40,10 @@ void Menu(Giocatore* giocatore_ptr){
     }
     
     if (tutte_completate) {
-        printf("%d. Castello del Signore Oscuro - MISSIONE FINALE\n", opzione_numero);
-        mappa_opzioni[opzione_numero - 1] = 4;
-        opzione_numero++;
+        printf("Hai completato tutte le missioni disponibili. Torna al villaggio per riposare o controllare l'inventario.\n");
+        printf("Premi INVIO per tornare...\n");
+        getchar();
+        return;
     }
     
     printf("Seleziona una missione [1-%d]: ", opzione_numero - 1);
@@ -61,11 +61,7 @@ void Menu(Giocatore* giocatore_ptr){
     
     int missione_scelta = mappa_opzioni[scelta - 1];
     
-    // Se è la missione finale, vai direttamente allo scontro
-    if (missione_scelta == 4) {
-        missioneFinale(giocatore_ptr);
-        return;
-    }
+    // Nessuna azione per missione finale (rimosso)
     
     // Altrimenti mostra il menu di missione standard
     while (1) {

@@ -4,7 +4,6 @@
 #include "menuvillaggio.h"
 #include "menuMissioni.h"
 #include "inventario.h"
-#include "salvataggio.h"
 #include "systemclear.h"
 
 void menuVillaggio(Giocatore* giocatore_ptr) {
@@ -36,19 +35,10 @@ void menuVillaggio(Giocatore* giocatore_ptr) {
             printf("Premi INVIO per continuare...");
             getchar();
         } else if (scelta == 4) {
-            salvaPartita(giocatore_ptr);
-            printf("Premi INVIO per continuare...");
+            printf("No non lo salvo...premi INVIO per continuare...");
             getchar();
         } else if (scelta == 5) {
-            printf("Stai uscendo dal gioco ricordati di salvare la partita per non perdere i tuoi progressi.\n");
-            printf("Sei sicuro di voler procedere? [Si/No]: ");
-            char risposta[10];
-            scanf("%s", risposta);
-            while(getchar() != '\n');
-            
-            if (strcmp(risposta, "Si") == 0 || strcmp(risposta, "si") == 0) {
-                return;
-            }
+            return;
         }
     }
 }
