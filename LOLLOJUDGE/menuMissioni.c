@@ -8,10 +8,9 @@
 #include "inventario.h"
 #include "negozio.h"
 
-void Menu(Giocatore* giocatore_ptr){
+void Menu(Giocatore* giocatore_ptr){   // Menu delle missioni richiamato dal villaggio
     puliscischermo();
     
-    // Controlla se tutte le missioni sono completate
     int tutte_completate = giocatore_ptr->missione_palude_completata &&
                           giocatore_ptr->missione_magione_completata &&
                           giocatore_ptr->missione_grotta_completata;
@@ -20,7 +19,8 @@ void Menu(Giocatore* giocatore_ptr){
     
     int opzione_numero = 1;
     int mappa_opzioni[3] = {0}; // Mappa per tracciare quale numero corrisponde a quale missione
-    
+
+    //Controllo e mostra solo le missioni non completate
     if (!giocatore_ptr->missione_palude_completata) {
         printf("%d. Palude Putrescente\n", opzione_numero);
         mappa_opzioni[opzione_numero - 1] = 1;
@@ -61,14 +61,16 @@ void Menu(Giocatore* giocatore_ptr){
     
     int missione_scelta = mappa_opzioni[scelta - 1];
     
-    // Nessuna azione per missione finale (rimosso)
+
     
-    // Altrimenti mostra il menu di missione standard
-    while (1) {
+
+    while (true) {
         puliscischermo();
         
-        // Mostra obiettivo
-        printf("===== MISSIONE: ");
+   
+        printf("===== MISSIONE: ");  
+
+        // Stampo descrizione diversa in base alla missione scelta
         if (missione_scelta == 1) {
             printf("PALUDE PUTRESCENTE =====\n");
             printf("Obiettivo: Eliminare 3 Generale Orco.\n");
@@ -91,12 +93,12 @@ void Menu(Giocatore* giocatore_ptr){
         scanf("%d",&sceltammissione);
         while(getchar() != '\n');
 
-        if(sceltammissione == 1){  
+        if(sceltammissione == 1){    // Se scelgo di esplorare la stanza
            puliscischermo();
            if(missione_scelta == 1){
-                esplora1StanzaDungeon(giocatore_ptr);
+                esplora1StanzaDungeon(giocatore_ptr); // Eseguo la funzione dedicarta alla missione 1
                 
-                // Controlla se missione completata o game over
+           
                 if (giocatore_ptr->missione_palude_completata) {
                     printf("\nMissione completata! Torni al villaggio.\n");
                     printf("Premi INVIO per continuare...");
@@ -111,7 +113,7 @@ void Menu(Giocatore* giocatore_ptr){
                 }
            }
            else if(missione_scelta == 2){
-                esplora2StanzaDungeon(giocatore_ptr);
+                esplora2StanzaDungeon(giocatore_ptr); // Eseguo la funzione dedicarta alla missione 2
                 
                 if (giocatore_ptr->missione_magione_completata) {
                     printf("\nMissione completata! Torni al villaggio.\n");
@@ -127,7 +129,7 @@ void Menu(Giocatore* giocatore_ptr){
                 }
            }
            else if(missione_scelta == 3){
-                esplora3StanzaDungeon(giocatore_ptr);
+                esplora3StanzaDungeon(giocatore_ptr); // Eseguo la funzione dedicarta alla missione 3
                 
                 if (giocatore_ptr->missione_grotta_completata) {
                     printf("\nMissione completata! Torni al villaggio.\n");
@@ -143,17 +145,17 @@ void Menu(Giocatore* giocatore_ptr){
                 }
            }
         }
-        else if(sceltammissione == 2){ 
+        else if(sceltammissione == 2){  // Vado al negozio
             puliscischermo();
             negozio(giocatore_ptr);
         }
-        else if(sceltammissione == 3){ 
+        else if(sceltammissione == 3){  // Mostro inventario
             puliscischermo();
             Inventario(giocatore_ptr);
             printf("Premi INVIO per continuare...");
             getchar();
         }
-        else if(sceltammissione == 4){   
+        else if(sceltammissione == 4){   // Torno al villaggio pagando 50 monete
             puliscischermo();
             if(giocatore_ptr->monete >= 50){
                 giocatore_ptr->monete -= 50;
