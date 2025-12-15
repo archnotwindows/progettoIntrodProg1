@@ -16,8 +16,9 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
     int obiettivo_richiesto = 3;
     const int MAX_STANZE = 10;
 
+    
     for (int i = 1; i <= MAX_STANZE; i++) {
-        // Controllo vittoria immediata
+       
         if (generali_sconfitti >= obiettivo_richiesto) {
             printf("\n>>> MISSIONE COMPLETATA! Hai sconfitto 3 Generali Orco! <<<\n");
             giocatore_ptr->missione_palude_completata = true;
