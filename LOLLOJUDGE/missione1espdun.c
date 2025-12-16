@@ -3,10 +3,11 @@
 #include "missione1espdun.h"
 #include "tabellemissioni.h"
 
-// Funzione per lanciare un dado a 6 facce
+// Funzione per lanciare il dado
 int lanciaDado() {
     return rand() % 6 + 1;
 }
+
 
 void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
     printf("\n--- INIZIO MISSIONE: PALUDE PUTRESCENTE ---\n");
@@ -19,19 +20,25 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
     
     for (int i = 1; i <= MAX_STANZE; i++) {
        
+        // Controllo se la missione è già completata
         if (generali_sconfitti >= obiettivo_richiesto) {
             printf("\n>>> MISSIONE COMPLETATA! Hai sconfitto 3 Generali Orco! <<<\n");
             giocatore_ptr->missione_palude_completata = true;
             return;
         }
 
+
+        // Controllo vita giocatore
         if (giocatore_ptr->vita <= 0) {
             printf("Sei stato sconfitto... GAME OVER.\n");
             return;
         }
 
+        // Stampo il numero della stanza attuale
         printf("\n--- STANZA %d/%d ---\n", i, MAX_STANZE);
 
+
+        // Variabili
         int indice_tabella;
         int stanze_rimanenti = MAX_STANZE - i + 1;
         int generali_mancanti = obiettivo_richiesto - generali_sconfitti;
@@ -39,17 +46,18 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
         // Logica di forzatura
         if (generali_mancanti >= stanze_rimanenti) {
             printf("(Il destino ti guida verso il tuo obiettivo...)\n");
-            indice_tabella = 5; // Indice del Generale Orco
+            indice_tabella = 5; // Indice del Generale Orco nella tabella
         } else {
-            // Generazione procedurale standard 
+            // Generazione randomica standard 
             int tiro = lanciaDado();
             indice_tabella = tiro - 1;
         }
 
+        // Recupero la stanza dalla tabella
         struct RigaDungeon stanza = TabellaPalude[indice_tabella];
         printf("Incontri: %s\n", stanza.nome);
 
-        // GESTIONE TRAPPOLA
+        // Getione caso stanza TRAPPOLA
         if (stanza.tipo == TIPO_TRAPPOLA) {
             int danno_trappola = stanza.danno;
             
@@ -67,7 +75,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
             giocatore_ptr->vita -= danno_trappola;
         } 
         
-        // GESTIONE COMBATTIMENTO
+        // Gestione caso stanza COMBATTIMENTO
         else if (stanza.tipo == TIPO_COMBATTIMENTO) {
             int nemico_vivo = 1;
             
@@ -118,7 +126,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
         }
     }
 
-    // Se finisci le 10 stanze
+    // Se finisco le 10 stanze
     if (generali_sconfitti >= obiettivo_richiesto) {
         printf("\n>>> MISSIONE COMPLETATA! <<<\n");
         giocatore_ptr->missione_palude_completata = true;
