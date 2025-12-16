@@ -9,12 +9,16 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr) {
     printf("\n--- INIZIO MISSIONE: MAGIONE INFESTATA ---\n");
     printf("Obiettivo: Recupera la chiave del Castello e sconfiggi un Vampiro Superiore.\n");
 
+
+    // Variabili
     int vampiro_sconfitto = 0;
     int chiave_ottenuta = 0;
     const int MAX_STANZE = 10;
 
     for (int i = 1; i <= MAX_STANZE; i++) {
-        // Controllo vittoria
+
+
+        // Controllo se la missione è già completata
         if (vampiro_sconfitto && chiave_ottenuta) {
             printf("\n>>> MISSIONE COMPLETATA! <<<\n");
             giocatore_ptr->missione_magione_completata = true;
@@ -22,13 +26,16 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr) {
             return;
         }
 
+        // Controllo vita giocatore
         if (giocatore_ptr->vita <= 0) {
             printf("Sei stato sconfitto... GAME OVER.\n");
             return;
         }
 
+        // Stampo il numero della stanza attuale
         printf("\n--- STANZA %d/%d ---\n", i, MAX_STANZE);
 
+        //Variabili
         int indice_tabella;
         int stanze_rimanenti = MAX_STANZE - i + 1;
         int obiettivi_mancanti = (vampiro_sconfitto ? 0 : 1) + (chiave_ottenuta ? 0 : 1);
@@ -37,19 +44,21 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr) {
         if (obiettivi_mancanti >= stanze_rimanenti) {
             printf("(Il destino ti guida...)\n");
             if (!vampiro_sconfitto) {
-                indice_tabella = 4; // Vampiro Superiore
+                indice_tabella = 4; //  indica Vampiro Superiore
             } else {
-                indice_tabella = 5; // Demone Custode (con chiave)
+                indice_tabella = 5; // indice Demone Custode (con chiave)
             }
         } else {
             int tiro = lanciaDado();
             indice_tabella = tiro - 1;
         }
 
+        
+        // Recupero la stanza dalla tabella della missione
         struct RigaDungeon stanza = TabellaMagione[indice_tabella];
         printf("Incontri: %s\n", stanza.nome);
 
-        // TRAPPOLA
+       //Gestione caso stanza TRAPPOLA
         if (stanza.tipo == TIPO_TRAPPOLA) {
             int danno = stanza.danno;
             if (giocatore_ptr->ha_armatura && danno > 0) {
@@ -58,10 +67,13 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr) {
             printf("E' una trappola! Subisci %d danni.\n", danno);
             giocatore_ptr->vita -= danno;
         }
-        // COMBATTIMENTO
+        
+        // Gestione caso stanza COMBATTIMENTO
         else if (stanza.tipo == TIPO_COMBATTIMENTO) {
             int nemico_vivo = 1;
             
+
+            //Loop di combattimento
             while (nemico_vivo && giocatore_ptr->vita > 0) {
                 printf("Tua Vita: %d | Premi INVIO per attaccare...", giocatore_ptr->vita);
                 getchar();
@@ -100,6 +112,8 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr) {
             }
         }
     }
+
+
 
     if (vampiro_sconfitto && chiave_ottenuta) {
         printf("\n>>> MISSIONE COMPLETATA! <<<\n");

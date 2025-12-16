@@ -13,6 +13,8 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
     printf("\n--- INIZIO MISSIONE: PALUDE PUTRESCENTE ---\n");
     printf("Obiettivo: Sconfiggi 3 Generali Orco.\n");
 
+
+    // Variabili 
     int generali_sconfitti = 0;
     int obiettivo_richiesto = 3;
     const int MAX_STANZE = 10;
@@ -26,7 +28,6 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
             giocatore_ptr->missione_palude_completata = true;
             return;
         }
-
 
         // Controllo vita giocatore
         if (giocatore_ptr->vita <= 0) {
@@ -46,14 +47,14 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
         // Logica di forzatura
         if (generali_mancanti >= stanze_rimanenti) {
             printf("(Il destino ti guida verso il tuo obiettivo...)\n");
-            indice_tabella = 5; // Indice del Generale Orco nella tabella
+            indice_tabella = 5; // Indice Generale Orco
         } else {
             // Generazione randomica standard 
             int tiro = lanciaDado();
             indice_tabella = tiro - 1;
         }
 
-        // Recupero la stanza dalla tabella
+        // Recupero la stanza dalla tabella della missione
         struct RigaDungeon stanza = TabellaPalude[indice_tabella];
         printf("Incontri: %s\n", stanza.nome);
 
