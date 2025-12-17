@@ -1,7 +1,7 @@
 #include "tabellemissioni.h"
 #include <stddef.h> // per NULL
 
-// Tabella 2: Palude Putrescente
+// Tabella 1: Palude Putrescente
 struct RigaDungeon TabellaPalude[] = {
     {"Cane Selvaggio",      TIPO_COMBATTIMENTO, 2, 1, 0, 0},  // Dado 1
     {"Goblin",              TIPO_COMBATTIMENTO, 3, 2, 2, 0},  // Dado 2
@@ -11,7 +11,7 @@ struct RigaDungeon TabellaPalude[] = {
     {"Generale Orco",       TIPO_COMBATTIMENTO, 6, 3, 12, 1}  // Dado 6 (Obiettivo!)
 };
 
-// Tabella 3: Magione Infestata
+// Tabella 2: Magione Infestata
 struct RigaDungeon TabellaMagione[] = {
     {"Botola Buia",        TIPO_TRAPPOLA,       0, 3, 0, 0},  // Dado 1
     {"Pipistrello",        TIPO_COMBATTIMENTO,  2, 2, 1, 0},  // Dado 2
@@ -21,7 +21,7 @@ struct RigaDungeon TabellaMagione[] = {
     {"Demone Custode",     TIPO_COMBATTIMENTO,  4, 6, 10, 2}  // Dado 6 (Obiettivo + chiave!)
 };
 
-// Tabella 4: Grotta di Cristallo
+// Tabella 3: Grotta di Cristallo
 struct RigaDungeon TabellaGrotta[] = {
     {"Stanza Vuota",       TIPO_VUOTA,          0, 0, 0, 0},   // Dado 1
     {"Cristalli Cadenti",  TIPO_TRAPPOLA,       0, 2, 0, 0},   // Dado 2
