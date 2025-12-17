@@ -1,5 +1,5 @@
 #include "tabellemissioni.h"
-#include <stddef.h> // per NULL se necessario
+#include <stddef.h> // per NULL
 
 // Tabella 2: Palude Putrescente
 struct RigaDungeon TabellaPalude[] = {

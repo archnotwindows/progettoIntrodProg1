@@ -9,8 +9,7 @@
 #include "inventario.h"
 #include "negozio.h"
 
-// Nota: Assicurati di avere una funzione vuota o reale per la finale se la chiami
-// void esploraFinale(Giocatore* g) { ... } 
+
 
 void Menu(Giocatore* giocatore_ptr) {   
     puliscischermo();
@@ -42,7 +41,7 @@ void Menu(Giocatore* giocatore_ptr) {
         opzione_numero++;
     }
     
-    // SBLOCCO MISSIONE FINALE
+    
     if (tutte_completate) {
         printf("\n*** EVENTO SPECIALE ***\n");
         printf("%d. Castello del Signore Oscuro (MISSIONE FINALE)\n", opzione_numero);
@@ -64,7 +63,7 @@ void Menu(Giocatore* giocatore_ptr) {
     
     int missione_scelta = mappa_opzioni[scelta - 1];
 
-    // STATO SESSIONE
+    
     int stanza_corrente = 1; 
     int progressi_missione = 0; 
 
@@ -80,7 +79,7 @@ void Menu(Giocatore* giocatore_ptr) {
         if(sceltammissione == 1){    
             puliscischermo();
             
-            // Limite Stanze
+            
             if(missione_scelta != 4 && stanza_corrente > 10) {
                  printf("Dungeon finito. Torna al villaggio.\n");
                  getchar();
@@ -117,12 +116,12 @@ void Menu(Giocatore* giocatore_ptr) {
                 return;
             }
 
-            if (giocatore_ptr->vita <= 0) return; // Game Over
+            if (giocatore_ptr->vita <= 0) return; 
         }
         else if(sceltammissione == 2) { negozio(giocatore_ptr); }
         else if(sceltammissione == 3) { Inventario(giocatore_ptr); getchar(); }
         else if(sceltammissione == 4) { 
-            // Controllo fuga
+            
             bool finita = (missione_scelta == 1 && giocatore_ptr->missione_palude_completata) ||
                           (missione_scelta == 2 && giocatore_ptr->missione_magione_completata) ||
                           (missione_scelta == 3 && giocatore_ptr->missione_grotta_completata);

@@ -11,7 +11,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     const int OBIETTIVO_GENERALI = 3;
     const int MAX_STANZE = 10;
     
-    // 1. CALCOLO DELLA "FORZATURA"
+  
     int stanze_rimanenti = MAX_STANZE - *stanza_corrente + 1;
     int generali_mancanti = OBIETTIVO_GENERALI - *generali_uccisi;
     int indice_tabella;
@@ -19,7 +19,6 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     printf("\n----------------------------------------\n");
     printf("ESPLORAZIONE STANZA %d (Obiettivo: %d/3 Generali)\n", *stanza_corrente, *generali_uccisi);
 
-    // Se i mostri che mancano sono >= delle stanze rimaste, forza l'uscita
     if (generali_mancanti > 0 && generali_mancanti >= stanze_rimanenti) {
         printf(">>> L'aria si fa pesante... senti la presenza di un Generale! (Incontro Forzato)\n");
         indice_tabella = 5; // Indice 5 = Generale Orco
@@ -31,18 +30,17 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
 
     struct RigaDungeon stanza = TabellaPalude[indice_tabella];
 
-    // --- GESTIONE TRAPPOLA ---
     if (stanza.tipo == TIPO_TRAPPOLA) {
         printf("Ti imbatti in: %s\n", stanza.nome);
         int danno = stanza.danno;
 
-        // Acquitrino Velenoso (danno variabile)
+      
         if (danno == -1 || indice_tabella == 4) { 
             danno = lanciaDado();
             printf("L'acquitrino è instabile! Il dado decide il danno: %d\n", danno);
         }
 
-        // Armatura
+       
         if (giocatore_ptr->ha_armatura && danno > 0) {
             danno--;
             printf("La tua armatura assorbe parte del colpo (-1 danno).\n");
@@ -53,14 +51,14 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
         giocatore_ptr->vita -= danno;
     }
 
-    // --- GESTIONE COMBATTIMENTO ---
+ 
     else if (stanza.tipo == TIPO_COMBATTIMENTO) {
         printf("COMBATTIMENTO! Hai incontrato: %s\n", stanza.nome);
         
         int nemico_vivo = 1;
         int colpo_fatale = stanza.colpo_fatale;
 
-        // Regola Spada dell'Eroe vs Generale Orco
+    
         if (indice_tabella == 5 && giocatore_ptr->ha_spada_eroe) {
             colpo_fatale = 5;
             printf("Grazie alla Spada dell'Eroe, il Generale è più debole! (Colpo Fatale ridotto a 5)\n");
