@@ -13,7 +13,7 @@ struct RigaDungeon {
     int colpo_fatale;   // Se è trappola: 0 = danno fisso, -1 = danno 1d6
     int danno;          // Danno subito se si perde o si cade nella trappola
     int monete;         // Monete guadagnate
-    int is_obiettivo;   // 1 se è il mostro obiettivo (es. Generale Orco), 0 altrimenti
+    int is_obiettivo;   // 1 se è il mostro obiettivo, 2 per obiettivi secondari (es. chiave)
 };
 
 // Array esterni per le tabelle

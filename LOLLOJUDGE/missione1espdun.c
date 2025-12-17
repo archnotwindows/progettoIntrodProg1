@@ -1,137 +1,111 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "missione1espdun.h"
-#include "tabellemissioni.h"
+#include "tabellemissioni.h" 
 
-// Funzione per lanciare il dado
-int lanciaDado() {
+static int lanciaDado() {
     return rand() % 6 + 1;
 }
 
-
-void esplora1StanzaDungeon(Giocatore* giocatore_ptr) {
-    printf("\n--- INIZIO MISSIONE: PALUDE PUTRESCENTE ---\n");
-    printf("Obiettivo: Sconfiggi 3 Generali Orco.\n");
-
-
-    // Variabili 
-    int generali_sconfitti = 0;
-    int obiettivo_richiesto = 3;
+void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* generali_uccisi) {
+    const int OBIETTIVO_GENERALI = 3;
     const int MAX_STANZE = 10;
-
     
-    for (int i = 1; i <= MAX_STANZE; i++) {
-       
-        // Controllo se la missione è già completata
-        if (generali_sconfitti >= obiettivo_richiesto) {
-            printf("\n>>> MISSIONE COMPLETATA! Hai sconfitto 3 Generali Orco! <<<\n");
-            giocatore_ptr->missione_palude_completata = true;
-            return;
-        }
+    [cite_start]// 1. CALCOLO DELLA "FORZATURA" [cite: 104]
+    int stanze_rimanenti = MAX_STANZE - *stanza_corrente + 1;
+    int generali_mancanti = OBIETTIVO_GENERALI - *generali_uccisi;
+    int indice_tabella;
 
-        // Controllo vita giocatore
-        if (giocatore_ptr->vita <= 0) {
-            printf("Sei stato sconfitto... GAME OVER.\n");
-            return;
-        }
+    printf("\n----------------------------------------\n");
+    printf("ESPLORAZIONE STANZA %d (Obiettivo: %d/3 Generali)\n", *stanza_corrente, *generali_uccisi);
 
-        // Stampo il numero della stanza attuale
-        printf("\n--- STANZA %d/%d ---\n", i, MAX_STANZE);
-
-
-        // Variabili
-        int indice_tabella;
-        int stanze_rimanenti = MAX_STANZE - i + 1;
-        int generali_mancanti = obiettivo_richiesto - generali_sconfitti;
-
-        // Logica di forzatura
-        if (generali_mancanti >= stanze_rimanenti) {
-            printf("(Il destino ti guida verso il tuo obiettivo...)\n");
-            indice_tabella = 5; // Indice Generale Orco
-        } else {
-            // Generazione randomica standard 
-            int tiro = lanciaDado();
-            indice_tabella = tiro - 1;
-        }
-
-        // Recupero la stanza dalla tabella della missione
-        struct RigaDungeon stanza = TabellaPalude[indice_tabella];
-        printf("Incontri: %s\n", stanza.nome);
-
-        // Getione caso stanza TRAPPOLA
-        if (stanza.tipo == TIPO_TRAPPOLA) {
-            int danno_trappola = stanza.danno;
-            
-            // Caso speciale Acquitrino: danno 1-6
-            if (danno_trappola == -1) {
-                danno_trappola = lanciaDado();
-            }
-            
-            // Applica riduzione armatura
-            if (giocatore_ptr->ha_armatura && danno_trappola > 0) {
-                danno_trappola = (danno_trappola - 1 > 0) ? danno_trappola - 1 : 0;
-            }
-
-            printf("E' una trappola! Subisci %d danni.\n", danno_trappola);
-            giocatore_ptr->vita -= danno_trappola;
-        } 
-        
-        // Gestione caso stanza COMBATTIMENTO
-        else if (stanza.tipo == TIPO_COMBATTIMENTO) {
-            int nemico_vivo = 1;
-            
-            // Controlla se ha la Spada dell'Eroe per Generale Orco
-            int colpo_fatale_richiesto = stanza.colpo_fatale;
-            if (stanza.is_obiettivo == 1 && giocatore_ptr->ha_spada_eroe) {
-                colpo_fatale_richiesto = 5;
-            }
-            
-            // Loop di combattimento 
-            while (nemico_vivo && giocatore_ptr->vita > 0) {
-                printf("Tua Vita: %d | Premi INVIO per attaccare...", giocatore_ptr->vita);
-                getchar();
-                
-                int dado_eroe = lanciaDado();
-                int attacco_totale = dado_eroe + giocatore_ptr->attacco;
-                
-                printf("Hai rollato %d (+%d bonus) = %d. Colpo Fatale richiesto: %d\n", 
-                       dado_eroe, giocatore_ptr->attacco, attacco_totale, colpo_fatale_richiesto);
-
-                if (attacco_totale >= colpo_fatale_richiesto) {
-                    printf("Nemico sconfitto! Guadagni %d monete.\n", stanza.monete);
-                    giocatore_ptr->monete += stanza.monete;
-                    nemico_vivo = 0;
-                    
-                    // Se era un Generale Orco, incrementiamo il contatore
-                    if (stanza.is_obiettivo == 1) {
-                        generali_sconfitti++;
-                        printf(">>> Generale Orco ucciso! (%d/%d) <<<\n", generali_sconfitti, obiettivo_richiesto);
-                    }
-                } else {
-                    int danno = stanza.danno;
-                    
-                    // Applica riduzione armatura
-                    if (giocatore_ptr->ha_armatura) {
-                        danno = (danno - 1 > 0) ? danno - 1 : 0;
-                    }
-                    
-                    printf("Attacco fallito! Il nemico contrattacca e infligge %d danni.\n", danno);
-                    giocatore_ptr->vita -= danno;
-                    
-                    if (giocatore_ptr->vita <= 0) {
-                        printf("Sei stato sconfitto... GAME OVER.\n");
-                        return;
-                    }
-                }
-            }
-        }
-    }
-
-    // Se finisco le 10 stanze
-    if (generali_sconfitti >= obiettivo_richiesto) {
-        printf("\n>>> MISSIONE COMPLETATA! <<<\n");
-        giocatore_ptr->missione_palude_completata = true;
+    // Se i mostri che mancano sono >= delle stanze rimaste, forza l'uscita
+    if (generali_mancanti > 0 && generali_mancanti >= stanze_rimanenti) {
+        printf(">>> L'aria si fa pesante... senti la presenza di un Generale! (Incontro Forzato)\n");
+        indice_tabella = 5; // Indice 5 = Generale Orco
     } else {
-        printf("Sei uscito dal dungeon senza completare l'obiettivo.\n");
+        int tiro = lanciaDado();
+        printf("Tiri il dado per generare la stanza: %d\n", tiro);
+        indice_tabella = tiro - 1; 
     }
+
+    struct RigaDungeon stanza = TabellaPalude[indice_tabella];
+
+    // --- GESTIONE TRAPPOLA ---
+    if (stanza.tipo == TIPO_TRAPPOLA) {
+        printf("Ti imbatti in: %s\n", stanza.nome);
+        int danno = stanza.danno;
+
+        [cite_start]// Acquitrino Velenoso (danno variabile) [cite: 134]
+        if (danno == -1 || indice_tabella == 4) { 
+            danno = lanciaDado();
+            printf("L'acquitrino è instabile! Il dado decide il danno: %d\n", danno);
+        }
+
+        [cite_start]// Armatura [cite: 91]
+        if (giocatore_ptr->ha_armatura && danno > 0) {
+            danno--;
+            printf("La tua armatura assorbe parte del colpo (-1 danno).\n");
+        }
+
+        if (danno < 0) danno = 0;
+        printf("Subisci %d danni dalla trappola.\n", danno);
+        giocatore_ptr->vita -= danno;
+    }
+
+    // --- GESTIONE COMBATTIMENTO ---
+    else if (stanza.tipo == TIPO_COMBATTIMENTO) {
+        printf("COMBATTIMENTO! Hai incontrato: %s\n", stanza.nome);
+        
+        int nemico_vivo = 1;
+        int colpo_fatale = stanza.colpo_fatale;
+
+        [cite_start]// Regola Spada dell'Eroe vs Generale Orco [cite: 135]
+        if (indice_tabella == 5 && giocatore_ptr->ha_spada_eroe) {
+            colpo_fatale = 5;
+            printf("Grazie alla Spada dell'Eroe, il Generale è più debole! (Colpo Fatale ridotto a 5)\n");
+        }
+
+        while (nemico_vivo && giocatore_ptr->vita > 0) {
+            printf("\n[TU: %d HP] vs [%s] (Serve > %d per vincere)\n", giocatore_ptr->vita, stanza.nome, colpo_fatale);
+            printf("Premi INVIO per attaccare...");
+            while(getchar() != '\n'); 
+
+            int dado_attacco = lanciaDado();
+            int attacco_totale = dado_attacco + giocatore_ptr->attacco; 
+
+            printf("Hai rollato %d (+%d bonus) = %d. ", dado_attacco, giocatore_ptr->attacco, attacco_totale);
+
+            if (attacco_totale > colpo_fatale) {
+                printf("COLPITO! Nemico sconfitto!\n");
+                nemico_vivo = 0;
+                printf("Ottieni %d monete.\n", stanza.monete);
+                giocatore_ptr->monete += stanza.monete;
+
+                if (indice_tabella == 5) {
+                    (*generali_uccisi)++;
+                    printf(">>> OBIETTIVO AGGIORNATO: Generali uccisi %d/3 <<<\n", *generali_uccisi);
+                }
+
+            } else {
+                printf("MANCATO!\n");
+                int danno_nemico = stanza.danno;
+                if (giocatore_ptr->ha_armatura) {
+                    danno_nemico = (danno_nemico - 1 > 0) ? danno_nemico - 1 : 0;
+                }
+                printf("Il nemico contrattacca! Subisci %d danni.\n", danno_nemico);
+                giocatore_ptr->vita -= danno_nemico;
+            }
+        }
+    }
+    
+    (*stanza_corrente)++; 
+
+    if (*generali_uccisi >= OBIETTIVO_GENERALI) {
+        giocatore_ptr->missione_palude_completata = 1;
+    }
+
+    printf("----------------------------------------\n");
+    printf("Premi INVIO per continuare...");
+    while(getchar() != '\n');
 }

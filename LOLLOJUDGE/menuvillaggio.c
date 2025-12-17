@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include "menuvillaggio.h"
 #include "menuMissioni.h"
@@ -9,35 +8,32 @@
 void menuVillaggio(Giocatore* giocatore_ptr) {
     while (1) {
         puliscischermo();
-        printf("===== MENU DEL VILLAGGIO =====\n");
-        printf("1. Intraprendi una missione\n");
-        printf("2. Riposati\n");
+        printf("===== VILLAGGIO =====\n");
+        printf("1. Intraprendi missione\n");
+        printf("2. Riposati (Ripristina vita)\n");
         printf("3. Inventario\n");
-        printf("4. Salva la partita\n");
-        printf("5. Esci\n");
-        printf("Seleziona una delle opzioni del menu [1-5]: ");
+        printf("4. Salva (Non implementato in questo snippet)\n");
+        printf("5. Esci dal gioco\n");
+        printf("Scelta: ");
         
         int scelta;
         scanf("%d", &scelta);
         while(getchar() != '\n');
-        
+
         if (scelta == 1) {
-            puliscischermo();
-            Menu(giocatore_ptr);
-        } else if (scelta == 2) {
+            Menu(giocatore_ptr); 
+            if (giocatore_ptr->vita <= 0) return; // Esci se morto
+        }
+        else if (scelta == 2) {
             giocatore_ptr->vita = 20;
-            printf("Ti sei riposato. Punti vita ripristinati a 20.\n");
-            printf("Premi INVIO per continuare...");
+            printf("Ti sei riposato. Vita ripristinata.\n");
             getchar();
-        } else if (scelta == 3) {
-            puliscischermo();
+        }
+        else if (scelta == 3) {
             Inventario(giocatore_ptr);
-            printf("Premi INVIO per continuare...");
             getchar();
-        } else if (scelta == 4) {
-            printf("No non lo salvo...premi INVIO per continuare...");
-            getchar();
-        } else if (scelta == 5) {
+        }
+        else if (scelta == 5) {
             return;
         }
     }

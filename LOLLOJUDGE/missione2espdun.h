@@ -3,6 +3,6 @@
 
 #include "giocatore.h"
 
-void esplora2StanzaDungeon(Giocatore* giocatore_ptr);
+void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* progressi);
 
 #endif
