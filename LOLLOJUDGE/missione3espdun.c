@@ -7,7 +7,7 @@
 
 static int lanciaDado() { return rand() % 6 + 1; }
 
-[cite_start]// Funzione ricorsiva Padovan (RICHIESTA) [cite: 208]
+// Funzione ricorsiva Padovan (RICHIESTA)
 int padovan(int n) {
     if (n == 0 || n == 1 || n == 2) return 1;
     return padovan(n - 2) + padovan(n - 3);
@@ -29,7 +29,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     
     printf("\n--- GROTTA DI CRISTALLO: STANZA %d/%d ---\n", *stanza_corrente, MAX_STANZE);
 
-    [cite_start]// FORZATURA DRAGO [cite: 104]
+    // FORZATURA DRAGO
     int indice_tabella;
     // Se siamo all'ultima stanza e non abbiamo la spada (*progressi == 0)
     if (*progressi == 0 && *stanza_corrente == MAX_STANZE) {
@@ -47,7 +47,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
         printf("Stanza vuota.\n");
     }
     else if (stanza.tipo == TIPO_TRAPPOLA) {
-        [cite_start]// Gestione Trappole Specifiche Grotta [cite: 146]
+        // Gestione Trappole Specifiche Grotta
         int danno = stanza.danno;
         int monete = stanza.monete;
 
@@ -86,7 +86,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
         // DRAGO ANTICO
         int danno_primo_turno = stanza.danno;
 
-        [cite_start]// ENIGMA PADOVAN [cite: 144]
+        // ENIGMA PADOVAN
         int numero_quiz = (rand() % 100) + 1; // Range ridotto per leggibilità
         printf("\nIL DRAGO CHIEDE: 'Il numero %d appartiene alla sequenza di Padovan?' [s/n]: ", numero_quiz);
         char risp;

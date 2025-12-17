@@ -18,7 +18,7 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
            ha_chiave ? "PRESA" : "MANCANTE", 
            vampiro_morto ? "SI" : "NO");
 
-    [cite_start]// FORZATURA [cite: 104]
+    // FORZATURA
     int stanze_rimanenti = MAX_STANZE - *stanza_corrente + 1;
     int obiettivi_mancanti = (!ha_chiave) + (!vampiro_morto ? 1 : 0);
     int indice_tabella;
@@ -62,7 +62,7 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
                         printf(">>> Vampiro Superiore Sconfitto! <<<\n");
                     }
                 } 
-                [cite_start]else if (stanza.is_obiettivo == 2) { // Demone (Chiave) [cite: 138]
+                else if (stanza.is_obiettivo == 2) { // Demone (Chiave)
                     if (!ha_chiave) {
                         *progressi |= 1; // Accendi bit 1
                         giocatore_ptr->ha_chiave = true;

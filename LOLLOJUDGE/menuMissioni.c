@@ -42,7 +42,7 @@ void Menu(Giocatore* giocatore_ptr) {
         opzione_numero++;
     }
     
-    [cite_start]// SBLOCCO MISSIONE FINALE [cite: 82]
+    // SBLOCCO MISSIONE FINALE
     if (tutte_completate) {
         printf("\n*** EVENTO SPECIALE ***\n");
         printf("%d. Castello del Signore Oscuro (MISSIONE FINALE)\n", opzione_numero);

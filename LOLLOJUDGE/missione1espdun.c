@@ -11,7 +11,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     const int OBIETTIVO_GENERALI = 3;
     const int MAX_STANZE = 10;
     
-    [cite_start]// 1. CALCOLO DELLA "FORZATURA" [cite: 104]
+    // 1. CALCOLO DELLA "FORZATURA"
     int stanze_rimanenti = MAX_STANZE - *stanza_corrente + 1;
     int generali_mancanti = OBIETTIVO_GENERALI - *generali_uccisi;
     int indice_tabella;
@@ -36,13 +36,13 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
         printf("Ti imbatti in: %s\n", stanza.nome);
         int danno = stanza.danno;
 
-        [cite_start]// Acquitrino Velenoso (danno variabile) [cite: 134]
+        // Acquitrino Velenoso (danno variabile)
         if (danno == -1 || indice_tabella == 4) { 
             danno = lanciaDado();
             printf("L'acquitrino è instabile! Il dado decide il danno: %d\n", danno);
         }
 
-        [cite_start]// Armatura [cite: 91]
+        // Armatura
         if (giocatore_ptr->ha_armatura && danno > 0) {
             danno--;
             printf("La tua armatura assorbe parte del colpo (-1 danno).\n");
@@ -60,7 +60,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
         int nemico_vivo = 1;
         int colpo_fatale = stanza.colpo_fatale;
 
-        [cite_start]// Regola Spada dell'Eroe vs Generale Orco [cite: 135]
+        // Regola Spada dell'Eroe vs Generale Orco
         if (indice_tabella == 5 && giocatore_ptr->ha_spada_eroe) {
             colpo_fatale = 5;
             printf("Grazie alla Spada dell'Eroe, il Generale è più debole! (Colpo Fatale ridotto a 5)\n");
