@@ -12,4 +12,6 @@ void Inventario(Giocatore* g) {
     if (g->ha_armatura) printf("- Armatura (-1 Danni)\n");
     if (g->ha_chiave) printf("- Chiave Castello\n");
     printf("======================\n");
+
+
 }

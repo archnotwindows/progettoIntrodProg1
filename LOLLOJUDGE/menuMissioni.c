@@ -119,7 +119,7 @@ void Menu(Giocatore* giocatore_ptr) {
             if (giocatore_ptr->vita <= 0) return; 
         }
         else if(sceltammissione == 2) { negozio(giocatore_ptr); }
-        else if(sceltammissione == 3) { Inventario(giocatore_ptr); getchar(); }
+        else if(sceltammissione == 3) { Inventario(giocatore_ptr); printf("Premi INVIO per tornare al menu..."); getchar(); }
         else if(sceltammissione == 4) { 
             
             bool finita = (missione_scelta == 1 && giocatore_ptr->missione_palude_completata) ||
