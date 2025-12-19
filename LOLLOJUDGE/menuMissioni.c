@@ -14,7 +14,7 @@
 void Menu(Giocatore* giocatore_ptr) {   
     puliscischermo();
     
-    int tutte_completate = giocatore_ptr->missione_palude_completata &&
+    int tutte_completate = giocatore_ptr->missione_palude_completata &&  // calcolo se tutte le missioni sono completate
                            giocatore_ptr->missione_magione_completata &&
                            giocatore_ptr->missione_grotta_completata;
     
@@ -23,7 +23,7 @@ void Menu(Giocatore* giocatore_ptr) {
     int opzione_numero = 1;
     int mappa_opzioni[4] = {0};
 
-    if (!giocatore_ptr->missione_palude_completata) {
+    if (!giocatore_ptr->missione_palude_completata) { // se la missione non è completata allora mostrala
         printf("%d. Palude Putrescente\n", opzione_numero);
         mappa_opzioni[opzione_numero - 1] = 1;
         opzione_numero++;
@@ -42,7 +42,7 @@ void Menu(Giocatore* giocatore_ptr) {
     }
     
     
-    if (tutte_completate) {
+    if (tutte_completate) {      // se ho completato tutte le missioni
         printf("\n*** EVENTO SPECIALE ***\n");
         printf("%d. Castello del Signore Oscuro (MISSIONE FINALE)\n", opzione_numero);
         mappa_opzioni[opzione_numero - 1] = 4;
@@ -56,10 +56,10 @@ void Menu(Giocatore* giocatore_ptr) {
     printf("\nSeleziona una missione [1-%d]: ", opzione_numero - 1);
     
     int scelta;
-    scanf("%d", &scelta);
+    scanf("%d", &scelta); // prendo la scelta della missione
     while(getchar() != '\n');
     
-    if(scelta < 1 || scelta >= opzione_numero) return;
+    if(scelta < 1 || scelta >= opzione_numero) return; // controllo imput
     
     int missione_scelta = mappa_opzioni[scelta - 1];
 
@@ -67,7 +67,7 @@ void Menu(Giocatore* giocatore_ptr) {
     int stanza_corrente = 1; 
     int progressi_missione = 0; 
 
-    while (true) {
+    while (true) { // ciclo missione 
         puliscischermo();
         printf("===== MISSIONE IN CORSO (Stanza %d/10) =====\n", stanza_corrente);
         printf("1. Esplora | 2. Negozio | 3. Inventario | 4. Torna al Villaggio\nScelta: ");
@@ -87,7 +87,7 @@ void Menu(Giocatore* giocatore_ptr) {
             }
 
             if(missione_scelta == 1){
-                esplora1StanzaDungeon(giocatore_ptr, &stanza_corrente, &progressi_missione);
+                esplora1StanzaDungeon(giocatore_ptr, &stanza_corrente, &progressi_missione); // passo alla funzione della prima missione
                 if (giocatore_ptr->missione_palude_completata) {
                     printf("\n>>> MISSIONE PALUDE COMPLETATA! <<<\nINVIO per uscire...");
                     getchar();
@@ -95,7 +95,7 @@ void Menu(Giocatore* giocatore_ptr) {
                 }
             }
             else if(missione_scelta == 2){
-                esplora2StanzaDungeon(giocatore_ptr, &stanza_corrente, &progressi_missione);
+                esplora2StanzaDungeon(giocatore_ptr, &stanza_corrente, &progressi_missione); // passo alla funzione della seconda missione
                 if (giocatore_ptr->missione_magione_completata) {
                     printf("\n>>> MISSIONE MAGIONE COMPLETATA! <<<\nINVIO per uscire...");
                     getchar();
@@ -103,7 +103,7 @@ void Menu(Giocatore* giocatore_ptr) {
                 }
             }
             else if(missione_scelta == 3){
-                esplora3StanzaDungeon(giocatore_ptr, &stanza_corrente, &progressi_missione);
+                esplora3StanzaDungeon(giocatore_ptr, &stanza_corrente, &progressi_missione); // passo alla funzione della terza missione
                 if (giocatore_ptr->missione_grotta_completata) {
                     printf("\n>>> MISSIONE GROTTA COMPLETATA! <<<\nINVIO per uscire...");
                     getchar();
@@ -118,8 +118,8 @@ void Menu(Giocatore* giocatore_ptr) {
 
             if (giocatore_ptr->vita <= 0) return; 
         }
-        else if(sceltammissione == 2) { negozio(giocatore_ptr); }
-        else if(sceltammissione == 3) { Inventario(giocatore_ptr); printf("Premi INVIO per tornare al menu..."); getchar(); }
+        else if(sceltammissione == 2) { negozio(giocatore_ptr); } // passo alla funziona del negozio
+        else if(sceltammissione == 3) { Inventario(giocatore_ptr); printf("Premi INVIO per tornare al menu..."); getchar(); } // passo alla funzione dell'inventario
         else if(sceltammissione == 4) { 
             
             bool finita = (missione_scelta == 1 && giocatore_ptr->missione_palude_completata) ||

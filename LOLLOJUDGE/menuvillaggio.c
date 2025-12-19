@@ -21,9 +21,9 @@ void menuVillaggio(Giocatore* giocatore_ptr) {
         while(getchar() != '\n');
 
         if (scelta == 1) {
-            Menu(giocatore_ptr); 
+            Menu(giocatore_ptr);  // passo il giocatore al menu delle missioni
            
-            if (giocatore_ptr->vita <= 0) {
+            if (giocatore_ptr->vita <= 0) {   // stampo messaggio errore se il giocatore perde
                 puliscischermo();
                 printf("\n=======================================\n");
                 printf("             GAME OVER                 \n");
@@ -36,7 +36,7 @@ void menuVillaggio(Giocatore* giocatore_ptr) {
             }
          
         }
-        else if (scelta == 2) {
+        else if (scelta == 2) { // recupera vita
            
             
             giocatore_ptr->vita = 20;
@@ -44,13 +44,13 @@ void menuVillaggio(Giocatore* giocatore_ptr) {
             printf("Premi INVIO per continuare..."); 
             getchar();
         }
-        else if (scelta == 3) {
+        else if (scelta == 3) { // mostra inventario
             puliscischermo();
             Inventario(giocatore_ptr);
             printf("\nPremi INVIO per tornare al villaggio...");
             getchar();
         }
-        else if (scelta == 5) {
+        else if (scelta == 5) {  // esci dal gioco
             return;
         }
     }
