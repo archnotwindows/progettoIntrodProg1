@@ -7,7 +7,7 @@
 static int lanciaDado() { return rand() % 6 + 1; }
 
 /**
- // Documentazione Doxygen
+ // DOCUMENTAZIONE DOXYGEN
  * * @param giocatore_ptr: Puntatore alla struttura dati del giocatore (vita, attacco, ecc.)
  * @param stanza_corrente: Puntatore al contatore della stanza attuale (1-10)
  * @param progressi: Puntatore a un intero bitmask che traccia gli obiettivi:
@@ -19,12 +19,12 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     const int MAX_STANZE = 10;
     
     // --- GESTIONE STATO MISSIONE  ---
-    // Verifica se dentro a progressi c'è l'1-> Chiave posseduta
+    //  & Confronto bit a bit tra progressi e 00000001  >> se ottengo 1 allora il giocatore ha la chiave
     int ha_chiave = (*progressi & 1);     
-    // Verifica se dentro a progressi c'è il 2-> Vampiro già ucciso
+    //  & Confronto bit a bit tra progressi e 00000010  >> se ottengo 2 allora il vampiro è morto
     int vampiro_morto = (*progressi & 2); 
 
-    // Stampa intestazione missione e stanza 
+  
     printf("\n--- MAGIONE INFESTATA: STANZA %d/%d ---\n", *stanza_corrente, MAX_STANZE);
     printf("Stato Missione: Chiave [%s] - Vampiro Sconfitto [%s]\n", 
            ha_chiave ? "PRESA" : "MANCANTE", 
