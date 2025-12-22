@@ -3,16 +3,11 @@
 #include "missione1espdun.h"
 #include "tabellemissioni.h" 
 
-// Funzione helper interna: simula il lancio di un dado a 6 facce (d6)
+// funzione che lancia un dado a 6 facce
 static int lanciaDado() {
     return rand() % 6 + 1;
 }
 
-/**
- * Funzione principale di esplorazione.
- * Gestisce l'apertura di una nuova porta, decide cosa c'è dentro (Nemico o Trappola)
- * e risolve l'interazione (Combattimento o Danno).
- */
 void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* generali_uccisi) {
     // Configurazioni della missione Palude
     const int OBIETTIVO_GENERALI = 3;
@@ -26,66 +21,64 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     printf("\n----------------------------------------\n");
     printf("ESPLORAZIONE STANZA %d (Obiettivo: %d/3 Generali)\n", *stanza_corrente, *generali_uccisi);
 
-    // --- LOGICA INTELLIGENTE (ANTI-SFORTUNA) ---
+    // --- LOGICA DI FORATURA  ---
     // Se mancano ancora Generali da uccidere e le stanze stanno finendo,
     // il gioco forza l'apparizione di un Generale invece di tirare il dado.
-    // Esempio: Mancano 2 generali e rimangono solo 2 stanze -> Forza incontro.
     if (generali_mancanti > 0 && generali_mancanti >= stanze_rimanenti) {
         printf(">>> L'aria si fa pesante... senti la presenza di un Generale! (Incontro Forzato)\n");
-        indice_tabella = 5; // L'indice 5 corrisponde sempre al GENERALE ORCO nella tabella
+        indice_tabella = 5; // L'indice 5 corrisponde al GENERALE ORCO 
     } else {
-        // Altrimenti, esplorazione standard casuale
+        // Altrimenti, esplorazione normale con lancio di dado
         int tiro = lanciaDado();
         printf("Tiri il dado per generare la stanza: %d\n", tiro);
-        indice_tabella = tiro - 1; // Array parte da 0, dado da 1
+        indice_tabella = tiro - 1; // L'Array parte da 0, dado da 1
     }
 
-    // Carichiamo i dati della stanza dalla tabella globale (definita in tabellemissioni.h)
+    // Carico i dati della stanza dalla tabella globale della Palude
     struct RigaDungeon stanza = TabellaPalude[indice_tabella];
 
-    // --- SCENARIO 1: TRAPPOLA ---
+    // --- CASO 1: STANZA TRAPPOLA ---
     if (stanza.tipo == TIPO_TRAPPOLA) {
         printf("Ti imbatti in: %s\n", stanza.nome);
         int danno = stanza.danno;
 
-        // Gestione danni variabili: se il danno è -1 o è la stanza specifica 4
-        // il danno non è fisso ma dipende da un lancio di dado.
+        // Gestione danni variabili
         if (danno == -1 || indice_tabella == 4) { 
             danno = lanciaDado();
             printf("L'acquitrino è instabile! Il dado decide il danno: %d\n", danno);
         }
 
-        // Riduzione danno se il giocatore ha l'armatura
+        // Riduzione del danno se il giocatore ha l'armatura
         if (giocatore_ptr->ha_armatura && danno > 0) {
-            danno--; // Sconto di 1 danno
+            danno--; 
             printf("La tua armatura assorbe parte del colpo (-1 danno).\n");
         }
 
-        // Applicazione del danno (evitando numeri negativi)
+        // Applicazione del danno
         if (danno < 0) danno = 0;
         printf("Subisci %d danni dalla trappola.\n", danno);
         giocatore_ptr->vita -= danno;
     }
 
-    // --- SCENARIO 2: COMBATTIMENTO ---
+    // --- CASO 2: STANZA COMBATTIMENTO ---
     else if (stanza.tipo == TIPO_COMBATTIMENTO) {
         printf("COMBATTIMENTO! Hai incontrato: %s\n", stanza.nome);
         
         int nemico_vivo = 1;
-        int colpo_fatale = stanza.colpo_fatale; // Valore da superare col dado per vincere
+        int colpo_fatale = stanza.colpo_fatale; // Valore da superare con il lancio del dado per vincere
 
-        // Bonus speciale: Se è un Generale (idx 5) e hai la Spada dell'Eroe
-        // il combattimento diventa più facile (basta fare 5 col dado invece del valore normale)
+        // Caso speciale: Se è un Generale e il giocatore ha la Spada dell'Eroe
+        // (basta fare 5 col dado )
         if (indice_tabella == 5 && giocatore_ptr->ha_spada_eroe) {
             colpo_fatale = 5;
             printf("Grazie alla Spada dell'Eroe, il Generale è più debole! (Colpo Fatale ridotto a 5)\n");
         }
 
-        // Ciclo di combattimento: continua finché uno dei due non va a 0 vita
+        // Ciclo di combattimento: continua finché uno dei due non ha 0 vita
         while (nemico_vivo && giocatore_ptr->vita > 0) {
             printf("\n[TU: %d HP] vs [%s] (Serve > %d per vincere)\n", giocatore_ptr->vita, stanza.nome, colpo_fatale);
             printf("Premi INVIO per attaccare...");
-            while(getchar() != '\n'); // Aspetta input utente
+            while(getchar() != '\n'); 
 
             // Calcolo attacco giocatore
             int dado_attacco = lanciaDado();
@@ -93,24 +86,24 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
 
             printf("Hai rollato %d (+%d bonus) = %d. ", dado_attacco, giocatore_ptr->attacco, attacco_totale);
 
-            // Verifica successo attacco
+            // Verifica successo dell'attacco
             if (attacco_totale > colpo_fatale) {
                 // VITTORIA
                 printf("COLPITO! Nemico sconfitto!\n");
                 nemico_vivo = 0;
                 
-                // Loot (Ricompensa)
+                // Ricompensa
                 printf("Ottieni %d monete.\n", stanza.monete);
                 giocatore_ptr->monete += stanza.monete;
 
-                // Se era un Generale, aggiorniamo il contatore per la missione
+                // Se é un Generale, aggiorno il contatore per la missione
                 if (indice_tabella == 5) {
                     (*generali_uccisi)++;
                     printf(">>> OBIETTIVO AGGIORNATO: Generali uccisi %d/3 <<<\n", *generali_uccisi);
                 }
 
             } else {
-                // SCONFITTA (MANCATO) -> Il nemico contrattacca
+                // SCONFITTA -> Il nemico contrattacca
                 printf("MANCATO!\n");
                 int danno_nemico = stanza.danno;
                 
@@ -125,10 +118,10 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
         }
     }
     
-    // Avanzamento alla prossima stanza (incremento puntatore intero)
+    // Avanzamento alla prossima stanza 
     (*stanza_corrente)++; 
 
-    // Verifica finale: Missione completata?
+    // Verifica finale del completamento della missione
     if (*generali_uccisi >= OBIETTIVO_GENERALI) {
         giocatore_ptr->missione_palude_completata = 1;
     }
