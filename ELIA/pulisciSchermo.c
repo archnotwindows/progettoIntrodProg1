@@ -1,14 +1,15 @@
+#define _POSIX_C_SOURCE 200809L 
 #include <stdlib.h>
 #include "pulisciSchermo.h"
 
 void pulisciSchermo(){
+    int ignore; // Variabile per ignorare il return
+
     #ifdef _WIN32
-        system("cls");          // pulisce temrinale windows
-    #elif __APPLE__
-        system("clear");        // pulisce terminale macOS
+        ignore = system("cls");
     #else
-        system("clear");        // pulisce terminale linux
+        ignore = system("clear");
     #endif
-    
-    return;
+
+    (void)ignore; // annulla il warning "unused variable 'ignore'"
 }

@@ -1,19 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "nuovoGioco.h"
-#include <stdbool.h>
-
-/*
-+ - - - - - - - - - - - - - - - - - - - - - - - - - +
-|                  [nome gioco]                     |
-| nuova partita                                     |
-| carica salvataggio                                |
-+ - - - - - - - - - - - - - - - - - - - - - - - - - +
-scegli un'opzione:
-
-*/
+#include "pulisciSchermo.h"
 
 int main(void) {
+    pulisciSchermo();
     nuovoGioco();
     return 0;
 }

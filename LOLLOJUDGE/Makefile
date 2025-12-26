@@ -1,19 +1,31 @@
-# Nome dell'eseguibile finale
+# Makefile per il progetto 
+
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
 TARGET = gioco
 
-# Compilatore da usare
-CC = gcc
+SOURCES = main.c \
+          menuvillaggio.c \
+          menuMissioni.c \
+          missione1espdun.c \
+          missione2espdun.c \
+          missione3espdun.c \
+          inventario.c \
+          negozio.c \
+          systemclear.c \
+          tabellemissioni.c \
 
-# Opzioni di compilazione (-Wall mostra tutti gli avvisi)
-CFLAGS = -Wall
+OBJECTS = $(SOURCES:.c=.o)
 
-# Lista dei file sorgente
-SRCS = main.c menuMissioni.c missione1espdun.c negozio.c inventario.c systemclear.c tabellemissioni.c
+all: $(TARGET)
 
-# Regola principale: crea l'eseguibile
-all:
-	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET)
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS) -lm
 
-# Regola per pulire i file generati (reset)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	rm -f $(TARGET) $(TARGET).exe
+	del *.o *.exe
+
+.PHONY: all clean
