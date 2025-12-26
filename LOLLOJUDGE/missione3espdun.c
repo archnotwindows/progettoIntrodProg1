@@ -86,7 +86,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
             printf("Subisci %d danni.\n", danno);
             giocatore_ptr->vita -= danno;
         }
-    }  // CASO STANZA COMBATTIMENTO
+    }   // CASO STANZA COMBATTIMENTO
     else if (stanza.tipo == TIPO_COMBATTIMENTO) {
        
         int danno_primo_turno = stanza.danno;
