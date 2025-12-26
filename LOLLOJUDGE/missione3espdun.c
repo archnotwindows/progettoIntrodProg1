@@ -8,11 +8,14 @@
 static int lanciaDado() { return rand() % 6 + 1; }
 
 
+// funzione ricorsiva per calcolare il n-esimo numero di Padovan
 int padovan(int n) {
     if (n == 0 || n == 1 || n == 2) return 1;
     return padovan(n - 2) + padovan(n - 3);
 }
 
+
+// funzione che verifica se un numero appartiene alla sequenza di Padovan
 int appartienePadovan(int numero) {
     if (numero < 1) return 0;
     int i = 0, p;
@@ -32,6 +35,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
   
     int indice_tabella;
   
+    // forzatura incontro con il drago 
     if (*progressi == 0 && *stanza_corrente == MAX_STANZE) {
         printf(">>> Un ruggito fa tremare le pareti... DRAGO! (Incontro Forzato)\n");
         indice_tabella = 5;
@@ -43,9 +47,10 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     struct RigaDungeon stanza = TabellaGrotta[indice_tabella];
     printf("Incontri: %s\n", stanza.nome);
 
+    // CASO STANZA VUOTA
     if (stanza.tipo == TIPO_VUOTA) {
         printf("Stanza vuota.\n");
-    }
+    } // CASO STANZA TRAPPOLA
     else if (stanza.tipo == TIPO_TRAPPOLA) {
       
         int danno = stanza.danno;
@@ -81,7 +86,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
             printf("Subisci %d danni.\n", danno);
             giocatore_ptr->vita -= danno;
         }
-    }
+    }  // CASO STANZA COMBATTIMENTO
     else if (stanza.tipo == TIPO_COMBATTIMENTO) {
        
         int danno_primo_turno = stanza.danno;
