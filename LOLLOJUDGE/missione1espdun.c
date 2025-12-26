@@ -21,9 +21,9 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     printf("\n----------------------------------------\n");
     printf("ESPLORAZIONE STANZA %d (Obiettivo: %d/3 Generali)\n", *stanza_corrente, *generali_uccisi);
 
-    // --- LOGICA DI FORATURA  ---
+    // --- LOGICA DI FORZATURA STANZE ---
     // Se mancano ancora Generali da uccidere e le stanze stanno finendo,
-    // il gioco forza l'apparizione di un Generale invece di tirare il dado.
+    // (forzo l'apparizione di un Generale)
     if (generali_mancanti > 0 && generali_mancanti >= stanze_rimanenti) {
         printf(">>> L'aria si fa pesante... senti la presenza di un Generale! (Incontro Forzato)\n");
         indice_tabella = 5; // L'indice 5 corrisponde al GENERALE ORCO 
@@ -74,7 +74,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
             printf("Grazie alla Spada dell'Eroe, il Generale è più debole! (Colpo Fatale ridotto a 5)\n");
         }
 
-        // Ciclo di combattimento: continua finché uno dei due non ha 0 vita
+        // Ciclo di combattimento: continua finché uno dei due arriva a  0 vita
         while (nemico_vivo && giocatore_ptr->vita > 0) {
             printf("\n[TU: %d HP] vs [%s] (Serve > %d per vincere)\n", giocatore_ptr->vita, stanza.nome, colpo_fatale);
             printf("Premi INVIO per attaccare...");

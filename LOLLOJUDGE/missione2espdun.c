@@ -30,28 +30,29 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
            ha_chiave ? "PRESA" : "MANCANTE", 
            vampiro_morto ? "SI" : "NO");
 
-    // --- LOGICA DI GENERAZIONE STANZA  ---
-    // Calcoliamo quante stanze mancano alla fine 
+
+    
     int stanze_rimanenti = MAX_STANZE - *stanza_corrente + 1;
-    // Calcoliamo quanti obiettivi mancano 
     int obiettivi_mancanti = (!ha_chiave) + (!vampiro_morto ? 1 : 0);
     int indice_tabella;
 
+
+    // --- LOGICA DI FORZATURA STANZE ---
     // SE mancano obiettivi E le stanze rimaste sono poche
-    // (forziamo l'incontro con l'obiettivo)
+    // (forzo l'incontro con l'obiettivo)
     if (obiettivi_mancanti > 0 && obiettivi_mancanti >= stanze_rimanenti) {
         printf(">>> Presenza oscura rilevata! (Incontro Forzato)\n");
         // Se manca la chiave, forza l'incontro con il nemico che ha la chiave
-        // Altrimenti forza l'incontro con il Vampiro 
         if (!ha_chiave) indice_tabella = 5; 
+        // Altrimenti forza l'incontro con il Vampiro 
         else indice_tabella = 4;            
-    } else {
-        // Altrimenti, esplorazione casuale normale
+
+    } else {  // Altrimenti, esplorazione casuale normale
         int tiro = lanciaDado();
-        indice_tabella = tiro - 1; // Adatta il dado (1-6) all'indice array (0-5)
+        indice_tabella = tiro - 1; // Adatta il dado all'indice array
     }
 
-    // Carica i dati della stanza dalla tabella globale 
+    // Carica i dati della stanza dalla tabella 
     struct RigaDungeon stanza = TabellaMagione[indice_tabella];
     printf("Ti imbatti in: %s\n", stanza.nome);
 
@@ -60,7 +61,6 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
         int danno = stanza.danno;
         // L'armatura riduce il danno delle trappole di 1
         if (giocatore_ptr->ha_armatura && danno > 0) danno--;
-        
         printf("Trappola scatta! Subisci %d danni.\n", danno);
         giocatore_ptr->vita -= danno;
     }
@@ -69,7 +69,7 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     else if (stanza.tipo == TIPO_COMBATTIMENTO) {
         int nemico_vivo = 1;
         
-        // Ciclo di combattimento: continua finché uno dei due ha 0 vita
+        // Ciclo di combattimento: continua finché uno dei due arriva a  0 vita
         while (nemico_vivo && giocatore_ptr->vita > 0) {
             printf("\nTU: %d HP | NEMICO (%d Fatale)\nINVIO per attaccare...", giocatore_ptr->vita, stanza.colpo_fatale);
             while(getchar() != '\n'); 
