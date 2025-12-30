@@ -18,10 +18,10 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     printf("\n--- PALUDE PUTRESCENTE: Stanza %d ---\n", *stanza_corrente);
     printf("Obiettivo: %d/3 Generali Orchi sconfitti\n", *generali_uccisi);
 
-    // Logica di forzatura per garantire il completamento se siamo alle strette
+  
     if (generali_mancanti > 0 && generali_mancanti >= stanze_rimanenti) {
         printf(">>> Senti dei passi pesanti... Un Generale si avvicina! (Incontro Forzato)\n");
-        indice_tabella = 5; // Indice del Generale Orco
+        indice_tabella = 5;
     } else {
         int tiro = lanciaDado();
         printf("Esplori la palude... (Dado: %d)\n", tiro);

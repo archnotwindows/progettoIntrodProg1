@@ -5,18 +5,16 @@
 
 static int lanciaDado() { return rand() % 6 + 1; }
 
-// Funzione ricorsiva sequenza di Padovan
-// P(n) = P(n-2) + P(n-3) con P(0)=P(1)=P(2)=1
 int padovan(int n) {
     if (n == 0 || n == 1 || n == 2) return 1;
     return padovan(n - 2) + padovan(n - 3);
 }
 
-// Verifica se un numero appartiene alla sequenza
+
 int appartienePadovan(int numero) {
     if (numero < 1) return 0;
     int i = 0, p;
-    // Calcoliamo la sequenza finché non superiamo il numero dato
+   
     while ((p = padovan(i)) <= numero) {
         if (p == numero) return 1;
         i++;
@@ -29,7 +27,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     printf("\n--- GROTTA DI CRISTALLO: STANZA %d/%d ---\n", *stanza_corrente, MAX_STANZE);
     int indice_tabella;
   
-    // Forzatura incontro Drago se ultima stanza e non ancora incontrato
+
     if (*progressi == 0 && *stanza_corrente == MAX_STANZE) {
         printf(">>> Un ruggito fa tremare le pareti... DRAGO! (Incontro Forzato)\n");
         indice_tabella = 5;
@@ -47,11 +45,11 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
 
         if (monete < 0 && danno == 0) {
             printf("Il ponte crolla! Perdi monete cadendo nel vuoto!\n");
-            // Se monete è -3, toglie 3 monete (o azzera se <0)
+           
             giocatore_ptr->monete += monete; 
             if (giocatore_ptr->monete < 0) giocatore_ptr->monete = 0;
         }
-        else if (danno == -2) { // Forziere Misterioso
+        else if (danno == -2) {
             if (rand() % 2 == 0) {
                 printf("Fortuna sfacciata! Trovi 10 monete nel forziere.\n");
                 giocatore_ptr->monete += 10;
@@ -61,7 +59,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
                 else giocatore_ptr->vita -= 2;
             }
         }
-        else if (danno == -1) { // Rupe
+        else if (danno == -1) {
             danno = lanciaDado();
             if (giocatore_ptr->ha_armatura && danno > 0) danno--;
             printf("Scivoli sulla rupe! Subisci %d danni.\n", danno);
@@ -76,8 +74,8 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     else if (stanza.tipo == TIPO_COMBATTIMENTO) {
         int danno_primo_turno = stanza.danno;
 
-        // INDOVINELLO PADOVAN DEL DRAGO
-        int numero_quiz = (rand() % 50) + 1; // Numero casuale piccolo per non attendere troppo la ricorsione
+
+        int numero_quiz = (rand() % 50) + 1;
         printf("\nIL DRAGO PARLA: 'Rispondi mortale! Il numero %d appartiene alla sequenza di Padovan?' [s/n]: ", numero_quiz);
         char risp;
         scanf(" %c", &risp);
@@ -108,7 +106,7 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
                 nemico_vivo = 0;
                 
                 giocatore_ptr->ha_spada_eroe = true;
-                giocatore_ptr->attacco += 2; // Bonus permanente
+                giocatore_ptr->attacco += 2;
                 *progressi = 1;
             } else {
                 int danno = (turno == 0) ? danno_primo_turno : stanza.danno;

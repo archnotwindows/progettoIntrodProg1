@@ -6,14 +6,14 @@
 #include "missione1espdun.h"
 #include "missione2espdun.h"
 #include "missione3espdun.h"
-#include "missionefinale.h" // Importante per il boss finale
+#include "missionefinale.h" 
 #include "inventario.h"
 #include "negozio.h"
 
 void Menu(Giocatore* giocatore_ptr) {   
     puliscischermo();
     
-    // Controlla se le tre missioni principali sono state completate
+
     int tutte_completate = giocatore_ptr->missione_palude_completata &&  
                            giocatore_ptr->missione_magione_completata &&
                            giocatore_ptr->missione_grotta_completata;
@@ -21,7 +21,7 @@ void Menu(Giocatore* giocatore_ptr) {
     printf("===== SELEZIONE MISSIONE =====\n");
     
     int opzione_numero = 1;
-    int mappa_opzioni[4] = {0}; // Mappa l'input utente all'ID della missione
+    int mappa_opzioni[4] = {0}; 
 
     if (!giocatore_ptr->missione_palude_completata) { 
         printf("%d. Palude Putrescente (Difficolta' 1)\n", opzione_numero);
@@ -65,13 +65,13 @@ void Menu(Giocatore* giocatore_ptr) {
     
     int missione_scelta = mappa_opzioni[scelta - 1];
     
-    // Se è la missione finale, chiama la funzione dedicata e esci
+    
     if (missione_scelta == 4) {
         CombattimentoFinale(giocatore_ptr);
         return;
     }
 
-    // --- LOOP DELLA MISSIONE (Dungeon) ---
+
     int stanza_corrente = 1; 
     int progressi_missione = 0; 
 
@@ -94,7 +94,7 @@ void Menu(Giocatore* giocatore_ptr) {
                  continue;
             }
 
-            // Chiama la logica specifica per ogni missione
+  
             if(missione_scelta == 1){
                 esplora1StanzaDungeon(giocatore_ptr, &stanza_corrente, &progressi_missione);
                 if (giocatore_ptr->missione_palude_completata) {
@@ -120,7 +120,7 @@ void Menu(Giocatore* giocatore_ptr) {
                 }
             }
 
-            // Se muori durante l'esplorazione, esci subito
+          
             if (giocatore_ptr->vita <= 0) return; 
         }
         else if(sceltammissione == 2) { 

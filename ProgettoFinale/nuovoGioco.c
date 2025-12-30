@@ -22,9 +22,9 @@ void stampaMenu(bool trucchiAttivi){
     puliscischermo();
     printf("+ - - - - - - - - - - - - - - - - - - - - - - - - - +\n");
     if ( trucchiAttivi ){
-        printf("|    RPG Adventure (CHEAT MODE)                     |\n");
+        printf("|    Dungeon Knight Adventure (CHEAT MODE)                     |\n");
     } else {
-        printf("|            RPG Adventure                          |\n");
+        printf("|            Dungeon Knight Adventure                          |\n");
     }
     printf("| 1) Nuova partita                                  |\n");
     printf("| 2) Carica salvataggio                             |\n");  
@@ -84,18 +84,19 @@ void nuovoGioco(){
                 int azione;
                 printf("\n1) Carica e Gioca\n2) Elimina\n");
                 
-                // --- AGGIUNTA QUI ---
+                
                 if (trucchiAttivi) {
-                    printf("3) MODIFICA (TRUCCHI)\n");
+                    printf("3) MODIFICA (TRUCCHI)\n4) Annulla\n");
+                } else {
+                    printf("3) Annulla\n");
                 }
-                // --------------------
-
-                printf("3) Annulla (o 4 se trucchi)\n"); // Estetica menu
+            
+        
                 printf("Scegli: ");
                 azione = leggiIntero();
                                 
                 if ( azione == 1 ){
-                     // ... (codice caricamento uguale a prima) ...
+                  
                     if (caricaDatiSalvataggio(nSalvataggio, &g)) {
                         printf("\nSalvataggio caricato con successo!\n");
                         printf("Premi Invio per entrare nel Villaggio...");
@@ -110,11 +111,11 @@ void nuovoGioco(){
                     printf("Sicuro? (1=Si, 2=No): ");
                     if ( leggiIntero() == 1 ) eliminaSalvataggio(nSalvataggio);
                 }
-                // --- AGGIUNTA QUI ---
+              
                 else if ( trucchiAttivi && azione == 3 ) {
                     modificaSalvataggio(nSalvataggio);
                 }
-                // --------------------
+              
             }    
         }
         else if ( intAction == 3 ) uscita = true;

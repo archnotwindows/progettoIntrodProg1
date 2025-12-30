@@ -22,8 +22,8 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
 
     if (obiettivi_mancanti > 0 && obiettivi_mancanti >= stanze_rimanenti) {
         printf(">>> Un brivido ti corre lungo la schiena... (Incontro Forzato)\n");
-        if (!ha_chiave) indice_tabella = 5; // Demone Custode (ha la chiave)
-        else indice_tabella = 4;            // Vampiro
+        if (!ha_chiave) indice_tabella = 5; 
+        else indice_tabella = 4;           
     } else {
         int tiro = lanciaDado();
         indice_tabella = tiro - 1;
