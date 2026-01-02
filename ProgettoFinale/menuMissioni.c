@@ -24,26 +24,26 @@ void Menu(Giocatore* giocatore_ptr) {
     int mappa_opzioni[4] = {0}; 
 
     if (!giocatore_ptr->missione_palude_completata) { 
-        printf("%d. Palude Putrescente (Difficolta' 1)\n", opzione_numero);
+        printf("%d. Palude Putrescente \n", opzione_numero);
         mappa_opzioni[opzione_numero - 1] = 1;
         opzione_numero++;
     }
     
     if (!giocatore_ptr->missione_magione_completata) {
-        printf("%d. Magione Infestata (Difficolta' 2)\n", opzione_numero);
+        printf("%d. Magione Infestata \n", opzione_numero);
         mappa_opzioni[opzione_numero - 1] = 2;
         opzione_numero++;
     }
     
     if (!giocatore_ptr->missione_grotta_completata) {
-        printf("%d. Grotta di Cristallo (Difficolta' 3)\n", opzione_numero);
+        printf("%d. Grotta di Cristallo \n", opzione_numero);
         mappa_opzioni[opzione_numero - 1] = 3;
         opzione_numero++;
     }
     
     if (tutte_completate) {      
-        printf("\n*** EVENTO SPECIALE ***\n");
-        printf("%d. Castello del Signore Oscuro (MISSIONE FINALE)\n", opzione_numero);
+        printf("\n*** MISSIONE FINALE ***\n");
+        printf("%d. Castello del Signore Oscuro \n", opzione_numero);
         mappa_opzioni[opzione_numero - 1] = 4;
         opzione_numero++;
     } 
@@ -63,10 +63,10 @@ void Menu(Giocatore* giocatore_ptr) {
     if(scelta == 0) return;
     if(scelta < 1 || scelta >= opzione_numero) return; 
     
-    int missione_scelta = mappa_opzioni[scelta - 1];
+    int missione_scelta = mappa_opzioni[scelta - 1]; // trova la missione scelta confrontando con la mappa delle opzioni
     
     
-    if (missione_scelta == 4) {
+    if (missione_scelta == 4) { // se é la missione finale passo subito alla funzione dedicata
         CombattimentoFinale(giocatore_ptr);
         return;
     }

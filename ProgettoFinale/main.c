@@ -5,10 +5,10 @@
 #include "systemclear.h"
 
 int main(void) {
-    srand(time(NULL)); // Inizializzazione seed random globale
+    srand(time(NULL)); 
     puliscischermo();
     
-    // Avvia il ciclo del Menu Iniziale
+    
     nuovoGioco();
     
     return 0;
