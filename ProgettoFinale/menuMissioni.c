@@ -48,7 +48,7 @@ void Menu(Giocatore* giocatore_ptr) {
         opzione_numero++;
     } 
     else if (opzione_numero == 1) {
-        printf("Non ci sono missioni disponibili (Errore imprevisto).\n");
+        printf("Non ci sono missioni disponibili (Errore).\n");
         getchar();
         return;
     }
