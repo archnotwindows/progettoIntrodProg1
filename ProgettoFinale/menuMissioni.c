@@ -63,7 +63,7 @@ void Menu(Giocatore* giocatore_ptr) {
     if(scelta == 0) return;
     if(scelta < 1 || scelta >= opzione_numero) return; 
     
-    int missione_scelta = mappa_opzioni[scelta - 1]; // trova la missione scelta confrontando con la mappa delle opzioni
+    int missione_scelta = mappa_opzioni[scelta - 1]; 
     
     
     if (missione_scelta == 4) { // se é la missione finale passo subito alla funzione dedicata
