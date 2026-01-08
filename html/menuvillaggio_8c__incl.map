@@ -1,0 +1,25 @@
+<map id="menuvillaggio.c" name="menuvillaggio.c">
+<area shape="rect" id="Node000001" title="Implementazione delle funzionalità del villaggio." alt="" coords="316,5,428,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,67,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="316,32,80,81,79,76,315,27"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="91,79,155,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="333,33,168,80,167,75,331,28"/>
+<area shape="rect" id="Node000004" href="$menuvillaggio_8h.html" title="Header per la gestione dell&#39;hub centrale (Villaggio)." alt="" coords="179,79,291,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="351,33,270,75,268,70,349,28"/>
+<area shape="rect" id="Node000007" href="$menuMissioni_8h.html" title="Header per il selettore delle missioni." alt="" coords="315,79,429,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="375,31,375,65,369,65,369,31"/>
+<area shape="rect" id="Node000008" href="$inventario_8h.html" title="Header per la visualizzazione dell&#39;inventario." alt="" coords="453,79,541,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="393,28,466,69,464,74,391,33"/>
+<area shape="rect" id="Node000009" href="$systemclear_8h.html" title="Header per la gestione della pulizia dello schermo multipiattaforma." alt="" coords="566,79,669,104"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="412,28,565,72,564,77,411,33"/>
+<area shape="rect" id="Node000010" href="$salvataggi_8h.html" title="Header per la gestione del salvataggio e caricamento." alt="" coords="693,79,784,104"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="429,27,680,76,679,81,428,33"/>
+<area shape="rect" id="Node000005" href="$giocatore_8h.html" title="Definizione della struttura Giocatore e funzioni di inizializzazione." alt="" coords="454,152,541,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="278,101,442,146,441,151,276,107"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="500,225,575,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="506,176,526,212,522,215,502,179"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="393,102,466,143,464,147,391,106"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="500,104,500,138,495,138,495,104"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="701,107,551,151,549,145,699,101"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="724,106,566,219,563,215,721,102"/>
+</map>

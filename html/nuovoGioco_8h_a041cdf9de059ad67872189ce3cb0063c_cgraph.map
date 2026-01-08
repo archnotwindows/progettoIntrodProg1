@@ -1,0 +1,52 @@
+<map id="nuovoGioco" name="nuovoGioco">
+<area shape="rect" id="Node000001" title="Gestisce il loop del menu principale (Nuova Partita, Carica, Esci)." alt="" coords="5,402,96,428"/>
+<area shape="rect" id="Node000002" href="$salvataggi_8c.html#a1912cd89ae44ef137420b207769f3632" title="Carica i dati da un file di salvataggio." alt="" coords="144,252,291,277"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,401,87,346,112,314,142,286,150,281,153,285,146,290,116,318,92,349,60,404"/>
+<area shape="rect" id="Node000003" href="$salvataggi_8c.html#a4208765e79421df60d16944464edf88e" title="Elimina un file di salvataggio." alt="" coords="152,301,283,326"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="65,400,100,373,143,343,169,330,171,334,145,348,103,377,69,404"/>
+<area shape="rect" id="Node000004" href="$salvataggi_8c.html#adab8accc64e79b6907f8ee1ff6446bf8" title="Restituisce il numero di salvataggi disponibili e li stampa a video." alt="" coords="355,502,461,528"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="97,425,349,496,348,501,95,430"/>
+<area shape="rect" id="Node000007" href="$menuvillaggio_8c.html#accd456c6d700c06e4ff1309d14d25ea3" title="Gestisce il menu del villaggio." alt="" coords="166,402,269,428"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="96,412,152,412,152,418,96,418"/>
+<area shape="rect" id="Node000019" href="$salvataggi_8c.html#adf592ebbc9d338383dbb7ef8d921840a" title="Modifica un salvataggio (Menu Trucchi)." alt="" coords="339,21,477,46"/>
+<area shape="poly" id="edge25_Node000001_Node000019" title=" " alt="" coords="94,400,214,363,289,336,306,313,316,292,322,250,323,204,327,177,336,149,361,98,388,56,392,59,366,101,341,151,332,179,328,204,327,250,321,294,311,316,292,340,216,368,96,405"/>
+<area shape="rect" id="Node000020" href="$nuovoGioco_8c.html#aafe68d574a2bf082b5b023b1416f16b2" title="Stampa a video il menu principale." alt="" coords="359,553,457,578"/>
+<area shape="poly" id="edge27_Node000001_Node000020" title=" " alt="" coords="68,426,102,454,145,482,196,505,250,524,347,551,345,556,248,529,194,510,143,487,98,458,64,430"/>
+<area shape="rect" id="Node000021" href="$salvataggi_8c.html#a0b197621f869405211a8975e3d56e5f9" title="Verifica l&#39;inserimento del Konami Code." alt="" coords="164,554,271,580"/>
+<area shape="poly" id="edge29_Node000001_Node000021" title=" " alt="" coords="61,426,94,477,118,507,146,533,167,546,164,551,142,537,114,510,90,480,57,429"/>
+<area shape="rect" id="Node000005" href="$salvataggi_8c.html#a3453e09dde07013ea2ca1146020bb6a7" title="Verifica l&#39;esistenza della directory &quot;salvataggi&quot;, creandola se necessario." alt="" coords="540,453,675,478"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="459,500,541,479,543,484,461,505"/>
+<area shape="rect" id="Node000006" href="$systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="749,253,859,278"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="462,522,513,527,572,526,633,514,661,504,688,489,712,469,732,445,764,391,784,336,795,291,801,293,789,338,768,393,736,448,715,473,691,493,664,508,634,519,573,531,513,532,462,527"/>
+<area shape="poly" id="edge24_Node000007_Node000006" title=" " alt="" coords="269,421,353,431,460,433,518,430,576,421,634,407,688,386,719,366,747,341,786,289,790,292,751,344,723,370,691,391,635,412,577,426,518,435,460,439,352,436,268,427"/>
+<area shape="rect" id="Node000008" href="$inventario_8c.html#a40e46221259810317ca7fa8b2bcf8de6" title="Stampa a video lo stato e l&#39;inventario del giocatore." alt="" coords="568,53,647,78"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="262,400,289,381,303,361,310,342,314,304,317,264,324,243,336,220,378,171,418,139,465,115,524,87,554,76,556,81,526,92,467,120,421,144,382,174,341,223,329,245,322,265,319,304,315,343,307,364,293,385,265,404"/>
+<area shape="rect" id="Node000009" href="$menuMissioni_8c.html#a1edc1f6ccd27be94e77587555e26e100" title="Gestisce il menu di selezione delle missioni e il loop di esplorazione." alt="" coords="381,234,435,260"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="254,400,289,381,320,354,347,325,389,270,393,273,351,328,323,358,292,385,257,405"/>
+<area shape="rect" id="Node000018" href="$salvataggi_8c.html#af13b31f6b761a6b7483a9cb18af25cc4" title="Crea un nuovo salvataggio su file." alt="" coords="347,453,469,478"/>
+<area shape="poly" id="edge22_Node000007_Node000018" title=" " alt="" coords="267,425,347,447,345,452,265,430"/>
+<area shape="poly" id="edge21_Node000009_Node000006" title=" " alt="" coords="436,241,546,234,618,233,690,238,744,247,743,252,689,243,617,239,546,239,436,247"/>
+<area shape="poly" id="edge18_Node000009_Node000008" title=" " alt="" coords="415,233,466,155,497,114,524,87,554,73,556,78,527,92,501,118,471,158,420,236"/>
+<area shape="rect" id="Node000010" href="$missionefinale_8c.html#a3ad4bbf8b478f335815a9688e70a3099" title="Gestisce il combattimento finale contro il Signore Oscuro." alt="" coords="534,152,681,177"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="434,233,524,194,560,180,562,184,526,199,437,238"/>
+<area shape="rect" id="Node000012" href="$missione1espdun_8c.html#abe73b1eb0883d1aa1e94399bf7ae9c35" title="Logica di esplorazione per la Palude Putrescente." alt="" coords="525,302,689,328"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="436,255,526,287,552,296,550,301,524,292,435,260"/>
+<area shape="rect" id="Node000013" href="$missione2espdun_8c.html#acb5fd52d53fb1486b810bcf0b7b4212b" title="Logica di esplorazione per la Magione Infestata." alt="" coords="525,352,689,377"/>
+<area shape="poly" id="edge13_Node000009_Node000013" title=" " alt="" coords="424,258,467,296,527,337,544,344,541,349,524,341,464,301,420,262"/>
+<area shape="rect" id="Node000014" href="$missione3espdun_8c.html#aa8d06f2d109079a6178ce64612394640" title="Logica di esplorazione per la Grotta di Cristallo." alt="" coords="525,102,689,128"/>
+<area shape="poly" id="edge14_Node000009_Node000014" title=" " alt="" coords="418,232,461,186,491,159,524,137,537,130,539,135,527,141,494,164,464,190,422,236"/>
+<area shape="rect" id="Node000017" href="$negozio_8c.html#a1d36ad6acf28cfa2ece96483d59b52c7" title="Gestisce l&#39;interfaccia e la logica di acquisto del negozio." alt="" coords="574,253,641,278"/>
+<area shape="poly" id="edge19_Node000009_Node000017" title=" " alt="" coords="436,247,561,259,560,264,435,252"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="646,175,691,194,774,243,771,248,688,199,644,180"/>
+<area shape="rect" id="Node000011" href="$missionefinale_8c.html#a4fdcb5d7028fdec314942a9c3e6bd519" title=" " alt="" coords="752,152,856,177"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="681,162,738,162,738,167,681,167"/>
+<area shape="rect" id="Node000015" href="$missione3espdun_8c.html#aa232f8a0c39b46609b88b85d9de22205" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="737,102,871,128"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="690,112,724,112,724,118,690,118"/>
+<area shape="rect" id="Node000016" href="$missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola n&#45;esimo numero di Padovan P(n)." alt="" coords="919,102,989,128"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="871,112,905,112,905,118,871,118"/>
+<area shape="poly" id="edge17_Node000016_Node000016" title=" " alt="" coords="929,104,923,94,926,84,937,78,954,76,975,79,984,88,980,92,972,84,954,81,939,83,930,88,929,93,933,101"/>
+<area shape="poly" id="edge20_Node000017_Node000006" title=" " alt="" coords="641,263,736,263,736,268,641,268"/>
+<area shape="poly" id="edge23_Node000018_Node000005" title=" " alt="" coords="469,463,526,463,526,468,469,468"/>
+<area shape="poly" id="edge26_Node000019_Node000006" title=" " alt="" coords="451,18,503,8,566,3,599,5,632,11,663,22,691,38,708,54,718,71,724,107,726,145,730,166,740,187,760,216,781,241,777,245,755,219,735,190,725,167,721,146,719,107,713,73,704,58,688,42,660,26,630,16,599,10,566,8,504,13,452,24"/>
+<area shape="poly" id="edge28_Node000020_Node000006" title=" " alt="" coords="457,571,509,576,570,574,632,561,661,549,688,533,715,508,737,478,756,445,770,411,789,344,798,292,803,293,794,346,775,413,760,448,742,481,719,511,691,537,664,554,634,566,571,579,509,581,457,577"/>
+</map>

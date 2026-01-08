@@ -1,0 +1,5 @@
+<map id="negozio" name="negozio">
+<area shape="rect" id="Node000001" title="Gestisce l&#39;interfaccia e la logica di acquisto del negozio." alt="" coords="5,5,72,31"/>
+<area shape="rect" id="Node000002" href="$systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="120,5,229,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,15,106,15,106,21,72,21"/>
+</map>

@@ -1,0 +1,110 @@
+\doxysection{Riferimenti per la struct Giocatore}
+\hypertarget{structGiocatore}{}\label{structGiocatore}\index{Giocatore@{Giocatore}}
+
+
+Rappresenta lo stato del personaggio giocante.  
+
+
+
+
+{\ttfamily \#include $<$giocatore.\+h$>$}
+
+\doxysubsubsection*{Campi}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structGiocatore_a14c297d7049e47b7bcef2c6ea8edb671}{vita}}
+\item 
+int \mbox{\hyperlink{structGiocatore_ab16e84c52ef3c289fda14fd416f31a47}{monete}}
+\item 
+int \mbox{\hyperlink{structGiocatore_a7ffeb3f1ffac95caed7c09d7bdb04120}{attacco}}
+\item 
+bool \mbox{\hyperlink{structGiocatore_a92487cc72d7afabcbef5aa181182a66c}{ha\+\_\+spada}}
+\item 
+bool \mbox{\hyperlink{structGiocatore_a8c3bc535ff03fb37a6a9f88054ca18c6}{ha\+\_\+armatura}}
+\item 
+bool \mbox{\hyperlink{structGiocatore_a800c3d65a228e4a0096fdcaa1cc6e033}{ha\+\_\+spada\+\_\+eroe}}
+\item 
+bool \mbox{\hyperlink{structGiocatore_ab3913a7bf98cc2b40a0f5810f3ab3852}{ha\+\_\+chiave}}
+\item 
+bool \mbox{\hyperlink{structGiocatore_a9e837a7d17050ff446df6616e07f84c3}{missione\+\_\+palude\+\_\+completata}}
+\item 
+bool \mbox{\hyperlink{structGiocatore_a049460b9c8897599427772765c9eab19}{missione\+\_\+magione\+\_\+completata}}
+\item 
+bool \mbox{\hyperlink{structGiocatore_a4707e2431224a0979956e34c315dedde}{missione\+\_\+grotta\+\_\+completata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Rappresenta lo stato del personaggio giocante. 
+
+
+\begin{DoxyItemize}
+\item Contiene le statistiche vitali, l\textquotesingle{}inventario e i progressi delle missioni. 
+\end{DoxyItemize}
+
+\doxysubsection{Documentazione dei campi}
+\Hypertarget{structGiocatore_a7ffeb3f1ffac95caed7c09d7bdb04120}\label{structGiocatore_a7ffeb3f1ffac95caed7c09d7bdb04120} 
+\index{Giocatore@{Giocatore}!attacco@{attacco}}
+\index{attacco@{attacco}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{attacco}{attacco}}
+{\footnotesize\ttfamily int Giocatore\+::attacco}
+
+Valore di attacco base. \Hypertarget{structGiocatore_a8c3bc535ff03fb37a6a9f88054ca18c6}\label{structGiocatore_a8c3bc535ff03fb37a6a9f88054ca18c6} 
+\index{Giocatore@{Giocatore}!ha\_armatura@{ha\_armatura}}
+\index{ha\_armatura@{ha\_armatura}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{ha\_armatura}{ha\_armatura}}
+{\footnotesize\ttfamily bool Giocatore\+::ha\+\_\+armatura}
+
+true se possiede l\textquotesingle{}Armatura (-\/1 Danno subito). \Hypertarget{structGiocatore_ab3913a7bf98cc2b40a0f5810f3ab3852}\label{structGiocatore_ab3913a7bf98cc2b40a0f5810f3ab3852} 
+\index{Giocatore@{Giocatore}!ha\_chiave@{ha\_chiave}}
+\index{ha\_chiave@{ha\_chiave}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{ha\_chiave}{ha\_chiave}}
+{\footnotesize\ttfamily bool Giocatore\+::ha\+\_\+chiave}
+
+true se ha trovato la Chiave del Castello. \Hypertarget{structGiocatore_a92487cc72d7afabcbef5aa181182a66c}\label{structGiocatore_a92487cc72d7afabcbef5aa181182a66c} 
+\index{Giocatore@{Giocatore}!ha\_spada@{ha\_spada}}
+\index{ha\_spada@{ha\_spada}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{ha\_spada}{ha\_spada}}
+{\footnotesize\ttfamily bool Giocatore\+::ha\+\_\+spada}
+
+true se possiede la Spada di Ferro (+1 Att). \Hypertarget{structGiocatore_a800c3d65a228e4a0096fdcaa1cc6e033}\label{structGiocatore_a800c3d65a228e4a0096fdcaa1cc6e033} 
+\index{Giocatore@{Giocatore}!ha\_spada\_eroe@{ha\_spada\_eroe}}
+\index{ha\_spada\_eroe@{ha\_spada\_eroe}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{ha\_spada\_eroe}{ha\_spada\_eroe}}
+{\footnotesize\ttfamily bool Giocatore\+::ha\+\_\+spada\+\_\+eroe}
+
+true se possiede la Spada Leggendaria (+2 Att). \Hypertarget{structGiocatore_a4707e2431224a0979956e34c315dedde}\label{structGiocatore_a4707e2431224a0979956e34c315dedde} 
+\index{Giocatore@{Giocatore}!missione\_grotta\_completata@{missione\_grotta\_completata}}
+\index{missione\_grotta\_completata@{missione\_grotta\_completata}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{missione\_grotta\_completata}{missione\_grotta\_completata}}
+{\footnotesize\ttfamily bool Giocatore\+::missione\+\_\+grotta\+\_\+completata}
+
+Flag completamento missione Grotta. \Hypertarget{structGiocatore_a049460b9c8897599427772765c9eab19}\label{structGiocatore_a049460b9c8897599427772765c9eab19} 
+\index{Giocatore@{Giocatore}!missione\_magione\_completata@{missione\_magione\_completata}}
+\index{missione\_magione\_completata@{missione\_magione\_completata}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{missione\_magione\_completata}{missione\_magione\_completata}}
+{\footnotesize\ttfamily bool Giocatore\+::missione\+\_\+magione\+\_\+completata}
+
+Flag completamento missione Magione. \Hypertarget{structGiocatore_a9e837a7d17050ff446df6616e07f84c3}\label{structGiocatore_a9e837a7d17050ff446df6616e07f84c3} 
+\index{Giocatore@{Giocatore}!missione\_palude\_completata@{missione\_palude\_completata}}
+\index{missione\_palude\_completata@{missione\_palude\_completata}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{missione\_palude\_completata}{missione\_palude\_completata}}
+{\footnotesize\ttfamily bool Giocatore\+::missione\+\_\+palude\+\_\+completata}
+
+Flag completamento missione Palude. \Hypertarget{structGiocatore_ab16e84c52ef3c289fda14fd416f31a47}\label{structGiocatore_ab16e84c52ef3c289fda14fd416f31a47} 
+\index{Giocatore@{Giocatore}!monete@{monete}}
+\index{monete@{monete}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{monete}{monete}}
+{\footnotesize\ttfamily int Giocatore\+::monete}
+
+Quantità di monete possedute. \Hypertarget{structGiocatore_a14c297d7049e47b7bcef2c6ea8edb671}\label{structGiocatore_a14c297d7049e47b7bcef2c6ea8edb671} 
+\index{Giocatore@{Giocatore}!vita@{vita}}
+\index{vita@{vita}!Giocatore@{Giocatore}}
+\doxysubsubsection{\texorpdfstring{vita}{vita}}
+{\footnotesize\ttfamily int Giocatore\+::vita}
+
+Punti vita attuali del giocatore (Max 20). 
+
+La documentazione per questa struct è stata generata a partire dal seguente file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{giocatore_8h}{giocatore.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,59 @@
+\doxysection{Riferimenti per il file menuvillaggio.\+c}
+\hypertarget{menuvillaggio_8c}{}\label{menuvillaggio_8c}\index{menuvillaggio.c@{menuvillaggio.c}}
+
+
+Implementazione delle funzionalità del villaggio.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}menuvillaggio.\+h"{}}\newline
+{\ttfamily \#include "{}menu\+Missioni.\+h"{}}\newline
+{\ttfamily \#include "{}inventario.\+h"{}}\newline
+{\ttfamily \#include "{}systemclear.\+h"{}}\newline
+{\ttfamily \#include "{}salvataggi.\+h"{}}\newline
+Grafo delle dipendenze di inclusione per menuvillaggio.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menuvillaggio_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menuvillaggio_8c_accd456c6d700c06e4ff1309d14d25ea3}{menu\+Villaggio}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Gestisce il menu del villaggio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione delle funzionalità del villaggio. 
+
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{menuvillaggio_8c_accd456c6d700c06e4ff1309d14d25ea3}\label{menuvillaggio_8c_accd456c6d700c06e4ff1309d14d25ea3} 
+\index{menuvillaggio.c@{menuvillaggio.c}!menuVillaggio@{menuVillaggio}}
+\index{menuVillaggio@{menuVillaggio}!menuvillaggio.c@{menuvillaggio.c}}
+\doxysubsubsection{\texorpdfstring{menuVillaggio()}{menuVillaggio()}}
+{\footnotesize\ttfamily void menu\+Villaggio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{giocatore\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Gestisce il menu del villaggio. 
+
+
+\begin{DoxyItemize}
+\item Permette di accedere alle missioni, riposare, vedere l\textquotesingle{}inventario o salvare. 
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore al giocatore. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menuvillaggio_8c_accd456c6d700c06e4ff1309d14d25ea3_cgraph}
+\end{center}
+\end{figure}

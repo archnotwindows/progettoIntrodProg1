@@ -1,0 +1,95 @@
+\doxysection{Riferimenti per il file missione3espdun.\+c}
+\hypertarget{missione3espdun_8c}{}\label{missione3espdun_8c}\index{missione3espdun.c@{missione3espdun.c}}
+
+
+Implementazione della missione Grotta (Padovan).  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}missione3espdun.\+h"{}}\newline
+{\ttfamily \#include "{}tabellemissioni.\+h"{}}\newline
+Grafo delle dipendenze di inclusione per missione3espdun.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{missione3espdun_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{missione3espdun_8c_ae7c83e4d97d50567cda5b807d89d6652}{padovan}} (int n)
+\begin{DoxyCompactList}\small\item\em Calcola n-\/esimo numero di Padovan P(n). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{missione3espdun_8c_aa232f8a0c39b46609b88b85d9de22205}{appartiene\+Padovan}} (int numero)
+\begin{DoxyCompactList}\small\item\em Verifica se un numero appartiene alla sequenza di Padovan. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{missione3espdun_8c_aa8d06f2d109079a6178ce64612394640}{esplora3\+Stanza\+Dungeon}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore\+\_\+ptr, int \texorpdfstring{$\ast$}{*}stanza\+\_\+corrente, int \texorpdfstring{$\ast$}{*}progressi)
+\begin{DoxyCompactList}\small\item\em Logica di esplorazione per la Grotta di Cristallo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione della missione Grotta (Padovan). 
+
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{missione3espdun_8c_aa232f8a0c39b46609b88b85d9de22205}\label{missione3espdun_8c_aa232f8a0c39b46609b88b85d9de22205} 
+\index{missione3espdun.c@{missione3espdun.c}!appartienePadovan@{appartienePadovan}}
+\index{appartienePadovan@{appartienePadovan}!missione3espdun.c@{missione3espdun.c}}
+\doxysubsubsection{\texorpdfstring{appartienePadovan()}{appartienePadovan()}}
+{\footnotesize\ttfamily int appartiene\+Padovan (\begin{DoxyParamCaption}\item[{int}]{numero }\end{DoxyParamCaption})}
+
+
+
+Verifica se un numero appartiene alla sequenza di Padovan. 
+
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{missione3espdun_8c_aa232f8a0c39b46609b88b85d9de22205_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{missione3espdun_8c_aa8d06f2d109079a6178ce64612394640}\label{missione3espdun_8c_aa8d06f2d109079a6178ce64612394640} 
+\index{missione3espdun.c@{missione3espdun.c}!esplora3StanzaDungeon@{esplora3StanzaDungeon}}
+\index{esplora3StanzaDungeon@{esplora3StanzaDungeon}!missione3espdun.c@{missione3espdun.c}}
+\doxysubsubsection{\texorpdfstring{esplora3StanzaDungeon()}{esplora3StanzaDungeon()}}
+{\footnotesize\ttfamily void esplora3\+Stanza\+Dungeon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{giocatore\+\_\+ptr,  }\item[{int \texorpdfstring{$\ast$}{*}}]{stanza\+\_\+corrente,  }\item[{int \texorpdfstring{$\ast$}{*}}]{progressi }\end{DoxyParamCaption})}
+
+
+
+Logica di esplorazione per la Grotta di Cristallo. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore al giocatore. \\
+\hline
+{\em stanza\+\_\+corrente} & Puntatore all\textquotesingle{}indice della stanza. \\
+\hline
+{\em progressi} & Puntatore flag (1 = Drago sconfitto). \\
+\hline
+\end{DoxyParams}
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{missione3espdun_8c_aa8d06f2d109079a6178ce64612394640_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{missione3espdun_8c_ae7c83e4d97d50567cda5b807d89d6652}\label{missione3espdun_8c_ae7c83e4d97d50567cda5b807d89d6652} 
+\index{missione3espdun.c@{missione3espdun.c}!padovan@{padovan}}
+\index{padovan@{padovan}!missione3espdun.c@{missione3espdun.c}}
+\doxysubsubsection{\texorpdfstring{padovan()}{padovan()}}
+{\footnotesize\ttfamily int padovan (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Calcola n-\/esimo numero di Padovan P(n). 
+
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{missione3espdun_8c_ae7c83e4d97d50567cda5b807d89d6652_cgraph}
+\end{center}
+\end{figure}

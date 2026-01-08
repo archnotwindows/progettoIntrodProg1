@@ -1,0 +1,19 @@
+<map id="systemclear.h" name="systemclear.h">
+<area shape="rect" id="Node000001" title="Header per la gestione della pulizia dello schermo multipiattaforma." alt="" coords="433,5,535,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title="Punto di ingresso del programma &quot;Il Dungeon Oscuro&quot;." alt="" coords="5,79,67,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="420,29,264,50,79,81,68,84,67,79,78,76,263,44,419,24"/>
+<area shape="rect" id="Node000003" href="$menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco." alt="" coords="91,79,205,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="420,36,203,81,202,76,419,30"/>
+<area shape="rect" id="Node000004" href="$menuvillaggio_8c.html" title="Implementazione delle funzionalità del villaggio." alt="" coords="229,79,341,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="440,38,319,81,317,76,438,33"/>
+<area shape="rect" id="Node000005" href="$missionefinale_8c.html" title="Implementazione del combattimento finale (Sasso&#45;Carta&#45;Forbice)." alt="" coords="366,79,482,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="467,43,436,80,432,77,463,40"/>
+<area shape="rect" id="Node000006" href="$negozio_8c.html" title="Implementazione del negozio ambulante." alt="" coords="507,79,584,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="505,40,537,77,533,80,501,43"/>
+<area shape="rect" id="Node000007" href="$nuovoGioco_8c.html" title="Implementazione del menu principale." alt="" coords="608,79,709,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="526,33,631,76,629,81,524,38"/>
+<area shape="rect" id="Node000008" href="$salvataggi_8c.html" title="Implementazione del sistema di gestione file dei salvataggi." alt="" coords="733,79,824,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="545,31,734,76,732,82,544,36"/>
+<area shape="rect" id="Node000009" href="$systemclear_8c.html" title="Implementazione della funzione di pulizia schermo." alt="" coords="849,79,951,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="550,28,836,76,849,78,848,83,836,81,549,33"/>
+</map>

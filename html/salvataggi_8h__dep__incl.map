@@ -1,0 +1,9 @@
+<map id="salvataggi.h" name="salvataggi.h">
+<area shape="rect" id="Node000001" title="Header per la gestione del salvataggio e caricamento." alt="" coords="147,5,237,31"/>
+<area shape="rect" id="Node000002" href="$menuvillaggio_8c.html" title="Implementazione delle funzionalità del villaggio." alt="" coords="5,79,117,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,40,84,81,81,76,157,35"/>
+<area shape="rect" id="Node000003" href="$nuovoGioco_8c.html" title="Implementazione del menu principale." alt="" coords="141,79,243,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,44,195,79,189,79,189,44"/>
+<area shape="rect" id="Node000004" href="$salvataggi_8c.html" title="Implementazione del sistema di gestione file dei salvataggi." alt="" coords="267,79,357,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="225,35,294,76,291,81,222,40"/>
+</map>

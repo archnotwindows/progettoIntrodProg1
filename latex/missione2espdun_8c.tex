@@ -1,0 +1,50 @@
+\doxysection{Riferimenti per il file missione2espdun.\+c}
+\hypertarget{missione2espdun_8c}{}\label{missione2espdun_8c}\index{missione2espdun.c@{missione2espdun.c}}
+
+
+Implementazione della missione Magione Infestata.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}missione2espdun.\+h"{}}\newline
+{\ttfamily \#include "{}tabellemissioni.\+h"{}}\newline
+Grafo delle dipendenze di inclusione per missione2espdun.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{missione2espdun_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{missione2espdun_8c_acb5fd52d53fb1486b810bcf0b7b4212b}{esplora2\+Stanza\+Dungeon}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore\+\_\+ptr, int \texorpdfstring{$\ast$}{*}stanza\+\_\+corrente, int \texorpdfstring{$\ast$}{*}progressi)
+\begin{DoxyCompactList}\small\item\em Logica di esplorazione per la Magione Infestata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione della missione Magione Infestata. 
+
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{missione2espdun_8c_acb5fd52d53fb1486b810bcf0b7b4212b}\label{missione2espdun_8c_acb5fd52d53fb1486b810bcf0b7b4212b} 
+\index{missione2espdun.c@{missione2espdun.c}!esplora2StanzaDungeon@{esplora2StanzaDungeon}}
+\index{esplora2StanzaDungeon@{esplora2StanzaDungeon}!missione2espdun.c@{missione2espdun.c}}
+\doxysubsubsection{\texorpdfstring{esplora2StanzaDungeon()}{esplora2StanzaDungeon()}}
+{\footnotesize\ttfamily void esplora2\+Stanza\+Dungeon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{giocatore\+\_\+ptr,  }\item[{int \texorpdfstring{$\ast$}{*}}]{stanza\+\_\+corrente,  }\item[{int \texorpdfstring{$\ast$}{*}}]{progressi }\end{DoxyParamCaption})}
+
+
+
+Logica di esplorazione per la Magione Infestata. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore al giocatore. \\
+\hline
+{\em stanza\+\_\+corrente} & Puntatore all\textquotesingle{}indice della stanza. \\
+\hline
+{\em progressi} & Bitmask (bit 1\+: Chiave trovata, bit 2\+: Vampiro ucciso). \\
+\hline
+\end{DoxyParams}

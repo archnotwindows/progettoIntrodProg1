@@ -1,0 +1,93 @@
+\doxysection{Riferimenti per il file tabellemissioni.\+h}
+\hypertarget{tabellemissioni_8h}{}\label{tabellemissioni_8h}\index{tabellemissioni.h@{tabellemissioni.h}}
+
+
+Definizioni per la generazione procedurale dei dungeon.  
+
+
+Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tabellemissioni_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Strutture dati}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}}
+\begin{DoxyCompactList}\small\item\em Rappresenta una possibile configurazione di una stanza del dungeon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Tipi enumerati (enum)}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6}{Tipo\+Stanza}} \{ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\+\_\+\+COMBATTIMENTO}}
+, \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\+\_\+\+TRAPPOLA}}
+, \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a5eab80387c498186427f91a3c2810a6a}{TIPO\+\_\+\+VUOTA}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identifica la tipologia di incontro in una stanza. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variabili}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} \mbox{\hyperlink{tabellemissioni_8h_ae00975ff9c5318f595a6e14913957e14}{Tabella\+Palude}} \mbox{[}$\,$\mbox{]}
+\item 
+struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} \mbox{\hyperlink{tabellemissioni_8h_a0486295629ab9f36db65d579a3cf1e65}{Tabella\+Magione}} \mbox{[}$\,$\mbox{]}
+\item 
+struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} \mbox{\hyperlink{tabellemissioni_8h_a48604b38b31ffeee75f40d3df1fe19b6}{Tabella\+Grotta}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Definizioni per la generazione procedurale dei dungeon. 
+
+
+\begin{DoxyItemize}
+\item Contiene le strutture dati per definire nemici, trappole e stanze. 
+\end{DoxyItemize}
+
+\doxysubsection{Documentazione dei tipi enumerati}
+\Hypertarget{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6}\label{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6} 
+\index{tabellemissioni.h@{tabellemissioni.h}!TipoStanza@{TipoStanza}}
+\index{TipoStanza@{TipoStanza}!tabellemissioni.h@{tabellemissioni.h}}
+\doxysubsubsection{\texorpdfstring{TipoStanza}{TipoStanza}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6}{Tipo\+Stanza}}}
+
+
+
+Identifica la tipologia di incontro in una stanza. 
+
+\begin{DoxyEnumFields}{Valori del tipo enumerato}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIPO\_COMBATTIMENTO@{TIPO\_COMBATTIMENTO}!tabellemissioni.h@{tabellemissioni.h}}\index{tabellemissioni.h@{tabellemissioni.h}!TIPO\_COMBATTIMENTO@{TIPO\_COMBATTIMENTO}}}\Hypertarget{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}\label{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48} 
+TIPO\+\_\+\+COMBATTIMENTO&Incontro con un nemico. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIPO\_TRAPPOLA@{TIPO\_TRAPPOLA}!tabellemissioni.h@{tabellemissioni.h}}\index{tabellemissioni.h@{tabellemissioni.h}!TIPO\_TRAPPOLA@{TIPO\_TRAPPOLA}}}\Hypertarget{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}\label{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459} 
+TIPO\+\_\+\+TRAPPOLA&Evento che causa danno o penalità. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIPO\_VUOTA@{TIPO\_VUOTA}!tabellemissioni.h@{tabellemissioni.h}}\index{tabellemissioni.h@{tabellemissioni.h}!TIPO\_VUOTA@{TIPO\_VUOTA}}}\Hypertarget{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a5eab80387c498186427f91a3c2810a6a}\label{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a5eab80387c498186427f91a3c2810a6a} 
+TIPO\+\_\+\+VUOTA&Stanza senza eventi. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentazione delle variabili}
+\Hypertarget{tabellemissioni_8h_a48604b38b31ffeee75f40d3df1fe19b6}\label{tabellemissioni_8h_a48604b38b31ffeee75f40d3df1fe19b6} 
+\index{tabellemissioni.h@{tabellemissioni.h}!TabellaGrotta@{TabellaGrotta}}
+\index{TabellaGrotta@{TabellaGrotta}!tabellemissioni.h@{tabellemissioni.h}}
+\doxysubsubsection{\texorpdfstring{TabellaGrotta}{TabellaGrotta}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} Tabella\+Grotta\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+Tabella incontri per la Grotta. \Hypertarget{tabellemissioni_8h_a0486295629ab9f36db65d579a3cf1e65}\label{tabellemissioni_8h_a0486295629ab9f36db65d579a3cf1e65} 
+\index{tabellemissioni.h@{tabellemissioni.h}!TabellaMagione@{TabellaMagione}}
+\index{TabellaMagione@{TabellaMagione}!tabellemissioni.h@{tabellemissioni.h}}
+\doxysubsubsection{\texorpdfstring{TabellaMagione}{TabellaMagione}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} Tabella\+Magione\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+Tabella incontri per la Magione. \Hypertarget{tabellemissioni_8h_ae00975ff9c5318f595a6e14913957e14}\label{tabellemissioni_8h_ae00975ff9c5318f595a6e14913957e14} 
+\index{tabellemissioni.h@{tabellemissioni.h}!TabellaPalude@{TabellaPalude}}
+\index{TabellaPalude@{TabellaPalude}!tabellemissioni.h@{tabellemissioni.h}}
+\doxysubsubsection{\texorpdfstring{TabellaPalude}{TabellaPalude}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} Tabella\+Palude\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+Tabella incontri per la Palude. 

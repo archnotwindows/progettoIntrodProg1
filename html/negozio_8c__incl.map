@@ -1,0 +1,15 @@
+<map id="negozio.c" name="negozio.c">
+<area shape="rect" id="Node000001" title="Implementazione del negozio ambulante." alt="" coords="131,5,208,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,67,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,33,71,74,69,70,147,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="91,79,155,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,32,140,69,136,66,159,30"/>
+<area shape="rect" id="Node000004" href="$negozio_8h.html" title="Header per il negozio ambulante." alt="" coords="179,79,256,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,30,204,66,200,69,175,33"/>
+<area shape="rect" id="Node000007" href="$systemclear_8h.html" title="Header per la gestione della pulizia dello schermo multipiattaforma." alt="" coords="281,79,383,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="197,28,294,71,292,75,194,33"/>
+<area shape="rect" id="Node000005" href="$giocatore_8h.html" title="Definizione della struttura Giocatore e funzioni di inizializzazione." alt="" coords="174,152,261,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="220,104,220,138,215,138,215,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="180,225,255,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="220,178,220,212,215,212,215,178"/>
+</map>
