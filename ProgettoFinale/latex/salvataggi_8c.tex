@@ -1,0 +1,231 @@
+\doxysection{Riferimenti per il file salvataggi.\+c}
+\hypertarget{salvataggi_8c}{}\label{salvataggi_8c}\index{salvataggi.c@{salvataggi.c}}
+
+
+Implementazione del sistema di gestione file dei salvataggi.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}salvataggi.\+h"{}}\newline
+{\ttfamily \#include "{}systemclear.\+h"{}}\newline
+{\ttfamily \#include "{}giocatore.\+h"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Grafo delle dipendenze di inclusione per salvataggi.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{salvataggi_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Definizioni}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{salvataggi_8c_a3024ccd4a9af5109d24e6c57565d74a1}{\+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE}}~200809L
+\item 
+\#define \mbox{\hyperlink{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5}{POPEN}}~popen
+\item 
+\#define \mbox{\hyperlink{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3}{PCLOSE}}~pclose
+\item 
+\#define \mbox{\hyperlink{salvataggi_8c_aa976fd4a3d989ebc7783c7b241a7d287}{LIST\+\_\+\+COMMAND}}~"{}ls -\/1 salvataggi/"{}
+\item 
+\#define \mbox{\hyperlink{salvataggi_8c_a0920890c442b665b0c6609fa796e9047}{DIR\+\_\+\+SEPARATOR}}~"{}/"{}
+\item 
+\#define \mbox{\hyperlink{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d}{MKDIR}}(p)~mkdir(p, 0700)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{salvataggi_8c_a3453e09dde07013ea2ca1146020bb6a7}{check\+Dir\+Salvataggi}} ()
+\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}esistenza della directory "{}salvataggi"{}, creandola se necessario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4}{nuovo\+Salvataggio}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Crea un nuovo salvataggio su file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{salvataggi_8c_a1912cd89ae44ef137420b207769f3632}{carica\+Dati\+Salvataggio}} (int numero\+Salvataggio, \mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Carica i dati da un file di salvataggio. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8}{lista\+Salvataggi}} ()
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di salvataggi disponibili e li stampa a video. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{salvataggi_8c_a4208765e79421df60d16944464edf88e}{elimina\+Salvataggio}} (int numero\+Da\+Eliminare)
+\begin{DoxyCompactList}\small\item\em Elimina un file di salvataggio. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{salvataggi_8c_a0b197621f869405211a8975e3d56e5f9}{triggher\+Trucchi}} (char tasto)
+\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}inserimento del Konami Code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a}{modifica\+Salvataggio}} (int numero\+Salvataggio)
+\begin{DoxyCompactList}\small\item\em Modifica un salvataggio (Menu Trucchi). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione del sistema di gestione file dei salvataggi. 
+
+
+
+\doxysubsection{Documentazione delle definizioni}
+\Hypertarget{salvataggi_8c_a3024ccd4a9af5109d24e6c57565d74a1}\label{salvataggi_8c_a3024ccd4a9af5109d24e6c57565d74a1} 
+\index{salvataggi.c@{salvataggi.c}!\_POSIX\_C\_SOURCE@{\_POSIX\_C\_SOURCE}}
+\index{\_POSIX\_C\_SOURCE@{\_POSIX\_C\_SOURCE}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{\_POSIX\_C\_SOURCE}{\_POSIX\_C\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE~200809L}
+
+\Hypertarget{salvataggi_8c_a0920890c442b665b0c6609fa796e9047}\label{salvataggi_8c_a0920890c442b665b0c6609fa796e9047} 
+\index{salvataggi.c@{salvataggi.c}!DIR\_SEPARATOR@{DIR\_SEPARATOR}}
+\index{DIR\_SEPARATOR@{DIR\_SEPARATOR}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{DIR\_SEPARATOR}{DIR\_SEPARATOR}}
+{\footnotesize\ttfamily \#define DIR\+\_\+\+SEPARATOR~"{}/"{}}
+
+\Hypertarget{salvataggi_8c_aa976fd4a3d989ebc7783c7b241a7d287}\label{salvataggi_8c_aa976fd4a3d989ebc7783c7b241a7d287} 
+\index{salvataggi.c@{salvataggi.c}!LIST\_COMMAND@{LIST\_COMMAND}}
+\index{LIST\_COMMAND@{LIST\_COMMAND}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{LIST\_COMMAND}{LIST\_COMMAND}}
+{\footnotesize\ttfamily \#define LIST\+\_\+\+COMMAND~"{}ls -\/1 salvataggi/"{}}
+
+\Hypertarget{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d}\label{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d} 
+\index{salvataggi.c@{salvataggi.c}!MKDIR@{MKDIR}}
+\index{MKDIR@{MKDIR}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{MKDIR}{MKDIR}}
+{\footnotesize\ttfamily \#define MKDIR(\begin{DoxyParamCaption}\item[{}]{p }\end{DoxyParamCaption})~mkdir(p, 0700)}
+
+\Hypertarget{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3}\label{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3} 
+\index{salvataggi.c@{salvataggi.c}!PCLOSE@{PCLOSE}}
+\index{PCLOSE@{PCLOSE}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{PCLOSE}{PCLOSE}}
+{\footnotesize\ttfamily \#define PCLOSE~pclose}
+
+\Hypertarget{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5}\label{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5} 
+\index{salvataggi.c@{salvataggi.c}!POPEN@{POPEN}}
+\index{POPEN@{POPEN}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{POPEN}{POPEN}}
+{\footnotesize\ttfamily \#define POPEN~popen}
+
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{salvataggi_8c_a1912cd89ae44ef137420b207769f3632}\label{salvataggi_8c_a1912cd89ae44ef137420b207769f3632} 
+\index{salvataggi.c@{salvataggi.c}!caricaDatiSalvataggio@{caricaDatiSalvataggio}}
+\index{caricaDatiSalvataggio@{caricaDatiSalvataggio}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{caricaDatiSalvataggio()}{caricaDatiSalvataggio()}}
+{\footnotesize\ttfamily int carica\+Dati\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Carica i dati da un file di salvataggio. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em n} & Indice del salvataggio scelto. \\
+\hline
+{\em g} & Puntatore alla struttura \doxylink{structGiocatore}{Giocatore} da popolare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se successo, 0 se errore. 
+\end{DoxyReturn}
+\Hypertarget{salvataggi_8c_a3453e09dde07013ea2ca1146020bb6a7}\label{salvataggi_8c_a3453e09dde07013ea2ca1146020bb6a7} 
+\index{salvataggi.c@{salvataggi.c}!checkDirSalvataggi@{checkDirSalvataggi}}
+\index{checkDirSalvataggi@{checkDirSalvataggi}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{checkDirSalvataggi()}{checkDirSalvataggi()}}
+{\footnotesize\ttfamily void check\+Dir\+Salvataggi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica l\textquotesingle{}esistenza della directory "{}salvataggi"{}, creandola se necessario. 
+
+\Hypertarget{salvataggi_8c_a4208765e79421df60d16944464edf88e}\label{salvataggi_8c_a4208765e79421df60d16944464edf88e} 
+\index{salvataggi.c@{salvataggi.c}!eliminaSalvataggio@{eliminaSalvataggio}}
+\index{eliminaSalvataggio@{eliminaSalvataggio}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{eliminaSalvataggio()}{eliminaSalvataggio()}}
+{\footnotesize\ttfamily void elimina\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Elimina un file di salvataggio. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em n} & Indice del salvataggio da eliminare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8}\label{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8} 
+\index{salvataggi.c@{salvataggi.c}!listaSalvataggi@{listaSalvataggi}}
+\index{listaSalvataggi@{listaSalvataggi}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{listaSalvataggi()}{listaSalvataggi()}}
+{\footnotesize\ttfamily int lista\+Salvataggi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Restituisce il numero di salvataggi disponibili e li stampa a video. 
+
+\begin{DoxyReturn}{Restituisce}
+Numero di file trovati. 
+\end{DoxyReturn}
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a}\label{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a} 
+\index{salvataggi.c@{salvataggi.c}!modificaSalvataggio@{modificaSalvataggio}}
+\index{modificaSalvataggio@{modificaSalvataggio}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{modificaSalvataggio()}{modificaSalvataggio()}}
+{\footnotesize\ttfamily void modifica\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Modifica un salvataggio (Menu Trucchi). 
+
+
+\begin{DoxyParams}{Parametri}
+{\em n} & Indice del salvataggio da modificare. \\
+\hline
+\end{DoxyParams}
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4}\label{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4} 
+\index{salvataggi.c@{salvataggi.c}!nuovoSalvataggio@{nuovoSalvataggio}}
+\index{nuovoSalvataggio@{nuovoSalvataggio}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{nuovoSalvataggio()}{nuovoSalvataggio()}}
+{\footnotesize\ttfamily void nuovo\+Salvataggio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Crea un nuovo salvataggio su file. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em g} & Puntatore allo stato del giocatore da salvare. \\
+\hline
+\end{DoxyParams}
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{salvataggi_8c_a0b197621f869405211a8975e3d56e5f9}\label{salvataggi_8c_a0b197621f869405211a8975e3d56e5f9} 
+\index{salvataggi.c@{salvataggi.c}!triggherTrucchi@{triggherTrucchi}}
+\index{triggherTrucchi@{triggherTrucchi}!salvataggi.c@{salvataggi.c}}
+\doxysubsubsection{\texorpdfstring{triggherTrucchi()}{triggherTrucchi()}}
+{\footnotesize\ttfamily bool triggher\+Trucchi (\begin{DoxyParamCaption}\item[{char}]{tasto }\end{DoxyParamCaption})}
+
+
+
+Verifica l\textquotesingle{}inserimento del Konami Code. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em tasto} & Carattere appena digitato. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+true se il codice è completo, false altrimenti. 
+\end{DoxyReturn}

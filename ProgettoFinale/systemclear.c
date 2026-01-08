@@ -1,3 +1,7 @@
+/**
+ * @file systemclear.c
+ * @brief Implementazione della funzione di pulizia schermo.
+ */
 #include <stdlib.h>
 #include "systemclear.h"
 

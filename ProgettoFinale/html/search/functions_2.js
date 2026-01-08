@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['eliminasalvataggio_0',['eliminasalvataggio',['../salvataggi_8c.html#a4208765e79421df60d16944464edf88e',1,'eliminaSalvataggio(int numeroDaEliminare):&#160;salvataggi.c'],['../salvataggi_8h.html#a7ecaf03e8313ad042451696951604c70',1,'eliminaSalvataggio(int n):&#160;salvataggi.c']]],
+  ['esplora1stanzadungeon_1',['esplora1stanzadungeon',['../missione1espdun_8c.html#abe73b1eb0883d1aa1e94399bf7ae9c35',1,'esplora1StanzaDungeon(Giocatore *giocatore_ptr, int *stanza_corrente, int *generali_uccisi):&#160;missione1espdun.c'],['../missione1espdun_8h.html#abe73b1eb0883d1aa1e94399bf7ae9c35',1,'esplora1StanzaDungeon(Giocatore *giocatore_ptr, int *stanza_corrente, int *generali_uccisi):&#160;missione1espdun.c']]],
+  ['esplora2stanzadungeon_2',['esplora2stanzadungeon',['../missione2espdun_8c.html#acb5fd52d53fb1486b810bcf0b7b4212b',1,'esplora2StanzaDungeon(Giocatore *giocatore_ptr, int *stanza_corrente, int *progressi):&#160;missione2espdun.c'],['../missione2espdun_8h.html#acb5fd52d53fb1486b810bcf0b7b4212b',1,'esplora2StanzaDungeon(Giocatore *giocatore_ptr, int *stanza_corrente, int *progressi):&#160;missione2espdun.c']]],
+  ['esplora3stanzadungeon_3',['esplora3stanzadungeon',['../missione3espdun_8c.html#aa8d06f2d109079a6178ce64612394640',1,'esplora3StanzaDungeon(Giocatore *giocatore_ptr, int *stanza_corrente, int *progressi):&#160;missione3espdun.c'],['../missione3espdun_8h.html#aa8d06f2d109079a6178ce64612394640',1,'esplora3StanzaDungeon(Giocatore *giocatore_ptr, int *stanza_corrente, int *progressi):&#160;missione3espdun.c']]]
+];

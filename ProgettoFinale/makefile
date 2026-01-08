@@ -8,7 +8,24 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -pedantic
 
 # Nome dell'eseguibile finale
-TARGET = GiocoRPG
+TARGET = Gioco
+
+# --- RILEVAMENTO SISTEMA OPERATIVO PER APERTURA FILE ---
+# Definisce il comando 'OPEN_CMD' in base al sistema operativo rilevato
+ifdef OS
+   # Windows (di solito definisce la variabile OS)
+   OPEN_CMD = start
+else
+   UNAME_S := $(shell uname -s)
+   ifeq ($(UNAME_S),Darwin)
+      # macOS
+      OPEN_CMD = open
+   else
+      # Linux / Altri Unix-like
+      OPEN_CMD = xdg-open
+   endif
+endif
+# -------------------------------------------------------
 
 # Lista di tutti i file sorgente (.c)
 SRCS = main.c \
@@ -40,6 +57,12 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Regola per pulire i file compilati (comando: "make clean")
-# Nota: Su Windows (cmd) potresti dover cambiare 'rm -f' con 'del'
 clean:
 	rm -f $(OBJS) $(TARGET)
+
+# --- GENERAZIONE DOCUMENTAZIONE ---
+# Genera la documentazione con Doxygen e la apre automaticamente
+doc:
+	doxygen Doxyfile
+	@echo "Apro la documentazione nel browser..."
+	$(OPEN_CMD) html/index.html

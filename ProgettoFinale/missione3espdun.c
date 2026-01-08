@@ -1,3 +1,7 @@
+/**
+ * @file missione3espdun.c
+ * @brief Implementazione della missione Grotta (Padovan).
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "missione3espdun.h"
@@ -5,12 +9,17 @@
 
 static int lanciaDado() { return rand() % 6 + 1; }
 
+/**
+ * @brief Calcola n-esimo numero di Padovan P(n).
+ */
 int padovan(int n) {
     if (n == 0 || n == 1 || n == 2) return 1;
     return padovan(n - 2) + padovan(n - 3);
 }
 
-
+/**
+ * @brief Verifica se un numero appartiene alla sequenza di Padovan.
+ */
 int appartienePadovan(int numero) {
     if (numero < 1) return 0;
     int i = 0, p;
@@ -27,7 +36,6 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     printf("\n--- GROTTA DI CRISTALLO: STANZA %d/%d ---\n", *stanza_corrente, MAX_STANZE);
     int indice_tabella;
   
-
     if (*progressi == 0 && *stanza_corrente == MAX_STANZE) {
         printf(">>> Un ruggito fa tremare le pareti... DRAGO! (Incontro Forzato)\n");
         indice_tabella = 5;
@@ -73,7 +81,6 @@ void esplora3StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     }   
     else if (stanza.tipo == TIPO_COMBATTIMENTO) {
         int danno_primo_turno = stanza.danno;
-
 
         int numero_quiz = (rand() % 50) + 1;
         printf("\nIL DRAGO PARLA: 'Rispondi mortale! Il numero %d appartiene alla sequenza di Padovan?' [s/n]: ", numero_quiz);

@@ -1,3 +1,7 @@
+/**
+ * @file nuovoGioco.c
+ * @brief Implementazione del menu principale.
+ */
 #define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,6 +13,10 @@
 #include "menuvillaggio.h"
 #include "giocatore.h"
 
+/**
+ * @brief Legge un intero da stdin in modo sicuro.
+ * @return L'intero letto o -1 in caso di errore.
+ */
 static int leggiIntero() {
     char buffer[100];
     if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
@@ -22,9 +30,10 @@ void stampaMenu(bool trucchiAttivi){
     puliscischermo();
     printf("+ - - - - - - - - - - - - - - - - - - - - - - - - - +\n");
     if ( trucchiAttivi ){
-        printf("|    Dungeon Knight Adventure (CHEAT MODE)                     |\n");
+        printf("|       Il Dungeon Oscuro   (CHEAT MODE)                     |\n");
     } else {
-        printf("|            Dungeon Knight Adventure                          |\n");
+        printf("|                  Il Dungeon Oscuro                |\n");
+        printf("+ - - - - - - - - - - - - - - - - - - - - - - - - - +\n");
     }
     printf("| 1) Nuova partita                                  |\n");
     printf("| 2) Carica salvataggio                             |\n");  
@@ -68,7 +77,6 @@ void nuovoGioco(){
             menuVillaggio(&g);
         }
 
-      
         else if ( intAction == 2 ){
             int elenco = listaSalvataggi();
             if (elenco == 0) {
@@ -84,19 +92,16 @@ void nuovoGioco(){
                 int azione;
                 printf("\n1) Carica e Gioca\n2) Elimina\n");
                 
-                
                 if (trucchiAttivi) {
                     printf("3) MODIFICA (TRUCCHI)\n4) Annulla\n");
                 } else {
                     printf("3) Annulla\n");
                 }
             
-        
                 printf("Scegli: ");
                 azione = leggiIntero();
                                 
                 if ( azione == 1 ){
-                  
                     if (caricaDatiSalvataggio(nSalvataggio, &g)) {
                         printf("\nSalvataggio caricato con successo!\n");
                         printf("Premi Invio per entrare nel Villaggio...");
@@ -111,11 +116,9 @@ void nuovoGioco(){
                     printf("Sicuro? (1=Si, 2=No): ");
                     if ( leggiIntero() == 1 ) eliminaSalvataggio(nSalvataggio);
                 }
-              
                 else if ( trucchiAttivi && azione == 3 ) {
                     modificaSalvataggio(nSalvataggio);
                 }
-              
             }    
         }
         else if ( intAction == 3 ) uscita = true;

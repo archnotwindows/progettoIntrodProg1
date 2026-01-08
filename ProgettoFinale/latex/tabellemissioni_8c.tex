@@ -1,0 +1,88 @@
+\doxysection{Riferimenti per il file tabellemissioni.\+c}
+\hypertarget{tabellemissioni_8c}{}\label{tabellemissioni_8c}\index{tabellemissioni.c@{tabellemissioni.c}}
+
+
+Inizializzazione delle tabelle degli incontri per le missioni.  
+
+
+{\ttfamily \#include "{}tabellemissioni.\+h"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Grafo delle dipendenze di inclusione per tabellemissioni.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{tabellemissioni_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Variabili}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} \mbox{\hyperlink{tabellemissioni_8c_ae00975ff9c5318f595a6e14913957e14}{Tabella\+Palude}} \mbox{[}$\,$\mbox{]}
+\item 
+struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} \mbox{\hyperlink{tabellemissioni_8c_a0486295629ab9f36db65d579a3cf1e65}{Tabella\+Magione}} \mbox{[}$\,$\mbox{]}
+\item 
+struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} \mbox{\hyperlink{tabellemissioni_8c_a48604b38b31ffeee75f40d3df1fe19b6}{Tabella\+Grotta}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Inizializzazione delle tabelle degli incontri per le missioni. 
+
+
+
+\doxysubsection{Documentazione delle variabili}
+\Hypertarget{tabellemissioni_8c_a48604b38b31ffeee75f40d3df1fe19b6}\label{tabellemissioni_8c_a48604b38b31ffeee75f40d3df1fe19b6} 
+\index{tabellemissioni.c@{tabellemissioni.c}!TabellaGrotta@{TabellaGrotta}}
+\index{TabellaGrotta@{TabellaGrotta}!tabellemissioni.c@{tabellemissioni.c}}
+\doxysubsubsection{\texorpdfstring{TabellaGrotta}{TabellaGrotta}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} Tabella\+Grotta\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Valore iniziale\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Stanza\ Vuota"{}},\ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a5eab80387c498186427f91a3c2810a6a}{TIPO\_VUOTA}},\ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0\},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Cristalli\ Cadenti"{}},\ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\_TRAPPOLA}},\ \ \ \ \ \ \ 0,\ 2,\ 0,\ 0\},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Ponte\ Pericolante"{}},\ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\_TRAPPOLA}},\ \ \ \ \ \ \ 0,\ 0,\ -\/3,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Forziere\ Misterioso"{}},\mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\_TRAPPOLA}},\ \ \ \ \ \ \ 0,\ -\/2,\ 10,\ 0\},\ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Rupe\ Scoscesa"{}},\ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\_TRAPPOLA}},\ \ \ \ \ \ \ 0,\ -\/1,\ 0,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Drago\ Antico"{}},\ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ \ 5,\ 10,\ 12,\ 1\}\ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Tabella incontri per la Grotta. \Hypertarget{tabellemissioni_8c_a0486295629ab9f36db65d579a3cf1e65}\label{tabellemissioni_8c_a0486295629ab9f36db65d579a3cf1e65} 
+\index{tabellemissioni.c@{tabellemissioni.c}!TabellaMagione@{TabellaMagione}}
+\index{TabellaMagione@{TabellaMagione}!tabellemissioni.c@{tabellemissioni.c}}
+\doxysubsubsection{\texorpdfstring{TabellaMagione}{TabellaMagione}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} Tabella\+Magione\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Valore iniziale\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Botola\ Buia"{}},\ \ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\_TRAPPOLA}},\ \ \ \ \ \ \ 0,\ 3,\ 0,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Pipistrello"{}},\ \ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ \ 2,\ 2,\ 1,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Zombie"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ \ 3,\ 2,\ 2,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Fantasma"{}},\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ \ 5,\ 2,\ 4,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Vampiro\ Superiore"{}},\ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ \ 4,\ 4,\ 7,\ 1\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Demone\ Custode"{}},\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ \ 4,\ 6,\ 10,\ 2\}\ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Tabella incontri per la Magione. \Hypertarget{tabellemissioni_8c_ae00975ff9c5318f595a6e14913957e14}\label{tabellemissioni_8c_ae00975ff9c5318f595a6e14913957e14} 
+\index{tabellemissioni.c@{tabellemissioni.c}!TabellaPalude@{TabellaPalude}}
+\index{TabellaPalude@{TabellaPalude}!tabellemissioni.c@{tabellemissioni.c}}
+\doxysubsubsection{\texorpdfstring{TabellaPalude}{TabellaPalude}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRigaDungeon}{Riga\+Dungeon}} Tabella\+Palude\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Valore iniziale\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Cane\ Selvaggio"{}},\ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ 2,\ 1,\ 0,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Goblin"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ 3,\ 2,\ 2,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Scheletro"{}},\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ 4,\ 2,\ 4,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Orco"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ 3,\ 4,\ 6,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Acquitrino\ Velenoso"{}},\ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\_TRAPPOLA}},\ \ \ \ \ \ 0,\ -\/1,\ 0,\ 0\},\ }
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}Generale\ Orco"{}},\ \ \ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ 6,\ 3,\ 12,\ 1\}\ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Tabella incontri per la Palude. 

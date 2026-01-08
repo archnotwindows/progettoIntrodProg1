@@ -1,3 +1,7 @@
+/**
+ * @file tabellemissioni.c
+ * @brief Inizializzazione delle tabelle degli incontri per le missioni.
+ */
 #include "tabellemissioni.h"
 #include <stddef.h> 
 

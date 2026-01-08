@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Il Dungeon Oscuro: Riferimenti per il file salvataggi.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Il Dungeon Oscuro
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definizioni</a> &#124;
+<a href="#func-members">Funzioni</a>  </div>
+  <div class="headertitle"><div class="title">Riferimenti per il file salvataggi.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementazione del sistema di gestione file dei salvataggi.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="salvataggi_8h_source.html">salvataggi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="systemclear_8h_source.html">systemclear.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="giocatore_8h_source.html">giocatore.h</a>&quot;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Grafo delle dipendenze di inclusione per salvataggi.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="salvataggi_8c__incl.png" border="0" usemap="#asalvataggi_8c" alt=""/></div>
+<map name="asalvataggi_8c" id="asalvataggi_8c">
+<area shape="rect" title="Implementazione del sistema di gestione file dei salvataggi." alt="" coords="425,5,516,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,67,104"/>
+<area shape="poly" title=" " alt="" coords="425,27,276,47,80,81,79,76,275,42,425,22"/>
+<area shape="rect" title=" " alt="" coords="91,79,155,104"/>
+<area shape="poly" title=" " alt="" coords="426,30,169,81,168,76,425,25"/>
+<area shape="rect" title=" " alt="" coords="179,79,245,104"/>
+<area shape="poly" title=" " alt="" coords="430,33,258,80,257,75,428,28"/>
+<area shape="rect" title=" " alt="" coords="583,225,657,251"/>
+<area shape="poly" title=" " alt="" coords="425,28,378,37,334,53,318,63,307,74,304,87,310,103,335,133,365,158,398,178,434,195,507,218,570,229,569,235,505,223,432,200,396,183,362,162,331,136,306,105,299,88,303,72,314,59,332,48,377,32,424,23"/>
+<area shape="rect" title=" " alt="" coords="320,79,408,104"/>
+<area shape="poly" title=" " alt="" coords="455,33,394,73,391,69,452,28"/>
+<area shape="rect" title=" " alt="" coords="432,79,509,104"/>
+<area shape="poly" title=" " alt="" coords="473,31,473,65,468,65,468,31"/>
+<area shape="rect" title=" " alt="" coords="533,79,592,104"/>
+<area shape="poly" title=" " alt="" coords="487,29,539,68,535,72,484,33"/>
+<area shape="rect" href="salvataggi_8h.html" title="Header per la gestione del salvataggio e caricamento." alt="" coords="616,79,707,104"/>
+<area shape="poly" title=" " alt="" coords="502,28,618,71,616,76,500,33"/>
+<area shape="rect" href="giocatore_8h.html" title="Definizione della struttura Giocatore e funzioni di inizializzazione." alt="" coords="658,152,745,177"/>
+<area shape="poly" title=" " alt="" coords="517,21,572,28,633,39,687,55,707,65,721,77,728,92,728,109,718,140,713,139,723,108,723,93,717,80,704,70,685,60,632,45,571,33,516,26"/>
+<area shape="rect" href="systemclear_8h.html" title="Header per la gestione della pulizia dello schermo multipiattaforma." alt="" coords="782,79,885,104"/>
+<area shape="poly" title=" " alt="" coords="517,26,769,75,768,80,516,31"/>
+<area shape="rect" title=" " alt="" coords="909,79,977,104"/>
+<area shape="poly" title=" " alt="" coords="517,21,680,41,896,76,895,81,680,47,516,27"/>
+<area shape="poly" title=" " alt="" coords="661,105,630,213,624,211,655,104"/>
+<area shape="poly" title=" " alt="" coords="670,103,690,139,686,141,666,106"/>
+<area shape="poly" title=" " alt="" coords="690,179,645,218,642,214,687,175"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:a3024ccd4a9af5109d24e6c57565d74a1" id="r_a3024ccd4a9af5109d24e6c57565d74a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#a3024ccd4a9af5109d24e6c57565d74a1">_POSIX_C_SOURCE</a>&#160;&#160;&#160;200809L</td></tr>
+<tr class="separator:a3024ccd4a9af5109d24e6c57565d74a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6949e8178edeb4294d893f3ee4966d5" id="r_ab6949e8178edeb4294d893f3ee4966d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#ab6949e8178edeb4294d893f3ee4966d5">POPEN</a>&#160;&#160;&#160;popen</td></tr>
+<tr class="separator:ab6949e8178edeb4294d893f3ee4966d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c39c7c96d7f5d1f5cd1743122d476e3" id="r_a4c39c7c96d7f5d1f5cd1743122d476e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#a4c39c7c96d7f5d1f5cd1743122d476e3">PCLOSE</a>&#160;&#160;&#160;pclose</td></tr>
+<tr class="separator:a4c39c7c96d7f5d1f5cd1743122d476e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa976fd4a3d989ebc7783c7b241a7d287" id="r_aa976fd4a3d989ebc7783c7b241a7d287"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#aa976fd4a3d989ebc7783c7b241a7d287">LIST_COMMAND</a>&#160;&#160;&#160;&quot;ls -1 salvataggi/&quot;</td></tr>
+<tr class="separator:aa976fd4a3d989ebc7783c7b241a7d287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0920890c442b665b0c6609fa796e9047" id="r_a0920890c442b665b0c6609fa796e9047"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#a0920890c442b665b0c6609fa796e9047">DIR_SEPARATOR</a>&#160;&#160;&#160;&quot;/&quot;</td></tr>
+<tr class="separator:a0920890c442b665b0c6609fa796e9047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17cda852a890b03845a49ff1a8ae7f6d" id="r_a17cda852a890b03845a49ff1a8ae7f6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#a17cda852a890b03845a49ff1a8ae7f6d">MKDIR</a>(p)&#160;&#160;&#160;mkdir(p, 0700)</td></tr>
+<tr class="separator:a17cda852a890b03845a49ff1a8ae7f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a3453e09dde07013ea2ca1146020bb6a7" id="r_a3453e09dde07013ea2ca1146020bb6a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#a3453e09dde07013ea2ca1146020bb6a7">checkDirSalvataggi</a> ()</td></tr>
+<tr class="memdesc:a3453e09dde07013ea2ca1146020bb6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica l'esistenza della directory "salvataggi", creandola se necessario.  <br /></td></tr>
+<tr class="separator:a3453e09dde07013ea2ca1146020bb6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13b31f6b761a6b7483a9cb18af25cc4" id="r_af13b31f6b761a6b7483a9cb18af25cc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#af13b31f6b761a6b7483a9cb18af25cc4">nuovoSalvataggio</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:af13b31f6b761a6b7483a9cb18af25cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nuovo salvataggio su file.  <br /></td></tr>
+<tr class="separator:af13b31f6b761a6b7483a9cb18af25cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1912cd89ae44ef137420b207769f3632" id="r_a1912cd89ae44ef137420b207769f3632"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#a1912cd89ae44ef137420b207769f3632">caricaDatiSalvataggio</a> (int numeroSalvataggio, <a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:a1912cd89ae44ef137420b207769f3632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica i dati da un file di salvataggio.  <br /></td></tr>
+<tr class="separator:a1912cd89ae44ef137420b207769f3632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adab8accc64e79b6907f8ee1ff6446bf8" id="r_adab8accc64e79b6907f8ee1ff6446bf8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#adab8accc64e79b6907f8ee1ff6446bf8">listaSalvataggi</a> ()</td></tr>
+<tr class="memdesc:adab8accc64e79b6907f8ee1ff6446bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di salvataggi disponibili e li stampa a video.  <br /></td></tr>
+<tr class="separator:adab8accc64e79b6907f8ee1ff6446bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4208765e79421df60d16944464edf88e" id="r_a4208765e79421df60d16944464edf88e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#a4208765e79421df60d16944464edf88e">eliminaSalvataggio</a> (int numeroDaEliminare)</td></tr>
+<tr class="memdesc:a4208765e79421df60d16944464edf88e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un file di salvataggio.  <br /></td></tr>
+<tr class="separator:a4208765e79421df60d16944464edf88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b197621f869405211a8975e3d56e5f9" id="r_a0b197621f869405211a8975e3d56e5f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#a0b197621f869405211a8975e3d56e5f9">triggherTrucchi</a> (char tasto)</td></tr>
+<tr class="memdesc:a0b197621f869405211a8975e3d56e5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica l'inserimento del Konami Code.  <br /></td></tr>
+<tr class="separator:a0b197621f869405211a8975e3d56e5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf592ebbc9d338383dbb7ef8d921840a" id="r_adf592ebbc9d338383dbb7ef8d921840a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salvataggi_8c.html#adf592ebbc9d338383dbb7ef8d921840a">modificaSalvataggio</a> (int numeroSalvataggio)</td></tr>
+<tr class="memdesc:adf592ebbc9d338383dbb7ef8d921840a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica un salvataggio (Menu Trucchi).  <br /></td></tr>
+<tr class="separator:adf592ebbc9d338383dbb7ef8d921840a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Implementazione del sistema di gestione file dei salvataggi. </p>
+</div><h2 class="groupheader">Documentazione delle definizioni</h2>
+<a id="a3024ccd4a9af5109d24e6c57565d74a1" name="a3024ccd4a9af5109d24e6c57565d74a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3024ccd4a9af5109d24e6c57565d74a1">&#9670;&#160;</a></span>_POSIX_C_SOURCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _POSIX_C_SOURCE&#160;&#160;&#160;200809L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0920890c442b665b0c6609fa796e9047" name="a0920890c442b665b0c6609fa796e9047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0920890c442b665b0c6609fa796e9047">&#9670;&#160;</a></span>DIR_SEPARATOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIR_SEPARATOR&#160;&#160;&#160;&quot;/&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa976fd4a3d989ebc7783c7b241a7d287" name="aa976fd4a3d989ebc7783c7b241a7d287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa976fd4a3d989ebc7783c7b241a7d287">&#9670;&#160;</a></span>LIST_COMMAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LIST_COMMAND&#160;&#160;&#160;&quot;ls -1 salvataggi/&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17cda852a890b03845a49ff1a8ae7f6d" name="a17cda852a890b03845a49ff1a8ae7f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17cda852a890b03845a49ff1a8ae7f6d">&#9670;&#160;</a></span>MKDIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MKDIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p</td><td>)</td>
+          <td>&#160;&#160;&#160;mkdir(p, 0700)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c39c7c96d7f5d1f5cd1743122d476e3" name="a4c39c7c96d7f5d1f5cd1743122d476e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c39c7c96d7f5d1f5cd1743122d476e3">&#9670;&#160;</a></span>PCLOSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PCLOSE&#160;&#160;&#160;pclose</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6949e8178edeb4294d893f3ee4966d5" name="ab6949e8178edeb4294d893f3ee4966d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6949e8178edeb4294d893f3ee4966d5">&#9670;&#160;</a></span>POPEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POPEN&#160;&#160;&#160;popen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentazione delle funzioni</h2>
+<a id="a1912cd89ae44ef137420b207769f3632" name="a1912cd89ae44ef137420b207769f3632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1912cd89ae44ef137420b207769f3632">&#9670;&#160;</a></span>caricaDatiSalvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int caricaDatiSalvataggio </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica i dati da un file di salvataggio. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Indice del salvataggio scelto. </td></tr>
+    <tr><td class="paramname">g</td><td>Puntatore alla struttura <a class="el" href="structGiocatore.html" title="Rappresenta lo stato del personaggio giocante.">Giocatore</a> da popolare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 se errore. </dd></dl>
+
+</div>
+</div>
+<a id="a3453e09dde07013ea2ca1146020bb6a7" name="a3453e09dde07013ea2ca1146020bb6a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3453e09dde07013ea2ca1146020bb6a7">&#9670;&#160;</a></span>checkDirSalvataggi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void checkDirSalvataggi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica l'esistenza della directory "salvataggi", creandola se necessario. </p>
+
+</div>
+</div>
+<a id="a4208765e79421df60d16944464edf88e" name="a4208765e79421df60d16944464edf88e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4208765e79421df60d16944464edf88e">&#9670;&#160;</a></span>eliminaSalvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eliminaSalvataggio </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina un file di salvataggio. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Indice del salvataggio da eliminare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adab8accc64e79b6907f8ee1ff6446bf8" name="adab8accc64e79b6907f8ee1ff6446bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab8accc64e79b6907f8ee1ff6446bf8">&#9670;&#160;</a></span>listaSalvataggi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int listaSalvataggi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il numero di salvataggi disponibili e li stampa a video. </p>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di file trovati. </dd></dl>
+<div class="dynheader">
+Questo è il grafo delle chiamate per questa funzione:</div>
+<div class="dyncontent">
+<div class="center"><img src="salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8_cgraph.png" border="0" usemap="#asalvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8_cgraph" alt=""/></div>
+<map name="asalvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8_cgraph" id="asalvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8_cgraph">
+<area shape="rect" title="Restituisce il numero di salvataggi disponibili e li stampa a video." alt="" coords="5,31,112,56"/>
+<area shape="rect" href="salvataggi_8c.html#a3453e09dde07013ea2ca1146020bb6a7" title="Verifica l&#39;esistenza della directory &quot;salvataggi&quot;, creandola se necessario." alt="" coords="160,5,295,31"/>
+<area shape="poly" title=" " alt="" coords="112,33,146,28,146,33,112,38"/>
+<area shape="rect" href="systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="173,55,282,80"/>
+<area shape="poly" title=" " alt="" coords="112,48,159,55,159,60,112,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adf592ebbc9d338383dbb7ef8d921840a" name="adf592ebbc9d338383dbb7ef8d921840a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf592ebbc9d338383dbb7ef8d921840a">&#9670;&#160;</a></span>modificaSalvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void modificaSalvataggio </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modifica un salvataggio (Menu Trucchi). </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Indice del salvataggio da modificare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Questo è il grafo delle chiamate per questa funzione:</div>
+<div class="dyncontent">
+<div class="center"><img src="salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a_cgraph.png" border="0" usemap="#asalvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a_cgraph" alt=""/></div>
+<map name="asalvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a_cgraph" id="asalvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a_cgraph">
+<area shape="rect" title="Modifica un salvataggio (Menu Trucchi)." alt="" coords="5,5,144,31"/>
+<area shape="rect" href="systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="192,5,301,31"/>
+<area shape="poly" title=" " alt="" coords="144,15,178,15,178,21,144,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af13b31f6b761a6b7483a9cb18af25cc4" name="af13b31f6b761a6b7483a9cb18af25cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af13b31f6b761a6b7483a9cb18af25cc4">&#9670;&#160;</a></span>nuovoSalvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nuovoSalvataggio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea un nuovo salvataggio su file. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore allo stato del giocatore da salvare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Questo è il grafo delle chiamate per questa funzione:</div>
+<div class="dyncontent">
+<div class="center"><img src="salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4_cgraph.png" border="0" usemap="#asalvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4_cgraph" alt=""/></div>
+<map name="asalvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4_cgraph" id="asalvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4_cgraph">
+<area shape="rect" title="Crea un nuovo salvataggio su file." alt="" coords="5,5,128,31"/>
+<area shape="rect" href="salvataggi_8c.html#a3453e09dde07013ea2ca1146020bb6a7" title="Verifica l&#39;esistenza della directory &quot;salvataggi&quot;, creandola se necessario." alt="" coords="176,5,311,31"/>
+<area shape="poly" title=" " alt="" coords="128,15,162,15,162,21,128,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0b197621f869405211a8975e3d56e5f9" name="a0b197621f869405211a8975e3d56e5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b197621f869405211a8975e3d56e5f9">&#9670;&#160;</a></span>triggherTrucchi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool triggherTrucchi </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>tasto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica l'inserimento del Konami Code. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasto</td><td>Carattere appena digitato. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>true se il codice è completo, false altrimenti. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato da&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

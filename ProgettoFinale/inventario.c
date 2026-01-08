@@ -1,3 +1,7 @@
+/**
+ * @file inventario.c
+ * @brief Implementazione della visualizzazione dell'inventario.
+ */
 #include <stdio.h>
 #include "inventario.h"
 

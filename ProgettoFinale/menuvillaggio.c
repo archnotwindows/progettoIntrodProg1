@@ -1,3 +1,7 @@
+/**
+ * @file menuvillaggio.c
+ * @brief Implementazione delle funzionalità del villaggio.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "menuvillaggio.h"

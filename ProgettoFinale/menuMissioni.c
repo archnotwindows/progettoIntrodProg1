@@ -1,3 +1,7 @@
+/**
+ * @file menuMissioni.c
+ * @brief Implementazione della selezione missioni e del loop di gioco.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -66,7 +70,7 @@ void Menu(Giocatore* giocatore_ptr) {
     int missione_scelta = mappa_opzioni[scelta - 1]; 
     
     
-    if (missione_scelta == 4) { // se é la missione finale passo subito alla funzione dedicata
+    if (missione_scelta == 4) { 
         CombattimentoFinale(giocatore_ptr);
         return;
     }
@@ -93,7 +97,6 @@ void Menu(Giocatore* giocatore_ptr) {
                  getchar();
                  continue;
             }
-
   
             if(missione_scelta == 1){
                 esplora1StanzaDungeon(giocatore_ptr, &stanza_corrente, &progressi_missione);
@@ -119,7 +122,6 @@ void Menu(Giocatore* giocatore_ptr) {
                     return;
                 }
             }
-
           
             if (giocatore_ptr->vita <= 0) return; 
         }

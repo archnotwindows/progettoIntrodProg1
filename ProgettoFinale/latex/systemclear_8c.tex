@@ -1,0 +1,43 @@
+\doxysection{Riferimenti per il file systemclear.\+c}
+\hypertarget{systemclear_8c}{}\label{systemclear_8c}\index{systemclear.c@{systemclear.c}}
+
+
+Implementazione della funzione di pulizia schermo.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}systemclear.\+h"{}}\newline
+Grafo delle dipendenze di inclusione per systemclear.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{systemclear_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{systemclear_8c_ab829d2cf08617f155740c0d6876979b4}{puliscischermo}} ()
+\begin{DoxyCompactList}\small\item\em Pulisce la console (terminale). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione della funzione di pulizia schermo. 
+
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{systemclear_8c_ab829d2cf08617f155740c0d6876979b4}\label{systemclear_8c_ab829d2cf08617f155740c0d6876979b4} 
+\index{systemclear.c@{systemclear.c}!puliscischermo@{puliscischermo}}
+\index{puliscischermo@{puliscischermo}!systemclear.c@{systemclear.c}}
+\doxysubsubsection{\texorpdfstring{puliscischermo()}{puliscischermo()}}
+{\footnotesize\ttfamily void puliscischermo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pulisce la console (terminale). 
+
+
+\begin{DoxyItemize}
+\item Esegue il comando di sistema appropriato in base al sistema operativo ("{}cls"{} per Windows, "{}clear"{} per Linux/\+Mac). 
+\end{DoxyItemize}

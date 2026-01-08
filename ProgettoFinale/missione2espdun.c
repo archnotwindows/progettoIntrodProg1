@@ -1,3 +1,7 @@
+/**
+ * @file missione2espdun.c
+ * @brief Implementazione della missione Magione Infestata.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "missione2espdun.h"

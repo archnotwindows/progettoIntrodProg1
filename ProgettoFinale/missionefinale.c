@@ -1,3 +1,7 @@
+/**
+ * @file missionefinale.c
+ * @brief Implementazione del combattimento finale (Sasso-Carta-Forbice).
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>

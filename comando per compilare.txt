@@ -1,1 +1,0 @@
- gcc main.c nuovoGioco.c salvataggi.c menuvillaggio.c menuMissioni.c missione1espdun.c missione2espdun.c missione3espdun.c missionefinale.c negozio.c inventario.c tabellemissioni.c systemclear.c -o Gioco

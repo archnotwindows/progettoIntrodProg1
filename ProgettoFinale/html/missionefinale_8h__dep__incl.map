@@ -1,0 +1,7 @@
+<map id="missionefinale.h" name="missionefinale.h">
+<area shape="rect" id="Node000001" title="Header per lo scontro finale." alt="" coords="73,5,189,31"/>
+<area shape="rect" id="Node000002" href="$menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco." alt="" coords="5,79,119,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,43,75,80,71,77,109,39"/>
+<area shape="rect" id="Node000003" href="$missionefinale_8c.html" title="Implementazione del combattimento finale (Sasso&#45;Carta&#45;Forbice)." alt="" coords="143,79,259,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,39,191,77,188,80,150,43"/>
+</map>

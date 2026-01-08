@@ -1,3 +1,7 @@
+/**
+ * @file salvataggi.c
+ * @brief Implementazione del sistema di gestione file dei salvataggi.
+ */
 #define _POSIX_C_SOURCE 200809L 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,6 +30,9 @@
     #define MKDIR(p) mkdir(p, 0700)
 #endif
 
+/**
+ * @brief Verifica l'esistenza della directory "salvataggi", creandola se necessario.
+ */
 void checkDirSalvataggi(){
     struct stat st = {0};
     if (stat("salvataggi", &st) == -1) {
@@ -195,8 +202,8 @@ void modificaSalvataggio(int numeroSalvataggio) {
 
             Giocatore g;
             char dataBuff[100];
-            fgets(dataBuff, sizeof(dataBuff), f_in); // Legge la data (la manteniamo)
-            dataBuff[strcspn(dataBuff, "\n")] = 0;   // Rimuove newline
+            fgets(dataBuff, sizeof(dataBuff), f_in); 
+            dataBuff[strcspn(dataBuff, "\n")] = 0;   
 
             int h_spada, h_arm, h_s_eroe, h_chiave;
             int m_pal, m_mag, m_gro;
@@ -231,7 +238,7 @@ void modificaSalvataggio(int numeroSalvataggio) {
                 modificato = true;
             }
             else if (scelta == 2) {
-                m_pal = 1; m_mag = 1; m_gro = 1; // Segna come completate
+                m_pal = 1; m_mag = 1; m_gro = 1; 
                 printf("Missione finale sbloccata!\n");
                 modificato = true;
             }
@@ -240,7 +247,7 @@ void modificaSalvataggio(int numeroSalvataggio) {
             if (modificato) {
                 FILE *f_out = fopen(percorso_completo, "w");
                 if (f_out != NULL) {
-                    fprintf(f_out, "%s\n", dataBuff); // Mantiene data originale
+                    fprintf(f_out, "%s\n", dataBuff); 
                     fprintf(f_out, "%d %d %d\n", g.vita, g.monete, g.attacco);
                     fprintf(f_out, "%d %d %d %d\n", h_spada, h_arm, h_s_eroe, h_chiave);
                     fprintf(f_out, "%d %d %d\n", m_pal, m_mag, m_gro);

@@ -1,3 +1,7 @@
+/**
+ * @file missione1espdun.c
+ * @brief Implementazione della missione Palude Putrescente.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "missione1espdun.h"
@@ -18,7 +22,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     printf("\n--- PALUDE PUTRESCENTE: Stanza %d ---\n", *stanza_corrente);
     printf("Obiettivo: %d/3 Generali Orchi sconfitti\n", *generali_uccisi);
 
-  
+    // Force encounter if running out of rooms
     if (generali_mancanti > 0 && generali_mancanti >= stanze_rimanenti) {
         printf(">>> Senti dei passi pesanti... Un Generale si avvicina! (Incontro Forzato)\n");
         indice_tabella = 5;

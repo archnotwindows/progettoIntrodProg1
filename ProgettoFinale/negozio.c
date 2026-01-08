@@ -1,3 +1,7 @@
+/**
+ * @file negozio.c
+ * @brief Implementazione del negozio ambulante.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "negozio.h"
