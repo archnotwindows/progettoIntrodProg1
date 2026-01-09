@@ -165,6 +165,7 @@ void eliminaSalvataggio(int numeroDaEliminare){
         contatore++;
     }
     PCLOSE(out);
+    printf("Premi INVIO per continuare...");
     getchar(); 
 }
 
@@ -220,7 +221,7 @@ void modificaSalvataggio(int numeroSalvataggio) {
                    g.vita, g.monete, m_pal, m_mag, m_gro);
             
             printf("1) Diventa Ricco e Immortale (HP=999, Monete=9999)\n");
-            printf("2) Sblocca Missione Finale (Completa tutto)\n");
+            printf("2) Sblocca Missione Finale (Completa le 3 missioni precedenti\n");
             printf("3) Annulla\n");
             printf("Scegli: ");
             

@@ -24,8 +24,8 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     int obiettivi_mancanti = (!ha_chiave) + (!vampiro_morto ? 1 : 0);
     int indice_tabella;
 
+    // Forza l'incontro se stanno finendo le stanze
     if (obiettivi_mancanti > 0 && obiettivi_mancanti >= stanze_rimanenti) {
-        printf(">>> Un brivido ti corre lungo la schiena... (Incontro Forzato)\n");
         if (!ha_chiave) indice_tabella = 5; 
         else indice_tabella = 4;           
     } else {
@@ -39,7 +39,7 @@ void esplora2StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     if (stanza.tipo == TIPO_TRAPPOLA) {
         int danno = stanza.danno;
         if (giocatore_ptr->ha_armatura && danno > 0) danno--;
-        printf("Trappola scatta! Subisci %d danni.\n", danno);
+        printf("La trappola scatta! Subisci %d danni.\n", danno);
         giocatore_ptr->vita -= danno;
     }
     else if (stanza.tipo == TIPO_COMBATTIMENTO) {

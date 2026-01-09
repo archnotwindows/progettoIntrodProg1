@@ -9,7 +9,7 @@
 
 void negozio(Giocatore* giocatore_ptr) {
     puliscischermo();
-    printf("===== NEGOZIO AMBULANTE =====\n");
+    printf("===== NEGOZIO =====\n");
     printf("Mercante: 'Benvenuto straniero! Cosa vuoi comprare?'\n\n");
     printf("Monete disponibili: %d\n", giocatore_ptr->monete);
     printf("1. Pozione Curativa (4 monete)  - Ripristina 1d6 vita\n");
@@ -28,7 +28,7 @@ void negozio(Giocatore* giocatore_ptr) {
             int cura = (rand() % 6) + 1;
             giocatore_ptr->vita += cura;
             if (giocatore_ptr->vita > 20) giocatore_ptr->vita = 20;
-            printf("Bevi la pozione... Ti senti meglio! (+%d HP)\n", cura);
+            printf("Bevi la pozione... Ora ti senti meglio! (+%d HP)\n", cura);
         } else printf("Mercante: 'Non hai abbastanza oro per la pozione!'\n");
     } 
     else if (scelta == 2) {
@@ -38,7 +38,7 @@ void negozio(Giocatore* giocatore_ptr) {
             giocatore_ptr->monete -= 5;
             giocatore_ptr->attacco += 1;
             giocatore_ptr->ha_spada = true;
-            printf("Mercante: 'Maneggiala con cura!' (Spada acquistata)\n");
+            printf("Mercante: 'Fanne buon uso!' (Spada acquistata)\n");
         } else printf("Mercante: 'Torna quando sarai piu' ricco!'\n");
     }
     else if (scelta == 3) {

@@ -15,7 +15,7 @@ void menuVillaggio(Giocatore* giocatore_ptr) {
         puliscischermo();
         printf("===== VILLAGGIO =====\n");
         printf("1. Intraprendi missione\n");
-        printf("2. Riposati (Ripristina vita) - Costo: Gratis (Locanda amica)\n");
+        printf("2. Riposati (Ripristina vita) - (Costo: Gratis)\n");
         printf("3. Inventario\n");
         printf("4. Salva la partita\n");
         printf("5. Esci al Menu Principale\n");

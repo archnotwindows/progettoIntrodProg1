@@ -82,7 +82,7 @@ void Menu(Giocatore* giocatore_ptr) {
     while (true) { 
         puliscischermo();
         printf("===== MISSIONE IN CORSO (Stanza %d/10) =====\n", stanza_corrente);
-        printf("1. Esplora stanza\n2. Negozio ambulante\n3. Inventario\n4. Fuggi al Villaggio (Costo: 50 monete o Gratis se finita)\n");
+        printf("1. Esplora stanza\n2. Negozio \n3. Inventario\n4. Fuggi al Villaggio (Costo: 50 monete )\n");
         printf("Scelta: ");
         
         int sceltammissione;
@@ -141,14 +141,14 @@ void Menu(Giocatore* giocatore_ptr) {
             if (finita || giocatore_ptr->monete >= 50) {
                 if(!finita) {
                     giocatore_ptr->monete -= 50;
-                    printf("Hai pagato 50 monete per fuggire codardamente!\n");
+                    printf("Hai pagato 50 monete per fuggire!\n");
                 } else {
-                    printf("Missione gia' compiuta, torni trionfante.\n");
+                    printf("Missione gia' compiuta\n");
                 }
                 getchar();
                 return;
             } else {
-                printf("Non hai abbastanza monete (50) per corrompere la guida e fuggire!\n");
+                printf("Non hai abbastanza monete (50) per fuggire!\n");
                 getchar();
             }
         }

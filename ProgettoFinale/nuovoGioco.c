@@ -109,6 +109,7 @@ void nuovoGioco(){
                         menuVillaggio(&g);
                     } else {
                         printf("Errore nel caricamento del file.\n");
+                        printf("Premi Invio per continuare...");
                         getchar();
                     }
                 } 

@@ -22,9 +22,8 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
     printf("\n--- PALUDE PUTRESCENTE: Stanza %d ---\n", *stanza_corrente);
     printf("Obiettivo: %d/3 Generali Orchi sconfitti\n", *generali_uccisi);
 
-    // Force encounter if running out of rooms
+    // Forza l'incontro con un Generale se stanno finendo le stanze
     if (generali_mancanti > 0 && generali_mancanti >= stanze_rimanenti) {
-        printf(">>> Senti dei passi pesanti... Un Generale si avvicina! (Incontro Forzato)\n");
         indice_tabella = 5;
     } else {
         int tiro = lanciaDado();
@@ -60,7 +59,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
 
         if (indice_tabella == 5 && giocatore_ptr->ha_spada_eroe) {
             colpo_fatale = 5;
-            printf("La tua Spada dell'Eroe brilla! Il Generale sembra piu' debole (Colpo Fatale 5).\n");
+            printf("La tua Spada dell'Eroe funziona! Il Generale sembra piu' debole (Colpo Fatale 5).\n");
         }
 
         while (nemico_vivo && giocatore_ptr->vita > 0) {
