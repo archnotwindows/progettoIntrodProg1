@@ -1,6 +1,6 @@
 /**
  * @file missione3espdun.c
- * @brief Implementazione della missione Grotta (Padovan).
+ * @brief Implementazione della missione Grotta.
  */
 #include <stdio.h>
 #include <stdlib.h>

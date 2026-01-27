@@ -1,7 +1,7 @@
 /**
  * @file main.c
- * @brief Punto di ingresso del programma "Il Dungeon Oscuro".
- * @author Utente
+ * @brief Inizio del programma "Il Dungeon Oscuro".
+ * @author Lorenzo Giudice, Elia Cavasin, Lorenzo Galloni, Denis Stetco 
  * @version 1.0
  */
 

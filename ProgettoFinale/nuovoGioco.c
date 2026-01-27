@@ -15,7 +15,7 @@
 
 /**
  * @brief Legge un intero da stdin in modo sicuro.
- * @return L'intero letto o -1 in caso di errore.
+ * @return L'intero letto o "-1" in caso di errore.
  */
 static int leggiIntero() {
     char buffer[100];
