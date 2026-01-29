@@ -3,6 +3,8 @@
  * @brief Definizione della struttura Giocatore e funzioni di inizializzazione.
  */
 
+
+// ifndef significa "if not defined" e se GIOCATORE_H non è definito, allora lo definisce.
 #ifndef GIOCATORE_H
 #define GIOCATORE_H
 

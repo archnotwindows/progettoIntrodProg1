@@ -15,8 +15,8 @@
  * @mainpage Documentazione del progetto "Il Dungeon Oscuro"
  * @section intro_sec Introduzione
  * Benvenuto nella documentazione del gioco "Il Dungeon Oscuro".
- * Questo progetto è un'avventura testuale scritta in C.
- */
+ * Questo progetto è stato sviluppato come parte del corso di Introduzione alla Programmazione 1.
+*/
 
 /**
  * @brief Funzione principale.
