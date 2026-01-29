@@ -14,11 +14,12 @@ Grafo delle dipendenze di inclusione per salvataggi.\+h\+:\nopagebreak
 \includegraphics[width=178pt]{salvataggi_8h__incl}
 \end{center}
 \end{figure}
-Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:\nopagebreak
+Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=344pt]{salvataggi_8h__dep__incl}
+\includegraphics[width=350pt]{salvataggi_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Funzioni}
@@ -48,7 +49,7 @@ Header per la gestione del salvataggio e caricamento.
 \index{salvataggi.h@{salvataggi.h}!caricaDatiSalvataggio@{caricaDatiSalvataggio}}
 \index{caricaDatiSalvataggio@{caricaDatiSalvataggio}!salvataggi.h@{salvataggi.h}}
 \doxysubsubsection{\texorpdfstring{caricaDatiSalvataggio()}{caricaDatiSalvataggio()}}
-{\footnotesize\ttfamily int carica\+Dati\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int carica\+Dati\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Salvataggio,  }\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
 
 
 
@@ -62,13 +63,25 @@ Carica i dati da un file di salvataggio.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Restituisce}
-1 se successo, 0 se errore. 
+1 se successo, 0 se errore.
+\end{DoxyReturn}
+Carica i dati da un file di salvataggio.
+
+
+\begin{DoxyParams}{Parametri}
+{\em numero\+Salvataggio} & Indice del file nella lista (1-\/based). \\
+\hline
+{\em g} & Puntatore alla struct \doxylink{structGiocatore}{Giocatore} da popolare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se il caricamento ha successo, 0 altrimenti. 
 \end{DoxyReturn}
 \Hypertarget{salvataggi_8h_a7ecaf03e8313ad042451696951604c70}\label{salvataggi_8h_a7ecaf03e8313ad042451696951604c70} 
 \index{salvataggi.h@{salvataggi.h}!eliminaSalvataggio@{eliminaSalvataggio}}
 \index{eliminaSalvataggio@{eliminaSalvataggio}!salvataggi.h@{salvataggi.h}}
 \doxysubsubsection{\texorpdfstring{eliminaSalvataggio()}{eliminaSalvataggio()}}
-{\footnotesize\ttfamily void elimina\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void elimina\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Da\+Eliminare }\end{DoxyParamCaption})}
 
 
 
@@ -76,7 +89,14 @@ Elimina un file di salvataggio.
 
 
 \begin{DoxyParams}{Parametri}
-{\em n} & Indice del salvataggio da eliminare. \\
+{\em n} & Indice del salvataggio da eliminare.\\
+\hline
+\end{DoxyParams}
+Elimina un file di salvataggio.
+
+
+\begin{DoxyParams}{Parametri}
+{\em numero\+Da\+Eliminare} & Indice del file da cancellare. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{salvataggi_8h_adab8accc64e79b6907f8ee1ff6446bf8}\label{salvataggi_8h_adab8accc64e79b6907f8ee1ff6446bf8} 
@@ -90,20 +110,26 @@ Elimina un file di salvataggio.
 Restituisce il numero di salvataggi disponibili e li stampa a video. 
 
 \begin{DoxyReturn}{Restituisce}
-Numero di file trovati. 
+Numero di file trovati.
 \end{DoxyReturn}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Restituisce il numero di salvataggi disponibili e li stampa a video.
+
+\begin{DoxyReturn}{Restituisce}
+Il numero totale di salvataggi trovati. 
+\end{DoxyReturn}
+Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=297pt]{salvataggi_8h_adab8accc64e79b6907f8ee1ff6446bf8_cgraph}
+\includegraphics[width=316pt]{salvataggi_8h_adab8accc64e79b6907f8ee1ff6446bf8_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{salvataggi_8h_adcbe1cec44c829d397f5130a8204f18b}\label{salvataggi_8h_adcbe1cec44c829d397f5130a8204f18b} 
 \index{salvataggi.h@{salvataggi.h}!modificaSalvataggio@{modificaSalvataggio}}
 \index{modificaSalvataggio@{modificaSalvataggio}!salvataggi.h@{salvataggi.h}}
 \doxysubsubsection{\texorpdfstring{modificaSalvataggio()}{modificaSalvataggio()}}
-{\footnotesize\ttfamily void modifica\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void modifica\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Salvataggio }\end{DoxyParamCaption})}
 
 
 
@@ -111,7 +137,14 @@ Modifica un salvataggio (Menu Trucchi).
 
 
 \begin{DoxyParams}{Parametri}
-{\em n} & Indice del salvataggio da modificare. \\
+{\em n} & Indice del salvataggio da modificare.\\
+\hline
+\end{DoxyParams}
+Modifica un salvataggio (Menu Trucchi).
+
+
+\begin{DoxyParams}{Parametri}
+{\em numero\+Salvataggio} & Indice del file da modificare. \\
 \hline
 \end{DoxyParams}
 Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
@@ -133,14 +166,26 @@ Crea un nuovo salvataggio su file.
 
 
 \begin{DoxyParams}{Parametri}
-{\em g} & Puntatore allo stato del giocatore da salvare. \\
+{\em g} & Puntatore allo stato del giocatore da salvare.\\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Crea un nuovo salvataggio su file.
+
+
+\begin{DoxyItemize}
+\item Il nome del file viene generato automaticamente usando il timestamp corrente (con il formato\+: GG-\/\+MM-\/\+AAAA\+\_\+\+HH-\/\+MM-\/\+SS).
+\item Scrive i dati della struct \doxylink{structGiocatore}{Giocatore} in formato testo semplice. 
+\begin{DoxyParams}{Parametri}
+{\em g} & Puntatore ai dati del giocatore da salvare. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=309pt]{salvataggi_8h_af13b31f6b761a6b7483a9cb18af25cc4_cgraph}
+\includegraphics[width=331pt]{salvataggi_8h_af13b31f6b761a6b7483a9cb18af25cc4_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{salvataggi_8h_a0b197621f869405211a8975e3d56e5f9}\label{salvataggi_8h_a0b197621f869405211a8975e3d56e5f9} 
@@ -159,5 +204,20 @@ Verifica l\textquotesingle{}inserimento del Konami Code.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Restituisce}
-true se il codice è completo, false altrimenti. 
+true se il codice è completo, false altrimenti.
 \end{DoxyReturn}
+Verifica l\textquotesingle{}inserimento del Konami Code.
+
+
+\begin{DoxyItemize}
+\item Sequenza segreta\+: "{}wwssadadba "{}
+\item 
+\begin{DoxyParams}{Parametri}
+{\em tasto} & Il carattere appena inserito dall\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+true se la sequenza è stata completata, sennó false. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Variabile statica\+: conserva il valore tra le chiamate della funzione

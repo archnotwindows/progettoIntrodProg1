@@ -2,39 +2,40 @@
 \hypertarget{giocatore_8h_source}{}\label{giocatore_8h_source}\mbox{\hyperlink{giocatore_8h}{Vai alla documentazione di questo file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ GIOCATORE\_H}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ GIOCATORE\_H}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ ifndef\ significa\ "{}if\ not\ defined"{}\ e\ se\ GIOCATORE\_H\ non\ è\ definito,\ allora\ lo\ definisce.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ GIOCATORE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ GIOCATORE\_H}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGiocatore_a14c297d7049e47b7bcef2c6ea8edb671}{vita}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGiocatore_ab16e84c52ef3c289fda14fd416f31a47}{monete}};\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGiocatore_a7ffeb3f1ffac95caed7c09d7bdb04120}{attacco}};\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Equipaggiamento}}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a92487cc72d7afabcbef5aa181182a66c}{ha\_spada}};\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a8c3bc535ff03fb37a6a9f88054ca18c6}{ha\_armatura}};\ \ \ \ \ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a800c3d65a228e4a0096fdcaa1cc6e033}{ha\_spada\_eroe}};\ \ \ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_ab3913a7bf98cc2b40a0f5810f3ab3852}{ha\_chiave}};\ \ \ \ \ \ \ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Progressi}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a9e837a7d17050ff446df6616e07f84c3}{missione\_palude\_completata}};\ \ }
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a049460b9c8897599427772765c9eab19}{missione\_magione\_completata}};\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a4707e2431224a0979956e34c315dedde}{missione\_grotta\_completata}};\ \ }
-\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{structGiocatore}{Giocatore}};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ initGiocatore(\mbox{\hyperlink{structGiocatore}{Giocatore}}*\ g)\ \{}
-\DoxyCodeLine{00040\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a14c297d7049e47b7bcef2c6ea8edb671}{vita}}\ =\ 20;}
-\DoxyCodeLine{00041\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_ab16e84c52ef3c289fda14fd416f31a47}{monete}}\ =\ 0;}
-\DoxyCodeLine{00042\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a7ffeb3f1ffac95caed7c09d7bdb04120}{attacco}}\ =\ 0;}
-\DoxyCodeLine{00043\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a92487cc72d7afabcbef5aa181182a66c}{ha\_spada}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00044\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a8c3bc535ff03fb37a6a9f88054ca18c6}{ha\_armatura}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00045\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a800c3d65a228e4a0096fdcaa1cc6e033}{ha\_spada\_eroe}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00046\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_ab3913a7bf98cc2b40a0f5810f3ab3852}{ha\_chiave}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00047\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a9e837a7d17050ff446df6616e07f84c3}{missione\_palude\_completata}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00048\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a049460b9c8897599427772765c9eab19}{missione\_magione\_completata}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00049\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a4707e2431224a0979956e34c315dedde}{missione\_grotta\_completata}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00050\ \}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGiocatore_a14c297d7049e47b7bcef2c6ea8edb671}{vita}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGiocatore_ab16e84c52ef3c289fda14fd416f31a47}{monete}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGiocatore_a7ffeb3f1ffac95caed7c09d7bdb04120}{attacco}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Equipaggiamento}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a92487cc72d7afabcbef5aa181182a66c}{ha\_spada}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a8c3bc535ff03fb37a6a9f88054ca18c6}{ha\_armatura}};\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a800c3d65a228e4a0096fdcaa1cc6e033}{ha\_spada\_eroe}};\ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_ab3913a7bf98cc2b40a0f5810f3ab3852}{ha\_chiave}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Progressi}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a9e837a7d17050ff446df6616e07f84c3}{missione\_palude\_completata}};\ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a049460b9c8897599427772765c9eab19}{missione\_magione\_completata}};\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGiocatore_a4707e2431224a0979956e34c315dedde}{missione\_grotta\_completata}};\ \ }
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{structGiocatore}{Giocatore}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ initGiocatore(\mbox{\hyperlink{structGiocatore}{Giocatore}}*\ g)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a14c297d7049e47b7bcef2c6ea8edb671}{vita}}\ =\ 20;}
+\DoxyCodeLine{00043\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_ab16e84c52ef3c289fda14fd416f31a47}{monete}}\ =\ 0;}
+\DoxyCodeLine{00044\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a7ffeb3f1ffac95caed7c09d7bdb04120}{attacco}}\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a92487cc72d7afabcbef5aa181182a66c}{ha\_spada}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00046\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a8c3bc535ff03fb37a6a9f88054ca18c6}{ha\_armatura}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a800c3d65a228e4a0096fdcaa1cc6e033}{ha\_spada\_eroe}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_ab3913a7bf98cc2b40a0f5810f3ab3852}{ha\_chiave}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00049\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a9e837a7d17050ff446df6616e07f84c3}{missione\_palude\_completata}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00050\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a049460b9c8897599427772765c9eab19}{missione\_magione\_completata}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \ \ g-\/>\mbox{\hyperlink{structGiocatore_a4707e2431224a0979956e34c315dedde}{missione\_grotta\_completata}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

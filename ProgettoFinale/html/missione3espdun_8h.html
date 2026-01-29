@@ -96,9 +96,9 @@ Questo grafo mostra quali altri file includono direttamente o indirettamente que
 <div class="center"><img src="missione3espdun_8h__dep__incl.png" border="0" usemap="#amissione3espdun_8hdep" alt=""/></div>
 <map name="amissione3espdun_8hdep" id="amissione3espdun_8hdep">
 <area shape="rect" title="Header per la missione Grotta." alt="" coords="73,5,221,31"/>
-<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco." alt="" coords="5,79,129,104"/>
+<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco principale." alt="" coords="5,79,129,104"/>
 <area shape="poly" title=" " alt="" coords="126,42,82,80,79,76,123,38"/>
-<area shape="rect" href="missione3espdun_8c.html" title="Implementazione della missione Grotta." alt="" coords="154,79,301,104"/>
+<area shape="rect" href="missione3espdun_8c.html" title="Implementazione della missione &quot;Grotta di Cristallo&quot;." alt="" coords="154,79,301,104"/>
 <area shape="poly" title=" " alt="" coords="172,38,216,76,212,80,168,42"/>
 </map>
 </div>
@@ -151,21 +151,36 @@ Funzioni</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">giocatore_ptr</td><td>Puntatore al giocatore. </td></tr>
     <tr><td class="paramname">stanza_corrente</td><td>Puntatore all'indice della stanza. </td></tr>
-    <tr><td class="paramname">progressi</td><td>Puntatore flag (1 = Drago sconfitto). </td></tr>
+    <tr><td class="paramname">progressi</td><td>Puntatore flag (1 = Drago sconfitto).</td></tr>
   </table>
   </dd>
 </dl>
+<p>Logica di esplorazione per la Grotta di Cristallo.</p>
+<ul>
+<li><dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">giocatore_ptr</td><td>Puntatore ai dati del giocatore. </td></tr>
+    <tr><td class="paramname">stanza_corrente</td><td>Puntatore al contatore stanze. </td></tr>
+    <tr><td class="paramname">progressi</td><td>Puntatore flag (0 = Drago vivo, 1 = Drago morto). </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+<ul>
+<li>Logica di forzatura del Drago Se siamo all'ultima stanza e il Drago non è ancora stato sconfitto (progressi == 0), forza l'incontro (indice 5)</li>
+</ul>
 <div class="dynheader">
 Questo è il grafo delle chiamate per questa funzione:</div>
 <div class="dyncontent">
 <div class="center"><img src="missione3espdun_8h_aa8d06f2d109079a6178ce64612394640_cgraph.png" border="0" usemap="#amissione3espdun_8h_aa8d06f2d109079a6178ce64612394640_cgraph" alt=""/></div>
 <map name="amissione3espdun_8h_aa8d06f2d109079a6178ce64612394640_cgraph" id="amissione3espdun_8h_aa8d06f2d109079a6178ce64612394640_cgraph">
-<area shape="rect" title="Logica di esplorazione per la Grotta di Cristallo." alt="" coords="5,29,169,55"/>
-<area shape="rect" href="missione3espdun_8c.html#aa232f8a0c39b46609b88b85d9de22205" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="217,29,351,55"/>
-<area shape="poly" title=" " alt="" coords="170,39,204,39,204,45,170,45"/>
-<area shape="rect" href="missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola n&#45;esimo numero di Padovan P(n)." alt="" coords="399,29,469,55"/>
-<area shape="poly" title=" " alt="" coords="351,39,385,39,385,45,351,45"/>
-<area shape="poly" title=" " alt="" coords="409,31,403,21,406,11,417,5,434,3,455,6,464,15,460,19,452,11,434,8,419,10,410,15,409,20,413,28"/>
+<area shape="rect" title="Logica di esplorazione per la Grotta di Cristallo." alt="" coords="5,29,185,55"/>
+<area shape="rect" href="missione3espdun_8c.html#aa232f8a0c39b46609b88b85d9de22205" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="233,29,380,55"/>
+<area shape="poly" title=" " alt="" coords="186,39,220,39,220,45,186,45"/>
+<area shape="rect" href="missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola l&#39;n&#45;esimo numero della successione di Padovan P(n)." alt="" coords="428,29,507,55"/>
+<area shape="poly" title=" " alt="" coords="380,39,414,39,414,45,380,45"/>
+<area shape="poly" title=" " alt="" coords="440,31,435,21,438,11,449,5,467,3,489,6,499,15,495,19,487,11,467,8,451,10,442,15,440,20,445,28"/>
 </map>
 </div>
 

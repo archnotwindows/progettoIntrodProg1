@@ -1,8 +1,8 @@
 <map id="esplora3StanzaDungeon" name="esplora3StanzaDungeon">
-<area shape="rect" id="Node000001" title="Logica di esplorazione per la Grotta di Cristallo." alt="" coords="5,29,169,55"/>
-<area shape="rect" id="Node000002" href="$missione3espdun_8c.html#aa232f8a0c39b46609b88b85d9de22205" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="217,29,351,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,39,204,39,204,45,170,45"/>
-<area shape="rect" id="Node000003" href="$missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola n&#45;esimo numero di Padovan P(n)." alt="" coords="399,29,469,55"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="351,39,385,39,385,45,351,45"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="409,31,403,21,406,11,417,5,434,3,455,6,464,15,460,19,452,11,434,8,419,10,410,15,409,20,413,28"/>
+<area shape="rect" id="Node000001" title="Gestisce l&#39;esplorazione di una stanza nella Grotta." alt="" coords="5,29,185,55"/>
+<area shape="rect" id="Node000002" href="$missione3espdun_8c.html#aa232f8a0c39b46609b88b85d9de22205" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="233,29,380,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,39,220,39,220,45,186,45"/>
+<area shape="rect" id="Node000003" href="$missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola l&#39;n&#45;esimo numero della successione di Padovan P(n)." alt="" coords="428,29,507,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="380,39,414,39,414,45,380,45"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="440,31,435,21,438,11,449,5,467,3,489,6,499,15,495,19,487,11,467,8,451,10,442,15,440,20,445,28"/>
 </map>

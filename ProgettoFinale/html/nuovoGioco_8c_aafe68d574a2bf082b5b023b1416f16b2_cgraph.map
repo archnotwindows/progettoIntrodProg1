@@ -1,5 +1,5 @@
 <map id="stampaMenu" name="stampaMenu">
-<area shape="rect" id="Node000001" title="Stampa a video il menu principale." alt="" coords="5,5,103,31"/>
-<area shape="rect" id="Node000002" href="$systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="151,5,260,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,15,137,15,137,21,103,21"/>
+<area shape="rect" id="Node000001" title="Stampa l&#39;interfaccia grafica del menu principale." alt="" coords="5,5,112,31"/>
+<area shape="rect" id="Node000002" href="$systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="160,5,280,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,15,146,15,146,21,112,21"/>
 </map>

@@ -2,14 +2,15 @@
 \hypertarget{negozio_8c}{}\label{negozio_8c}\index{negozio.c@{negozio.c}}
 
 
-Implementazione del negozio ambulante.  
+Implementazione del sistema del Negozio.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include "{}negozio.\+h"{}}\newline
 {\ttfamily \#include "{}systemclear.\+h"{}}\newline
-Grafo delle dipendenze di inclusione per negozio.\+c\+:\nopagebreak
+Grafo delle dipendenze di inclusione per negozio.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,13 +21,16 @@ Grafo delle dipendenze di inclusione per negozio.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{negozio_8c_a1d36ad6acf28cfa2ece96483d59b52c7}{negozio}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore\+\_\+ptr)
-\begin{DoxyCompactList}\small\item\em Gestisce l\textquotesingle{}interfaccia e la logica di acquisto del negozio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Visualizza il menu del negozio e gestisce gli acquisti. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descrizione dettagliata}
-Implementazione del negozio ambulante. 
+Implementazione del sistema del Negozio. 
 
 
+\begin{DoxyItemize}
+\item Questo file gestisce l\textquotesingle{}interazione con il mercante 
+\end{DoxyItemize}
 
 \doxysubsection{Documentazione delle funzioni}
 \Hypertarget{negozio_8c_a1d36ad6acf28cfa2ece96483d59b52c7}\label{negozio_8c_a1d36ad6acf28cfa2ece96483d59b52c7} 
@@ -37,17 +41,39 @@ Implementazione del negozio ambulante.
 
 
 
-Gestisce l\textquotesingle{}interfaccia e la logica di acquisto del negozio. 
+Visualizza il menu del negozio e gestisce gli acquisti. 
+
+Gestisce l\textquotesingle{}interfaccia e la logica di acquisto del negozio.
 
 
+\begin{DoxyItemize}
+\item La funzione verifica che il giocatore abbia abbastanza monete e che non possieda già l\textquotesingle{}oggetto che vuole acquistare
+\item 
 \begin{DoxyParams}{Parametri}
-{\em giocatore\+\_\+ptr} & Puntatore al giocatore. \\
+{\em giocatore\+\_\+ptr} & Puntatore alla struttura dati del giocatore \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Pulizia buffer input
+
+
+\begin{DoxyItemize}
+\item Cap della Vita. La vita non può superare il valore massimo di 20.
+\end{DoxyItemize}
+
+Controllo ridondanza. Impedisce l\textquotesingle{}acquisto se il giocatore ha già la spada di ferro OPPURE se possiede già la Spada dell\textquotesingle{}Eroe.
+
+\texorpdfstring{$<$}{<} Incremento permanente attacco
+
+\texorpdfstring{$<$}{<} Flag inventario
+
+Controllo ridondanza armatura. Verifica se l\textquotesingle{}armatura è già posseduta.
+
+\texorpdfstring{$<$}{<} Flag per riduzione danniQuesto è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=248pt]{negozio_8c_a1d36ad6acf28cfa2ece96483d59b52c7_cgraph}
+\includegraphics[width=261pt]{negozio_8c_a1d36ad6acf28cfa2ece96483d59b52c7_cgraph}
 \end{center}
 \end{figure}

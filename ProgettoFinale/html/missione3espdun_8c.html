@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Implementazione della missione Grotta.  
+<p>Implementazione della missione "Grotta di Cristallo".  
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -86,7 +86,7 @@ Grafo delle dipendenze di inclusione per missione3espdun.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="missione3espdun_8c__incl.png" border="0" usemap="#amissione3espdun_8c" alt=""/></div>
 <map name="amissione3espdun_8c" id="amissione3espdun_8c">
-<area shape="rect" title="Implementazione della missione Grotta." alt="" coords="125,5,272,31"/>
+<area shape="rect" title="Implementazione della missione &quot;Grotta di Cristallo&quot;." alt="" coords="125,5,272,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,72,104"/>
 <area shape="poly" title=" " alt="" coords="174,33,78,75,76,71,172,28"/>
 <area shape="rect" title=" " alt="" coords="97,79,167,104"/>
@@ -105,17 +105,20 @@ Grafo delle dipendenze di inclusione per missione3espdun.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
 <tr class="memitem:ae7c83e4d97d50567cda5b807d89d6652" id="r_ae7c83e4d97d50567cda5b807d89d6652"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652">padovan</a> (int n)</td></tr>
-<tr class="memdesc:ae7c83e4d97d50567cda5b807d89d6652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola n-esimo numero di Padovan P(n).  <br /></td></tr>
+<tr class="memdesc:ae7c83e4d97d50567cda5b807d89d6652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola l'n-esimo numero della successione di Padovan P(n).  <br /></td></tr>
 <tr class="separator:ae7c83e4d97d50567cda5b807d89d6652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa232f8a0c39b46609b88b85d9de22205" id="r_aa232f8a0c39b46609b88b85d9de22205"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="missione3espdun_8c.html#aa232f8a0c39b46609b88b85d9de22205">appartienePadovan</a> (int numero)</td></tr>
 <tr class="memdesc:aa232f8a0c39b46609b88b85d9de22205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un numero appartiene alla sequenza di Padovan.  <br /></td></tr>
 <tr class="separator:aa232f8a0c39b46609b88b85d9de22205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8d06f2d109079a6178ce64612394640" id="r_aa8d06f2d109079a6178ce64612394640"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="missione3espdun_8c.html#aa8d06f2d109079a6178ce64612394640">esplora3StanzaDungeon</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *giocatore_ptr, int *stanza_corrente, int *progressi)</td></tr>
-<tr class="memdesc:aa8d06f2d109079a6178ce64612394640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logica di esplorazione per la Grotta di Cristallo.  <br /></td></tr>
+<tr class="memdesc:aa8d06f2d109079a6178ce64612394640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestisce l'esplorazione di una stanza nella Grotta.  <br /></td></tr>
 <tr class="separator:aa8d06f2d109079a6178ce64612394640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Implementazione della missione Grotta. </p>
+<div class="textblock"><p>Implementazione della missione "Grotta di Cristallo". </p>
+<ul>
+<li>Questa missione introduce il Boss finale dei dungeon secondari: il Drago. Il combattimento include una meccanica unica basata sulla Sequenza di Padovan. </li>
+</ul>
 </div><h2 class="groupheader">Documentazione delle funzioni</h2>
 <a id="aa232f8a0c39b46609b88b85d9de22205" name="aa232f8a0c39b46609b88b85d9de22205"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa232f8a0c39b46609b88b85d9de22205">&#9670;&#160;</a></span>appartienePadovan()</h2>
@@ -134,15 +137,26 @@ Funzioni</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verifica se un numero appartiene alla sequenza di Padovan. </p>
+<ul>
+<li>La funzione genera numeri di Padovan crescenti finché non raggiunge o supera il numero target.</li>
+<li><dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numero</td><td>Il numero intero da verificare (generato casualmente dal Drago). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 (true) se il numero appartiene alla sequenza, 0 (false) altrimenti. </dd></dl>
+</li>
+</ul>
 <div class="dynheader">
 Questo è il grafo delle chiamate per questa funzione:</div>
 <div class="dyncontent">
 <div class="center"><img src="missione3espdun_8c_aa232f8a0c39b46609b88b85d9de22205_cgraph.png" border="0" usemap="#amissione3espdun_8c_aa232f8a0c39b46609b88b85d9de22205_cgraph" alt=""/></div>
 <map name="amissione3espdun_8c_aa232f8a0c39b46609b88b85d9de22205_cgraph" id="amissione3espdun_8c_aa232f8a0c39b46609b88b85d9de22205_cgraph">
-<area shape="rect" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="5,29,139,55"/>
-<area shape="rect" href="missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola n&#45;esimo numero di Padovan P(n)." alt="" coords="187,29,257,55"/>
-<area shape="poly" title=" " alt="" coords="139,39,173,39,173,45,139,45"/>
-<area shape="poly" title=" " alt="" coords="197,31,191,21,194,11,205,5,222,3,243,6,252,15,248,19,240,11,222,8,207,10,198,15,197,20,201,28"/>
+<area shape="rect" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="5,29,152,55"/>
+<area shape="rect" href="missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola l&#39;n&#45;esimo numero della successione di Padovan P(n)." alt="" coords="200,29,279,55"/>
+<area shape="poly" title=" " alt="" coords="152,39,186,39,186,45,152,45"/>
+<area shape="poly" title=" " alt="" coords="212,31,207,21,210,11,221,5,239,3,261,6,271,15,267,19,259,11,239,8,223,10,214,15,212,20,217,28"/>
 </map>
 </div>
 
@@ -180,26 +194,33 @@ Questo è il grafo delle chiamate per questa funzione:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Logica di esplorazione per la Grotta di Cristallo. </p>
-<dl class="params"><dt>Parametri</dt><dd>
+<p>Gestisce l'esplorazione di una stanza nella Grotta. </p>
+<p>Logica di esplorazione per la Grotta di Cristallo.</p>
+<ul>
+<li><dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">giocatore_ptr</td><td>Puntatore al giocatore. </td></tr>
-    <tr><td class="paramname">stanza_corrente</td><td>Puntatore all'indice della stanza. </td></tr>
-    <tr><td class="paramname">progressi</td><td>Puntatore flag (1 = Drago sconfitto). </td></tr>
+    <tr><td class="paramname">giocatore_ptr</td><td>Puntatore ai dati del giocatore. </td></tr>
+    <tr><td class="paramname">stanza_corrente</td><td>Puntatore al contatore stanze. </td></tr>
+    <tr><td class="paramname">progressi</td><td>Puntatore flag (0 = Drago vivo, 1 = Drago morto). </td></tr>
   </table>
   </dd>
 </dl>
+</li>
+</ul>
+<ul>
+<li>Logica di forzatura del Drago Se siamo all'ultima stanza e il Drago non è ancora stato sconfitto (progressi == 0), forza l'incontro (indice 5)</li>
+</ul>
 <div class="dynheader">
 Questo è il grafo delle chiamate per questa funzione:</div>
 <div class="dyncontent">
 <div class="center"><img src="missione3espdun_8c_aa8d06f2d109079a6178ce64612394640_cgraph.png" border="0" usemap="#amissione3espdun_8c_aa8d06f2d109079a6178ce64612394640_cgraph" alt=""/></div>
 <map name="amissione3espdun_8c_aa8d06f2d109079a6178ce64612394640_cgraph" id="amissione3espdun_8c_aa8d06f2d109079a6178ce64612394640_cgraph">
-<area shape="rect" title="Logica di esplorazione per la Grotta di Cristallo." alt="" coords="5,29,169,55"/>
-<area shape="rect" href="missione3espdun_8c.html#aa232f8a0c39b46609b88b85d9de22205" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="217,29,351,55"/>
-<area shape="poly" title=" " alt="" coords="170,39,204,39,204,45,170,45"/>
-<area shape="rect" href="missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola n&#45;esimo numero di Padovan P(n)." alt="" coords="399,29,469,55"/>
-<area shape="poly" title=" " alt="" coords="351,39,385,39,385,45,351,45"/>
-<area shape="poly" title=" " alt="" coords="409,31,403,21,406,11,417,5,434,3,455,6,464,15,460,19,452,11,434,8,419,10,410,15,409,20,413,28"/>
+<area shape="rect" title="Gestisce l&#39;esplorazione di una stanza nella Grotta." alt="" coords="5,29,185,55"/>
+<area shape="rect" href="missione3espdun_8c.html#aa232f8a0c39b46609b88b85d9de22205" title="Verifica se un numero appartiene alla sequenza di Padovan." alt="" coords="233,29,380,55"/>
+<area shape="poly" title=" " alt="" coords="186,39,220,39,220,45,186,45"/>
+<area shape="rect" href="missione3espdun_8c.html#ae7c83e4d97d50567cda5b807d89d6652" title="Calcola l&#39;n&#45;esimo numero della successione di Padovan P(n)." alt="" coords="428,29,507,55"/>
+<area shape="poly" title=" " alt="" coords="380,39,414,39,414,45,380,45"/>
+<area shape="poly" title=" " alt="" coords="440,31,435,21,438,11,449,5,467,3,489,6,499,15,495,19,487,11,467,8,451,10,442,15,440,20,445,28"/>
 </map>
 </div>
 
@@ -221,14 +242,26 @@ Questo è il grafo delle chiamate per questa funzione:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calcola n-esimo numero di Padovan P(n). </p>
+<p>Calcola l'n-esimo numero della successione di Padovan P(n). </p>
+<ul>
+<li>La successione è definita dalla relazione di ricorrenza: $P(n) = P(n-2) + P(n-3)$ con condizioni iniziali $P(0)=P(1)=P(2)=1$.</li>
+<li><dl class="section note"><dt>Nota</dt><dd>Poiché il numero massimo generato nel quiz è 50, la ricorsione non è abbastanza profonda da causare problemi di performance </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>L'indice della sequenza da calcolare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Il valore di P(n). </dd></dl>
+</li>
+</ul>
 <div class="dynheader">
 Questo è il grafo delle chiamate per questa funzione:</div>
 <div class="dyncontent">
 <div class="center"><img src="missione3espdun_8c_ae7c83e4d97d50567cda5b807d89d6652_cgraph.png" border="0" usemap="#amissione3espdun_8c_ae7c83e4d97d50567cda5b807d89d6652_cgraph" alt=""/></div>
 <map name="amissione3espdun_8c_ae7c83e4d97d50567cda5b807d89d6652_cgraph" id="amissione3espdun_8c_ae7c83e4d97d50567cda5b807d89d6652_cgraph">
-<area shape="rect" title="Calcola n&#45;esimo numero di Padovan P(n)." alt="" coords="5,29,76,55"/>
-<area shape="poly" title=" " alt="" coords="27,29,26,12,32,5,41,3,51,6,56,14,51,17,48,10,41,8,35,10,31,14,33,29"/>
+<area shape="rect" title="Calcola l&#39;n&#45;esimo numero della successione di Padovan P(n)." alt="" coords="5,29,84,55"/>
+<area shape="poly" title=" " alt="" coords="30,29,29,12,35,5,45,3,56,6,61,14,57,17,53,10,45,8,38,10,34,14,35,29"/>
 </map>
 </div>
 

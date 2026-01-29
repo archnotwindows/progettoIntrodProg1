@@ -2,7 +2,7 @@
 \hypertarget{salvataggi_8c}{}\label{salvataggi_8c}\index{salvataggi.c@{salvataggi.c}}
 
 
-Implementazione del sistema di gestione file dei salvataggi.  
+Implementazione del sistema di gestione file (I/O) e persistenza dati.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
@@ -16,7 +16,8 @@ Implementazione del sistema di gestione file dei salvataggi.
 {\ttfamily \#include "{}systemclear.\+h"{}}\newline
 {\ttfamily \#include "{}giocatore.\+h"{}}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
-Grafo delle dipendenze di inclusione per salvataggi.\+c\+:\nopagebreak
+Grafo delle dipendenze di inclusione per salvataggi.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,7 +30,7 @@ Grafo delle dipendenze di inclusione per salvataggi.\+c\+:\nopagebreak
 \#define \mbox{\hyperlink{salvataggi_8c_a3024ccd4a9af5109d24e6c57565d74a1}{\+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE}}~200809L
 \item 
 \#define \mbox{\hyperlink{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5}{POPEN}}~popen
-\item 
+\begin{DoxyCompactList}\small\item\em Blocco di compatibilità Cross-\/\+Platform. Definisce macro specifiche per i comandi di shell e le funzioni di sistema a seconda che si stia compilando su Windows (\+\_\+\+WIN32) o Unix/\+Linux/mac\+OS. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3}{PCLOSE}}~pclose
 \item 
 \#define \mbox{\hyperlink{salvataggi_8c_aa976fd4a3d989ebc7783c7b241a7d287}{LIST\+\_\+\+COMMAND}}~"{}ls -\/1 salvataggi/"{}
@@ -42,25 +43,28 @@ Grafo delle dipendenze di inclusione per salvataggi.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{salvataggi_8c_a3453e09dde07013ea2ca1146020bb6a7}{check\+Dir\+Salvataggi}} ()
-\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}esistenza della directory "{}salvataggi"{}, creandola se necessario. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}esistenza della directory "{}salvataggi"{}, creandola se necessario. Utilizza la struct stat per controllare i metadati del filesystem. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4}{nuovo\+Salvataggio}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
-\begin{DoxyCompactList}\small\item\em Crea un nuovo salvataggio su file. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Crea un nuovo file di salvataggio. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{salvataggi_8c_a1912cd89ae44ef137420b207769f3632}{carica\+Dati\+Salvataggio}} (int numero\+Salvataggio, \mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
-\begin{DoxyCompactList}\small\item\em Carica i dati da un file di salvataggio. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Carica i dati da un file specifico nella struct \doxylink{structGiocatore}{Giocatore}. Utilizza una pipe per ottenere la lista dei file e seleziona l\textquotesingle{}n-\/esimo file. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8}{lista\+Salvataggi}} ()
-\begin{DoxyCompactList}\small\item\em Restituisce il numero di salvataggi disponibili e li stampa a video. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Stampa l\textquotesingle{}elenco dei file di salvataggio disponibili. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{salvataggi_8c_a4208765e79421df60d16944464edf88e}{elimina\+Salvataggio}} (int numero\+Da\+Eliminare)
-\begin{DoxyCompactList}\small\item\em Elimina un file di salvataggio. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Elimina un file di salvataggio dal disco. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{salvataggi_8c_a0b197621f869405211a8975e3d56e5f9}{triggher\+Trucchi}} (char tasto)
-\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}inserimento del Konami Code. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Rilevatore di sequenze di tasti per attivare la "{}\+Cheat Mode"{}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a}{modifica\+Salvataggio}} (int numero\+Salvataggio)
-\begin{DoxyCompactList}\small\item\em Modifica un salvataggio (Menu Trucchi). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funzione di debug/cheating per modificare i salvataggi. Permette di editare un file esistente alterando statistiche o flag di completamento. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descrizione dettagliata}
-Implementazione del sistema di gestione file dei salvataggi. 
+Implementazione del sistema di gestione file (I/O) e persistenza dati. 
 
 
+\begin{DoxyItemize}
+\item Questo modulo gestisce la creazione, lettura, modifica ed eliminazione dei file di salvataggio. Include anche la logica per la compatibilità tra Windows e Unix e un sistema di riconoscimento pattern per l\textquotesingle{}attivazione della "{}\+Cheat Mode"{}. 
+\end{DoxyItemize}
 
 \doxysubsection{Documentazione delle definizioni}
 \Hypertarget{salvataggi_8c_a3024ccd4a9af5109d24e6c57565d74a1}\label{salvataggi_8c_a3024ccd4a9af5109d24e6c57565d74a1} 
@@ -81,19 +85,19 @@ Implementazione del sistema di gestione file dei salvataggi.
 \doxysubsubsection{\texorpdfstring{LIST\_COMMAND}{LIST\_COMMAND}}
 {\footnotesize\ttfamily \#define LIST\+\_\+\+COMMAND~"{}ls -\/1 salvataggi/"{}}
 
-\Hypertarget{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d}\label{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d} 
+Comando Bash per listare file \Hypertarget{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d}\label{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d} 
 \index{salvataggi.c@{salvataggi.c}!MKDIR@{MKDIR}}
 \index{MKDIR@{MKDIR}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{MKDIR}{MKDIR}}
 {\footnotesize\ttfamily \#define MKDIR(\begin{DoxyParamCaption}\item[{}]{p }\end{DoxyParamCaption})~mkdir(p, 0700)}
 
-\Hypertarget{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3}\label{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3} 
+Funzione creazione cartella Unix (con permessi) \Hypertarget{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3}\label{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3} 
 \index{salvataggi.c@{salvataggi.c}!PCLOSE@{PCLOSE}}
 \index{PCLOSE@{PCLOSE}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{PCLOSE}{PCLOSE}}
 {\footnotesize\ttfamily \#define PCLOSE~pclose}
 
-\Hypertarget{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5}\label{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5} 
+Chiude la pipe su Unix \Hypertarget{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5}\label{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5} 
 \index{salvataggi.c@{salvataggi.c}!POPEN@{POPEN}}
 \index{POPEN@{POPEN}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{POPEN}{POPEN}}
@@ -101,26 +105,32 @@ Implementazione del sistema di gestione file dei salvataggi.
 
 
 
+Blocco di compatibilità Cross-\/\+Platform. Definisce macro specifiche per i comandi di shell e le funzioni di sistema a seconda che si stia compilando su Windows (\+\_\+\+WIN32) o Unix/\+Linux/mac\+OS. 
+
+Apre una pipe di processo su Unix 
+
 \doxysubsection{Documentazione delle funzioni}
 \Hypertarget{salvataggi_8c_a1912cd89ae44ef137420b207769f3632}\label{salvataggi_8c_a1912cd89ae44ef137420b207769f3632} 
 \index{salvataggi.c@{salvataggi.c}!caricaDatiSalvataggio@{caricaDatiSalvataggio}}
 \index{caricaDatiSalvataggio@{caricaDatiSalvataggio}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{caricaDatiSalvataggio()}{caricaDatiSalvataggio()}}
-{\footnotesize\ttfamily int carica\+Dati\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int carica\+Dati\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Salvataggio,  }\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
 
 
 
-Carica i dati da un file di salvataggio. 
+Carica i dati da un file specifico nella struct \doxylink{structGiocatore}{Giocatore}. Utilizza una pipe per ottenere la lista dei file e seleziona l\textquotesingle{}n-\/esimo file. 
+
+Carica i dati da un file di salvataggio.
 
 
 \begin{DoxyParams}{Parametri}
-{\em n} & Indice del salvataggio scelto. \\
+{\em numero\+Salvataggio} & Indice del file nella lista (1-\/based). \\
 \hline
-{\em g} & Puntatore alla struttura \doxylink{structGiocatore}{Giocatore} da popolare. \\
+{\em g} & Puntatore alla struct \doxylink{structGiocatore}{Giocatore} da popolare. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Restituisce}
-1 se successo, 0 se errore. 
+1 se il caricamento ha successo, 0 altrimenti. 
 \end{DoxyReturn}
 \Hypertarget{salvataggi_8c_a3453e09dde07013ea2ca1146020bb6a7}\label{salvataggi_8c_a3453e09dde07013ea2ca1146020bb6a7} 
 \index{salvataggi.c@{salvataggi.c}!checkDirSalvataggi@{checkDirSalvataggi}}
@@ -130,21 +140,23 @@ Carica i dati da un file di salvataggio.
 
 
 
-Verifica l\textquotesingle{}esistenza della directory "{}salvataggi"{}, creandola se necessario. 
+Verifica l\textquotesingle{}esistenza della directory "{}salvataggi"{}, creandola se necessario. Utilizza la struct stat per controllare i metadati del filesystem. 
 
 \Hypertarget{salvataggi_8c_a4208765e79421df60d16944464edf88e}\label{salvataggi_8c_a4208765e79421df60d16944464edf88e} 
 \index{salvataggi.c@{salvataggi.c}!eliminaSalvataggio@{eliminaSalvataggio}}
 \index{eliminaSalvataggio@{eliminaSalvataggio}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{eliminaSalvataggio()}{eliminaSalvataggio()}}
-{\footnotesize\ttfamily void elimina\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void elimina\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Da\+Eliminare }\end{DoxyParamCaption})}
 
 
 
-Elimina un file di salvataggio. 
+Elimina un file di salvataggio dal disco. 
+
+Elimina un file di salvataggio.
 
 
 \begin{DoxyParams}{Parametri}
-{\em n} & Indice del salvataggio da eliminare. \\
+{\em numero\+Da\+Eliminare} & Indice del file da cancellare. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8}\label{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8} 
@@ -155,38 +167,44 @@ Elimina un file di salvataggio.
 
 
 
-Restituisce il numero di salvataggi disponibili e li stampa a video. 
+Stampa l\textquotesingle{}elenco dei file di salvataggio disponibili. 
+
+Restituisce il numero di salvataggi disponibili e li stampa a video.
 
 \begin{DoxyReturn}{Restituisce}
-Numero di file trovati. 
+Il numero totale di salvataggi trovati. 
 \end{DoxyReturn}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=297pt]{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8_cgraph}
+\includegraphics[width=316pt]{salvataggi_8c_adab8accc64e79b6907f8ee1ff6446bf8_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a}\label{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a} 
 \index{salvataggi.c@{salvataggi.c}!modificaSalvataggio@{modificaSalvataggio}}
 \index{modificaSalvataggio@{modificaSalvataggio}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{modificaSalvataggio()}{modificaSalvataggio()}}
-{\footnotesize\ttfamily void modifica\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void modifica\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Salvataggio }\end{DoxyParamCaption})}
 
 
 
-Modifica un salvataggio (Menu Trucchi). 
+Funzione di debug/cheating per modificare i salvataggi. Permette di editare un file esistente alterando statistiche o flag di completamento. 
+
+Modifica un salvataggio (Menu Trucchi).
 
 
 \begin{DoxyParams}{Parametri}
-{\em n} & Indice del salvataggio da modificare. \\
+{\em numero\+Salvataggio} & Indice del file da modificare. \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=302pt]{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a_cgraph}
+\includegraphics[width=322pt]{salvataggi_8c_adf592ebbc9d338383dbb7ef8d921840a_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4}\label{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4} 
@@ -197,18 +215,25 @@ Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 
 
 
-Crea un nuovo salvataggio su file. 
+Crea un nuovo file di salvataggio. 
+
+Crea un nuovo salvataggio su file.
 
 
+\begin{DoxyItemize}
+\item Il nome del file viene generato automaticamente usando il timestamp corrente (con il formato\+: GG-\/\+MM-\/\+AAAA\+\_\+\+HH-\/\+MM-\/\+SS).
+\item Scrive i dati della struct \doxylink{structGiocatore}{Giocatore} in formato testo semplice. 
 \begin{DoxyParams}{Parametri}
-{\em g} & Puntatore allo stato del giocatore da salvare. \\
+{\em g} & Puntatore ai dati del giocatore da salvare. \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+
+\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=309pt]{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4_cgraph}
+\includegraphics[width=331pt]{salvataggi_8c_af13b31f6b761a6b7483a9cb18af25cc4_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{salvataggi_8c_a0b197621f869405211a8975e3d56e5f9}\label{salvataggi_8c_a0b197621f869405211a8975e3d56e5f9} 
@@ -219,13 +244,20 @@ Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 
 
 
-Verifica l\textquotesingle{}inserimento del Konami Code. 
+Rilevatore di sequenze di tasti per attivare la "{}\+Cheat Mode"{}. 
+
+Verifica l\textquotesingle{}inserimento del Konami Code.
 
 
+\begin{DoxyItemize}
+\item Sequenza segreta\+: "{}wwssadadba "{}
+\item 
 \begin{DoxyParams}{Parametri}
-{\em tasto} & Carattere appena digitato. \\
+{\em tasto} & Il carattere appena inserito dall\textquotesingle{}utente. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Restituisce}
-true se il codice è completo, false altrimenti. 
+true se la sequenza è stata completata, sennó false. 
 \end{DoxyReturn}
+
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Variabile statica\+: conserva il valore tra le chiamate della funzione

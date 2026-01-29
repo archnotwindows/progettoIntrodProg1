@@ -13,11 +13,12 @@ Grafo delle dipendenze di inclusione per missione2espdun.\+h\+:\nopagebreak
 \includegraphics[width=181pt]{missione2espdun_8h__incl}
 \end{center}
 \end{figure}
-Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:\nopagebreak
+Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=284pt]{missione2espdun_8h__dep__incl}
+\includegraphics[width=302pt]{missione2espdun_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Funzioni}
@@ -49,6 +50,43 @@ Logica di esplorazione per la Magione Infestata.
 \hline
 {\em stanza\+\_\+corrente} & Puntatore all\textquotesingle{}indice della stanza. \\
 \hline
-{\em progressi} & Bitmask (bit 1\+: Chiave trovata, bit 2\+: Vampiro ucciso). \\
+{\em progressi} & Bitmask (bit 1\+: Chiave trovata, bit 2\+: Vampiro ucciso).\\
 \hline
 \end{DoxyParams}
+Logica di esplorazione per la Magione Infestata.
+
+
+\begin{DoxyItemize}
+\item Utilizza un intero ({\ttfamily progressi}) come maschera di bit per tracciare lo stato\+:
+\item Bit 0 (valore 1)\+: Chiave trovata.
+\item Bit 1 (valore 2)\+: Vampiro sconfitto.
+\item La funzione garantisce che entrambi gli obiettivi vengano incontrati entro le 10 stanze.
+\item 
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore ai dati del giocatore. \\
+\hline
+{\em stanza\+\_\+corrente} & Puntatore al numero della stanza attuale. \\
+\hline
+{\em progressi} & Puntatore alla variabile bitmask che conserva lo stato degli obiettivi. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Decodifica della bitmask. Utilizza l\textquotesingle{}operatore AND bit a bit (\&) per verificare se i flag sono attivi.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Logica di forzatura obiettivi. Se il numero di stanze rimanenti è uguale o inferiore agli obiettivi mancanti, il gioco smette di tirare i dadi e forza l\textquotesingle{}uscita degli eventi necessari. Priorità\+: Prima la Chiave (indice 5), poi il Vampiro (indice 4).
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Aggiornamento obiettivi (Bitwise OR). Se il nemico sconfitto è un obiettivo, attiviamo il bit corrispondente. is\+\_\+obiettivo == 1 -\/\texorpdfstring{$>$}{>} Vampiro (Bit 2) is\+\_\+obiettivo == 2 -\/\texorpdfstring{$>$}{>} Chiave (Bit 1)
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Verifica completamento missione. Controlla se entrambi i bit (1 e 2) sono attivi. 1 (01 binario) + 2 (10 binario) = 3 (11 binario).
+\end{DoxyItemize}

@@ -1,7 +1,7 @@
 <map id="CombattimentoFinale" name="CombattimentoFinale">
-<area shape="rect" id="Node000001" title="Gestisce il combattimento finale contro il Signore Oscuro." alt="" coords="5,31,152,56"/>
-<area shape="rect" id="Node000002" href="$missionefinale_8c.html#a4fdcb5d7028fdec314942a9c3e6bd519" title=" " alt="" coords="203,5,307,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,30,189,25,189,30,152,35"/>
-<area shape="rect" id="Node000003" href="$systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="200,55,309,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,51,187,55,186,61,152,56"/>
+<area shape="rect" id="Node000001" title="Gestisce il combattimento finale contro il Signore Oscuro." alt="" coords="5,31,168,56"/>
+<area shape="rect" id="Node000002" href="$missionefinale_8c.html#a4fdcb5d7028fdec314942a9c3e6bd519" title="Genera la mossa dell&#39;avversario." alt="" coords="219,5,333,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,30,205,25,205,30,169,35"/>
+<area shape="rect" id="Node000003" href="$systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="216,55,336,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,51,203,55,202,61,168,56"/>
 </map>

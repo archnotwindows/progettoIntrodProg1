@@ -1,4 +1,4 @@
 <map id="padovan" name="padovan">
-<area shape="rect" id="Node000001" title="Calcola n&#45;esimo numero di Padovan P(n)." alt="" coords="5,29,76,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="27,29,26,12,32,5,41,3,51,6,56,14,51,17,48,10,41,8,35,10,31,14,33,29"/>
+<area shape="rect" id="Node000001" title="Calcola l&#39;n&#45;esimo numero della successione di Padovan P(n)." alt="" coords="5,29,84,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="30,29,29,12,35,5,45,3,56,6,61,14,57,17,53,10,45,8,38,10,34,14,35,29"/>
 </map>

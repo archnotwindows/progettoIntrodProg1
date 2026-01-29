@@ -2,7 +2,7 @@
 \hypertarget{missionefinale_8c}{}\label{missionefinale_8c}\index{missionefinale.c@{missionefinale.c}}
 
 
-Implementazione del combattimento finale.  
+Implementazione del combattimento finale contro il Signore Oscuro.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
@@ -10,7 +10,8 @@ Implementazione del combattimento finale.
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include "{}missionefinale.\+h"{}}\newline
 {\ttfamily \#include "{}systemclear.\+h"{}}\newline
-Grafo delle dipendenze di inclusione per missionefinale.\+c\+:\nopagebreak
+Grafo delle dipendenze di inclusione per missionefinale.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,15 +22,18 @@ Grafo delle dipendenze di inclusione per missionefinale.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{missionefinale_8c_a4fdcb5d7028fdec314942a9c3e6bd519}{mossarandom}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Genera la mossa dell\textquotesingle{}avversario. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{missionefinale_8c_a3ad4bbf8b478f335815a9688e70a3099}{Combattimento\+Finale}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
-\begin{DoxyCompactList}\small\item\em Gestisce il combattimento finale contro il Signore Oscuro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gestisce il loop del combattimento finale. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descrizione dettagliata}
-Implementazione del combattimento finale. 
+Implementazione del combattimento finale contro il Signore Oscuro. 
 
 
+\begin{DoxyItemize}
+\item Questo file gestisce l\textquotesingle{}ultimo ostacolo del gioco. Il sistema di combattimento utilizzato é un minigioco strategico "{}\+Sasso-\/\+Carta-\/\+Forbice"{} in cui il giocatore deve vincere 3 round su 5 contro l\textquotesingle{}avversario controllato dalla CPU. 
+\end{DoxyItemize}
 
 \doxysubsection{Documentazione delle funzioni}
 \Hypertarget{missionefinale_8c_a3ad4bbf8b478f335815a9688e70a3099}\label{missionefinale_8c_a3ad4bbf8b478f335815a9688e70a3099} 
@@ -40,18 +44,41 @@ Implementazione del combattimento finale.
 
 
 
-Gestisce il combattimento finale contro il Signore Oscuro. 
+Gestisce il loop del combattimento finale. 
+
+Gestisce il combattimento finale contro il Signore Oscuro.
 
 
+\begin{DoxyItemize}
+\item Le regole sono\+:
+\item Scudo (1) batte Spada (3)
+\item Magia (2) batte Scudo (1)
+\item Spada (3) batte Magia (2)
+\item Vince il primo che arriva a 3 vittorie.
+\item 
 \begin{DoxyParams}{Parametri}
-{\em g} & Puntatore al giocatore. \\
+{\em g} & Puntatore al giocatore (usato per azzerare la vita in caso di sconfitta). \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Array di stringhe per decodificare gli indici delle mosse in testo.
+
+\texorpdfstring{$<$}{<} Contatore vittorie \doxylink{structGiocatore}{Giocatore}
+
+\texorpdfstring{$<$}{<} Contatore vittorie Signore Oscuro
+
+\texorpdfstring{$<$}{<} Contatore Round corrente
+
+Loop principale dello scontro. Continua finché non si raggiungono 5 round validi O finché uno dei due contendenti non ottiene 3 vittorie (con maggioranza assoluta).
+
+Verifica condizioni di vittoria. vince\+\_\+g è true se si verifica una delle tre condizioni di vantaggio.
+
+Imposta HP a 0 per Game Over. Impostando la vita a 0, al ritorno nel menu\+Villaggio verrà rilevata la morte del giocatore, attivando la schermata di Game Over.Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=308pt]{missionefinale_8c_a3ad4bbf8b478f335815a9688e70a3099_cgraph}
+\includegraphics[width=328pt]{missionefinale_8c_a3ad4bbf8b478f335815a9688e70a3099_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{missionefinale_8c_a4fdcb5d7028fdec314942a9c3e6bd519}\label{missionefinale_8c_a4fdcb5d7028fdec314942a9c3e6bd519} 
@@ -60,3 +87,15 @@ Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{mossarandom()}{mossarandom()}}
 {\footnotesize\ttfamily int mossarandom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Genera la mossa dell\textquotesingle{}avversario. 
+
+\begin{DoxyReturn}{Restituisce}
+Un intero rappresentante la mossa\+:
+\begin{DoxyItemize}
+\item 1\+: Scudo
+\item 2\+: Magia
+\item 3\+: Spada 
+\end{DoxyItemize}
+\end{DoxyReturn}

@@ -1,5 +1,5 @@
 <map id="nuovoSalvataggio" name="nuovoSalvataggio">
-<area shape="rect" id="Node000001" title="Crea un nuovo salvataggio su file." alt="" coords="5,5,128,31"/>
-<area shape="rect" id="Node000002" href="$salvataggi_8c.html#a3453e09dde07013ea2ca1146020bb6a7" title="Verifica l&#39;esistenza della directory &quot;salvataggi&quot;, creandola se necessario." alt="" coords="176,5,311,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,15,162,15,162,21,128,21"/>
+<area shape="rect" id="Node000001" title="Crea un nuovo file di salvataggio." alt="" coords="5,5,144,31"/>
+<area shape="rect" id="Node000002" href="$salvataggi_8c.html#a3453e09dde07013ea2ca1146020bb6a7" title="Verifica l&#39;esistenza della directory &quot;salvataggi&quot;, creandola se necessario. Utilizza la struct stat p..." alt="" coords="192,5,340,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,15,178,15,178,21,144,21"/>
 </map>

@@ -13,11 +13,12 @@ Grafo delle dipendenze di inclusione per negozio.\+h\+:\nopagebreak
 \includegraphics[width=145pt]{negozio_8h__incl}
 \end{center}
 \end{figure}
-Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:\nopagebreak
+Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{negozio_8h__dep__incl}
+\includegraphics[width=254pt]{negozio_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Funzioni}
@@ -45,10 +46,36 @@ Gestisce l\textquotesingle{}interfaccia e la logica di acquisto del negozio.
 
 
 \begin{DoxyParams}{Parametri}
-{\em giocatore\+\_\+ptr} & Puntatore al giocatore. \\
+{\em giocatore\+\_\+ptr} & Puntatore al giocatore.\\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Gestisce l\textquotesingle{}interfaccia e la logica di acquisto del negozio.
+
+
+\begin{DoxyItemize}
+\item La funzione verifica che il giocatore abbia abbastanza monete e che non possieda già l\textquotesingle{}oggetto che vuole acquistare
+\item 
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore alla struttura dati del giocatore \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Pulizia buffer input
+
+
+\begin{DoxyItemize}
+\item Cap della Vita. La vita non può superare il valore massimo di 20.
+\end{DoxyItemize}
+
+Controllo ridondanza. Impedisce l\textquotesingle{}acquisto se il giocatore ha già la spada di ferro OPPURE se possiede già la Spada dell\textquotesingle{}Eroe.
+
+\texorpdfstring{$<$}{<} Incremento permanente attacco
+
+\texorpdfstring{$<$}{<} Flag inventario
+
+Controllo ridondanza armatura. Verifica se l\textquotesingle{}armatura è già posseduta.
+
+\texorpdfstring{$<$}{<} Flag per riduzione danniQuesto è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

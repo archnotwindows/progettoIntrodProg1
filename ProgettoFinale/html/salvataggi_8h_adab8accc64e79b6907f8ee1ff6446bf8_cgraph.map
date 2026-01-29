@@ -1,7 +1,7 @@
 <map id="listaSalvataggi" name="listaSalvataggi">
-<area shape="rect" id="Node000001" title="Restituisce il numero di salvataggi disponibili e li stampa a video." alt="" coords="5,31,112,56"/>
-<area shape="rect" id="Node000002" href="$salvataggi_8c.html#a3453e09dde07013ea2ca1146020bb6a7" title="Verifica l&#39;esistenza della directory &quot;salvataggi&quot;, creandola se necessario." alt="" coords="160,5,295,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,33,146,28,146,33,112,38"/>
-<area shape="rect" id="Node000003" href="$systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="173,55,282,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,48,159,55,159,60,112,54"/>
+<area shape="rect" id="Node000001" title="Restituisce il numero di salvataggi disponibili e li stampa a video." alt="" coords="5,31,124,56"/>
+<area shape="rect" id="Node000002" href="$salvataggi_8c.html#a3453e09dde07013ea2ca1146020bb6a7" title="Verifica l&#39;esistenza della directory &quot;salvataggi&quot;, creandola se necessario. Utilizza la struct stat p..." alt="" coords="172,5,320,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,32,158,28,159,33,124,38"/>
+<area shape="rect" id="Node000003" href="$systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="186,55,306,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,48,173,55,172,60,124,54"/>
 </map>

@@ -13,11 +13,12 @@ Grafo delle dipendenze di inclusione per menuvillaggio.\+h\+:\nopagebreak
 \includegraphics[width=164pt]{menuvillaggio_8h__incl}
 \end{center}
 \end{figure}
-Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:\nopagebreak
+Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=258pt]{menuvillaggio_8h__dep__incl}
+\includegraphics[width=276pt]{menuvillaggio_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Funzioni}
@@ -47,11 +48,44 @@ Gestisce il menu del villaggio.
 \begin{DoxyItemize}
 \item Permette di accedere alle missioni, riposare, vedere l\textquotesingle{}inventario o salvare. 
 \begin{DoxyParams}{Parametri}
-{\em giocatore\+\_\+ptr} & Puntatore al giocatore. \\
+{\em giocatore\+\_\+ptr} & Puntatore al giocatore.\\
+\hline
+\end{DoxyParams}
+Gestisce il menu del villaggio.
+\item Questa funzione mostra un menu ciclico che permette al giocatore di prepararsi prima di una missione. Gestisce anche il controllo del "{}\+Game Over"{} al ritorno dalle missioni.
+\item 
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore alla struttura dati \doxylink{structGiocatore}{Giocatore} per modificare vita, inventario e stato missioni. \\
 \hline
 \end{DoxyParams}
 
-\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Loop infinito del villaggio. Il giocatore rimane in questo ciclo finché non sceglie di uscire (opzione 5) o muore in missione (Game Over).
+\end{DoxyItemize}
+
+\texorpdfstring{$<$}{<} Pulizia buffer
+
+
+\begin{DoxyItemize}
+\item Entra nel menu di selezione missioni. Il controllo passa al modulo \doxylink{menuMissioni_8c}{menu\+Missioni.\+c}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Controllo stato vitale post-\/missione. Quando la funzione \doxylink{menuMissioni_8c_a1edc1f6ccd27be94e77587555e26e100}{Menu()} ritorna, verifichiamo se il giocatore è vivo. Se la vita è \texorpdfstring{$<$}{<}= 0, il gioco termina
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Ripristino salute. Imposta la vita del giocatore al valore massimo
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Salva lo stato corrente del gioco su file. Chiama la funzione definita in \doxylink{salvataggi_8h}{salvataggi.\+h}.
+\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

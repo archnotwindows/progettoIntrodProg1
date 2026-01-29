@@ -2,14 +2,15 @@
 \hypertarget{missione1espdun_8c}{}\label{missione1espdun_8c}\index{missione1espdun.c@{missione1espdun.c}}
 
 
-Implementazione della missione Palude Putrescente.  
+Implementazione della missione "{}\+Palude Putrescente"{}.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include "{}missione1espdun.\+h"{}}\newline
 {\ttfamily \#include "{}tabellemissioni.\+h"{}}\newline
-Grafo delle dipendenze di inclusione per missione1espdun.\+c\+:\nopagebreak
+Grafo delle dipendenze di inclusione per missione1espdun.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,13 +21,16 @@ Grafo delle dipendenze di inclusione per missione1espdun.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{missione1espdun_8c_abe73b1eb0883d1aa1e94399bf7ae9c35}{esplora1\+Stanza\+Dungeon}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore\+\_\+ptr, int \texorpdfstring{$\ast$}{*}stanza\+\_\+corrente, int \texorpdfstring{$\ast$}{*}generali\+\_\+uccisi)
-\begin{DoxyCompactList}\small\item\em Logica di esplorazione per la Palude Putrescente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gestisce l\textquotesingle{}esplorazione di una singola stanza nella Palude. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descrizione dettagliata}
-Implementazione della missione Palude Putrescente. 
+Implementazione della missione "{}\+Palude Putrescente"{}. 
 
 
+\begin{DoxyItemize}
+\item Questo file contiene la logica specifica per la prima missione. L\textquotesingle{}obiettivo è sconfiggere 3 Generali Orchi entro 10 stanze. Il sistema utilizza la Tabella\+Palude definita in \doxylink{tabellemissioni_8h}{tabellemissioni.\+h} per determinare cosa accade in base al lancio del dado. 
+\end{DoxyItemize}
 
 \doxysubsection{Documentazione delle funzioni}
 \Hypertarget{missione1espdun_8c_abe73b1eb0883d1aa1e94399bf7ae9c35}\label{missione1espdun_8c_abe73b1eb0883d1aa1e94399bf7ae9c35} 
@@ -37,14 +41,45 @@ Implementazione della missione Palude Putrescente.
 
 
 
-Logica di esplorazione per la Palude Putrescente. 
+Gestisce l\textquotesingle{}esplorazione di una singola stanza nella Palude. 
+
+Logica di esplorazione per la Palude Putrescente.
 
 
+\begin{DoxyItemize}
+\item La funzione determina l\textquotesingle{}evento della stanza basandosi sul caso o sulla necessità di completare l\textquotesingle{}obiettivo. Gestisce il combattimento, il calcolo dei danni, le ricompense e l\textquotesingle{}aggiornamento degli obiettivi.
+\item 
 \begin{DoxyParams}{Parametri}
-{\em giocatore\+\_\+ptr} & Puntatore al giocatore. \\
+{\em giocatore\+\_\+ptr} & Puntatore alla struttura dati del giocatore. \\
 \hline
-{\em stanza\+\_\+corrente} & Puntatore all\textquotesingle{}indice della stanza attuale. \\
+{\em stanza\+\_\+corrente} & Puntatore al contatore della stanza attuale (1-\/10). \\
 \hline
-{\em generali\+\_\+uccisi} & Puntatore al contatore dei boss sconfitti. \\
+{\em generali\+\_\+uccisi} & Puntatore al contatore degli obiettivi completati per questa missione. \\
 \hline
 \end{DoxyParams}
+
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Numero di Generali da sconfiggere per vincere.
+
+\texorpdfstring{$<$}{<} Lunghezza massima del dungeon.
+
+
+\begin{DoxyItemize}
+\item Logica per forzare l\textquotesingle{}incontro con il Generale Orco. Se il numero di Generali mancanti è uguale al numero di stanze rimaste, il gioco forza l\textquotesingle{}uscita del Generale (indice 5) invece di tirare il dado. Questo impedisce al giocatore di fallire la missione solo per sfortuna coi dadi.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Gestione danni variabili. il danno viene calcolato tirando un dado al momento.
+\end{DoxyItemize}
+
+\texorpdfstring{$<$}{<} Valore da superare col dado per colpire
+
+
+\begin{DoxyItemize}
+\item Bonus Oggetto Speciale\+: Spada dell\textquotesingle{}Eroe. Se il giocatore possiede l\textquotesingle{}oggetto speciale e affronta il Generale, la difficoltà del combattimento si abbassa (il colpo fatale scende a 5).
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Verifica condizione di vittoria. Se il giocatore ha ucciso 3 generali, imposta il flag globale di completamento missione.
+\end{DoxyItemize}

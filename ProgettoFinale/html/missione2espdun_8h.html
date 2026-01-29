@@ -95,11 +95,11 @@ Questo grafo mostra quali altri file includono direttamente o indirettamente que
 <div class="dyncontent">
 <div class="center"><img src="missione2espdun_8h__dep__incl.png" border="0" usemap="#amissione2espdun_8hdep" alt=""/></div>
 <map name="amissione2espdun_8hdep" id="amissione2espdun_8hdep">
-<area shape="rect" title="Header per la missione Magione." alt="" coords="68,5,203,31"/>
-<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco." alt="" coords="5,79,119,104"/>
-<area shape="poly" title=" " alt="" coords="115,42,76,80,72,77,112,38"/>
-<area shape="rect" href="missione2espdun_8c.html" title="Implementazione della missione Magione Infestata." alt="" coords="143,79,277,104"/>
-<area shape="poly" title=" " alt="" coords="159,38,200,77,196,80,155,42"/>
+<area shape="rect" title="Header per la missione Magione." alt="" coords="73,5,221,31"/>
+<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco principale." alt="" coords="5,79,129,104"/>
+<area shape="poly" title=" " alt="" coords="126,42,82,80,79,76,123,38"/>
+<area shape="rect" href="missione2espdun_8c.html" title="Implementazione della missione &quot;Magione Infestata&quot;." alt="" coords="154,79,301,104"/>
+<area shape="poly" title=" " alt="" coords="172,38,216,76,212,80,168,42"/>
 </map>
 </div>
 </div>
@@ -151,10 +151,38 @@ Funzioni</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">giocatore_ptr</td><td>Puntatore al giocatore. </td></tr>
     <tr><td class="paramname">stanza_corrente</td><td>Puntatore all'indice della stanza. </td></tr>
-    <tr><td class="paramname">progressi</td><td>Bitmask (bit 1: Chiave trovata, bit 2: Vampiro ucciso). </td></tr>
+    <tr><td class="paramname">progressi</td><td>Bitmask (bit 1: Chiave trovata, bit 2: Vampiro ucciso).</td></tr>
   </table>
   </dd>
 </dl>
+<p>Logica di esplorazione per la Magione Infestata.</p>
+<ul>
+<li>Utilizza un intero (<code>progressi</code>) come maschera di bit per tracciare lo stato:</li>
+<li>Bit 0 (valore 1): Chiave trovata.</li>
+<li>Bit 1 (valore 2): Vampiro sconfitto.</li>
+<li>La funzione garantisce che entrambi gli obiettivi vengano incontrati entro le 10 stanze.</li>
+<li><dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">giocatore_ptr</td><td>Puntatore ai dati del giocatore. </td></tr>
+    <tr><td class="paramname">stanza_corrente</td><td>Puntatore al numero della stanza attuale. </td></tr>
+    <tr><td class="paramname">progressi</td><td>Puntatore alla variabile bitmask che conserva lo stato degli obiettivi. </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+<ul>
+<li>Decodifica della bitmask. Utilizza l'operatore AND bit a bit (&amp;) per verificare se i flag sono attivi.</li>
+</ul>
+<ul>
+<li>Logica di forzatura obiettivi. Se il numero di stanze rimanenti è uguale o inferiore agli obiettivi mancanti, il gioco smette di tirare i dadi e forza l'uscita degli eventi necessari. Priorità: Prima la Chiave (indice 5), poi il Vampiro (indice 4).</li>
+</ul>
+<ul>
+<li>Aggiornamento obiettivi (Bitwise OR). Se il nemico sconfitto è un obiettivo, attiviamo il bit corrispondente. is_obiettivo == 1 -&gt; Vampiro (Bit 2) is_obiettivo == 2 -&gt; Chiave (Bit 1)</li>
+</ul>
+<ul>
+<li>Verifica completamento missione. Controlla se entrambi i bit (1 e 2) sono attivi. 1 (01 binario) + 2 (10 binario) = 3 (11 binario).</li>
+</ul>
 
 </div>
 </div>

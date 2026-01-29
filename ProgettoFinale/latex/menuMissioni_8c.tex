@@ -2,7 +2,7 @@
 \hypertarget{menuMissioni_8c}{}\label{menuMissioni_8c}\index{menuMissioni.c@{menuMissioni.c}}
 
 
-Implementazione della selezione missioni e del loop di gioco.  
+Implementazione della selezione missioni e del loop di gioco principale.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
@@ -16,7 +16,8 @@ Implementazione della selezione missioni e del loop di gioco.
 {\ttfamily \#include "{}missionefinale.\+h"{}}\newline
 {\ttfamily \#include "{}inventario.\+h"{}}\newline
 {\ttfamily \#include "{}negozio.\+h"{}}\newline
-Grafo delle dipendenze di inclusione per menu\+Missioni.\+c\+:\nopagebreak
+Grafo delle dipendenze di inclusione per menu\+Missioni.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -31,9 +32,12 @@ void \mbox{\hyperlink{menuMissioni_8c_a1edc1f6ccd27be94e77587555e26e100}{Menu}} 
 
 
 \doxysubsection{Descrizione dettagliata}
-Implementazione della selezione missioni e del loop di gioco. 
+Implementazione della selezione missioni e del loop di gioco principale. 
 
 
+\begin{DoxyItemize}
+\item Questo file gestisce l\textquotesingle{}interfaccia utente per la scelta della missione e il ciclo "{}while"{} che regola\+: l\textquotesingle{}avanzamento nelle stanze, l\textquotesingle{}accesso al negozio e all\textquotesingle{}inventario durante una missione in corso 
+\end{DoxyItemize}
 
 \doxysubsection{Documentazione delle funzioni}
 \Hypertarget{menuMissioni_8c_a1edc1f6ccd27be94e77587555e26e100}\label{menuMissioni_8c_a1edc1f6ccd27be94e77587555e26e100} 
@@ -47,11 +51,50 @@ Implementazione della selezione missioni e del loop di gioco.
 Gestisce il menu di selezione delle missioni e il loop di esplorazione. 
 
 
+\begin{DoxyItemize}
+\item La funzione verifica quali missioni sono state completate per mostrare dinamicamente le opzioni. Una volta selezionata una missione, entra in un loop che la gestisce fino al completamento.
+\item 
 \begin{DoxyParams}{Parametri}
-{\em giocatore\+\_\+ptr} & Puntatore al giocatore. \\
+{\em giocatore\+\_\+ptr} & Puntatore alla struttura dati \doxylink{structGiocatore}{Giocatore}. \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Verifica lo stato di completamento. Risulta true solo se tutte le missioni sono state completate. Questo flag è necessario per sbloccare la missione finale.
+\end{DoxyItemize}
+
+\texorpdfstring{$<$}{<} Contatore per numerare dinamicamente le opzioni del menu.
+
+Array di mappatura opzioni -\/\texorpdfstring{$>$}{>} ID missione. Poiché le missioni spariscono dal menu una volta completate, l\textquotesingle{}opzione "{}1"{} non corrisponde sempre alla missione 1. Questo array mappa la scelta dell\textquotesingle{}utente (indice array) all\textquotesingle{}ID effettivo della missione (valore). ID 1\+: Palude, 2\+: Magione, 3\+: Grotta, 4\+: Castello Finale.
+
+\texorpdfstring{$<$}{<} Pulizia buffer
+
+\texorpdfstring{$<$}{<} Ritorna al menu precedente (Villaggio)
+
+\texorpdfstring{$<$}{<} Controllo input fuori range
+
+Recupera l\textquotesingle{}ID reale della missione dalla mappa.
+
+
+\begin{DoxyItemize}
+\item Gestione caso speciale\+: Missione Finale. La Missione Finale ha una logica di combattimento dedicata e non usa il loop di esplorazione standard.
+\end{DoxyItemize}
+
+\texorpdfstring{$<$}{<} Tiene traccia della stanza attuale nel dungeon ~\newline
+
+
+\texorpdfstring{$<$}{<} Variabile per tracciare eventi specifici della missione.
+
+
+\begin{DoxyItemize}
+\item Controllo stato vitale. Se la vita è \texorpdfstring{$<$}{<}= 0, si esce dal menu
+\end{DoxyItemize}
+
+Verifica se la missione attuale è già stata completata in precedenza. Permette di capire se la fuga deve essere gratuita (missione già finita) o a pagamento.
+
+\texorpdfstring{$<$}{<} Ritorna al menu principaleQuesto è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

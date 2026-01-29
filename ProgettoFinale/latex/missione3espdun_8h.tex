@@ -13,7 +13,8 @@ Grafo delle dipendenze di inclusione per missione3espdun.\+h\+:\nopagebreak
 \includegraphics[width=181pt]{missione3espdun_8h__incl}
 \end{center}
 \end{figure}
-Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:\nopagebreak
+Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -49,10 +50,28 @@ Logica di esplorazione per la Grotta di Cristallo.
 \hline
 {\em stanza\+\_\+corrente} & Puntatore all\textquotesingle{}indice della stanza. \\
 \hline
-{\em progressi} & Puntatore flag (1 = Drago sconfitto). \\
+{\em progressi} & Puntatore flag (1 = Drago sconfitto).\\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Logica di esplorazione per la Grotta di Cristallo.
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore ai dati del giocatore. \\
+\hline
+{\em stanza\+\_\+corrente} & Puntatore al contatore stanze. \\
+\hline
+{\em progressi} & Puntatore flag (0 = Drago vivo, 1 = Drago morto). \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Logica di forzatura del Drago Se siamo all\textquotesingle{}ultima stanza e il Drago non è ancora stato sconfitto (progressi == 0), forza l\textquotesingle{}incontro (indice 5)
+\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

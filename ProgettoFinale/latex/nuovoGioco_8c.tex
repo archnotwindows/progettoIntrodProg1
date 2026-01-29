@@ -2,7 +2,7 @@
 \hypertarget{nuovoGioco_8c}{}\label{nuovoGioco_8c}\index{nuovoGioco.c@{nuovoGioco.c}}
 
 
-Implementazione del menu principale.  
+Implementazione del menu principale e gestione della sessione.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
@@ -14,7 +14,8 @@ Implementazione del menu principale.
 {\ttfamily \#include "{}salvataggi.\+h"{}}\newline
 {\ttfamily \#include "{}menuvillaggio.\+h"{}}\newline
 {\ttfamily \#include "{}giocatore.\+h"{}}\newline
-Grafo delle dipendenze di inclusione per nuovo\+Gioco.\+c\+:\nopagebreak
+Grafo delle dipendenze di inclusione per nuovo\+Gioco.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,15 +31,23 @@ Grafo delle dipendenze di inclusione per nuovo\+Gioco.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{nuovoGioco_8c_aafe68d574a2bf082b5b023b1416f16b2}{stampa\+Menu}} (bool trucchi\+Attivi)
-\begin{DoxyCompactList}\small\item\em Stampa a video il menu principale. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Stampa l\textquotesingle{}interfaccia grafica del menu principale. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{nuovoGioco_8c_a041cdf9de059ad67872189ce3cb0063c}{nuovo\+Gioco}} ()
-\begin{DoxyCompactList}\small\item\em Gestisce il loop del menu principale (Nuova Partita, Carica, Esci). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funzione principale di gestione del flusso di gioco. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descrizione dettagliata}
-Implementazione del menu principale. 
+Implementazione del menu principale e gestione della sessione. 
 
 
+\begin{DoxyItemize}
+\item Questo file funge gestisce\+:
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Il menu iniziale .
+\item L\textquotesingle{}attivazione della modalità trucchi .
+\item L\textquotesingle{}inizializzazione di una nuova partita o il caricamento di una esistente. 
+\end{DoxyEnumerate}
 
 \doxysubsection{Documentazione delle definizioni}
 \Hypertarget{nuovoGioco_8c_a3024ccd4a9af5109d24e6c57565d74a1}\label{nuovoGioco_8c_a3024ccd4a9af5109d24e6c57565d74a1} 
@@ -47,7 +56,8 @@ Implementazione del menu principale.
 \doxysubsubsection{\texorpdfstring{\_POSIX\_C\_SOURCE}{\_POSIX\_C\_SOURCE}}
 {\footnotesize\ttfamily \#define \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE~200809L}
 
-
+Macro per garantire compatibilità POSIX ~\newline
+ 
 
 \doxysubsection{Documentazione delle funzioni}
 \Hypertarget{nuovoGioco_8c_a041cdf9de059ad67872189ce3cb0063c}\label{nuovoGioco_8c_a041cdf9de059ad67872189ce3cb0063c} 
@@ -58,9 +68,29 @@ Implementazione del menu principale.
 
 
 
-Gestisce il loop del menu principale (Nuova Partita, Carica, Esci). 
+Funzione principale di gestione del flusso di gioco. 
 
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Gestisce il loop del menu principale (Nuova Partita, Carica, Esci).
+
+
+\begin{DoxyItemize}
+\item Contiene il loop principale che permette di avviare il gioco o gestire i file.
+\item Gestisce se l\textquotesingle{}utente inserisce un input specifico (definito in triggher\+Trucchi), attiva funzionalità nascoste. 
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Buffer per l\textquotesingle{}input grezzo dell\textquotesingle{}utente
+
+\texorpdfstring{$<$}{<} Istanza temporanea del giocatore
+
+Controllo attivazione Trucchi. Controlla se la sequenza di caratteri corrisponde alla sequenza segreta. Se sì, ricarica il loop mostrando il menu "{}\+CHEAT MODE"{}.
+
+
+\begin{DoxyItemize}
+\item Bonus Cheat Mode. Se i trucchi sono attivi, il giocatore inizia con valori aumentati.
+\end{DoxyItemize}
+
+\texorpdfstring{$<$}{<} Entra nel gioco con i dati caricati
+
+Permette di modificare manualmente i valori del file di salvataggio.Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -75,17 +105,20 @@ Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 
 
 
-Stampa a video il menu principale. 
+Stampa l\textquotesingle{}interfaccia grafica del menu principale. 
+
+Stampa a video il menu principale.
 
 
 \begin{DoxyParams}{Parametri}
-{\em trucchi\+Attivi} & Flag che indica se la modalità cheat è attiva. \\
+{\em trucchi\+Attivi} & Flag booleano\+: true se i trucchi sono stati attivati. \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=271pt]{nuovoGioco_8c_aafe68d574a2bf082b5b023b1416f16b2_cgraph}
+\includegraphics[width=286pt]{nuovoGioco_8c_aafe68d574a2bf082b5b023b1416f16b2_cgraph}
 \end{center}
 \end{figure}

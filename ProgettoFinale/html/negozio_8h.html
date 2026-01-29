@@ -95,11 +95,11 @@ Questo grafo mostra quali altri file includono direttamente o indirettamente que
 <div class="dyncontent">
 <div class="center"><img src="negozio_8h__dep__incl.png" border="0" usemap="#anegozio_8hdep" alt=""/></div>
 <map name="anegozio_8hdep" id="anegozio_8hdep">
-<area shape="rect" title="Header per il negozio ambulante." alt="" coords="83,5,161,31"/>
-<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco." alt="" coords="5,79,119,104"/>
-<area shape="poly" title=" " alt="" coords="105,43,74,80,70,77,101,40"/>
-<area shape="rect" href="negozio_8c.html" title="Implementazione del negozio ambulante." alt="" coords="143,79,221,104"/>
-<area shape="poly" title=" " alt="" coords="143,40,174,77,170,80,139,43"/>
+<area shape="rect" title="Header per il negozio ambulante." alt="" coords="89,5,174,31"/>
+<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco principale." alt="" coords="5,79,129,104"/>
+<area shape="poly" title=" " alt="" coords="114,43,80,80,76,77,110,39"/>
+<area shape="rect" href="negozio_8c.html" title="Implementazione del sistema del Negozio." alt="" coords="153,79,237,104"/>
+<area shape="poly" title=" " alt="" coords="153,39,187,77,183,80,149,43"/>
 </map>
 </div>
 </div>
@@ -133,10 +133,30 @@ Funzioni</h2></td></tr>
 <p>Gestisce l'interfaccia e la logica di acquisto del negozio. </p>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">giocatore_ptr</td><td>Puntatore al giocatore. </td></tr>
+    <tr><td class="paramname">giocatore_ptr</td><td>Puntatore al giocatore.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Gestisce l'interfaccia e la logica di acquisto del negozio.</p>
+<ul>
+<li>La funzione verifica che il giocatore abbia abbastanza monete e che non possieda già l'oggetto che vuole acquistare</li>
+<li><dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">giocatore_ptr</td><td>Puntatore alla struttura dati del giocatore </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+<p>&lt; Pulizia buffer input</p>
+<ul>
+<li>Cap della Vita. La vita non può superare il valore massimo di 20.</li>
+</ul>
+<p>Controllo ridondanza. Impedisce l'acquisto se il giocatore ha già la spada di ferro OPPURE se possiede già la Spada dell'Eroe.</p>
+<p>&lt; Incremento permanente attacco</p>
+<p>&lt; Flag inventario</p>
+<p>Controllo ridondanza armatura. Verifica se l'armatura è già posseduta.</p>
+<p>&lt; Flag per riduzione danni</p>
 <div class="dynheader">
 Questo è il grafo delle chiamate per questa funzione:</div>
 <div class="dyncontent">

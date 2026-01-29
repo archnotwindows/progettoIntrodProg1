@@ -95,11 +95,11 @@ Questo grafo mostra quali altri file includono direttamente o indirettamente que
 <div class="dyncontent">
 <div class="center"><img src="missione1espdun_8h__dep__incl.png" border="0" usemap="#amissione1espdun_8hdep" alt=""/></div>
 <map name="amissione1espdun_8hdep" id="amissione1espdun_8hdep">
-<area shape="rect" title="Header per la missione Palude." alt="" coords="68,5,203,31"/>
-<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco." alt="" coords="5,79,119,104"/>
-<area shape="poly" title=" " alt="" coords="115,42,76,80,72,77,112,38"/>
-<area shape="rect" href="missione1espdun_8c.html" title="Implementazione della missione Palude Putrescente." alt="" coords="143,79,277,104"/>
-<area shape="poly" title=" " alt="" coords="159,38,200,77,196,80,155,42"/>
+<area shape="rect" title="Header per la missione Palude." alt="" coords="73,5,221,31"/>
+<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco principale." alt="" coords="5,79,129,104"/>
+<area shape="poly" title=" " alt="" coords="126,42,82,80,79,76,123,38"/>
+<area shape="rect" href="missione1espdun_8c.html" title="Implementazione della missione &quot;Palude Putrescente&quot;." alt="" coords="154,79,301,104"/>
+<area shape="poly" title=" " alt="" coords="172,38,216,76,212,80,168,42"/>
 </map>
 </div>
 </div>
@@ -151,10 +151,38 @@ Funzioni</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">giocatore_ptr</td><td>Puntatore al giocatore. </td></tr>
     <tr><td class="paramname">stanza_corrente</td><td>Puntatore all'indice della stanza attuale. </td></tr>
-    <tr><td class="paramname">generali_uccisi</td><td>Puntatore al contatore dei boss sconfitti. </td></tr>
+    <tr><td class="paramname">generali_uccisi</td><td>Puntatore al contatore dei boss sconfitti.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Logica di esplorazione per la Palude Putrescente.</p>
+<ul>
+<li>La funzione determina l'evento della stanza basandosi sul caso o sulla necessità di completare l'obiettivo. Gestisce il combattimento, il calcolo dei danni, le ricompense e l'aggiornamento degli obiettivi.</li>
+<li><dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">giocatore_ptr</td><td>Puntatore alla struttura dati del giocatore. </td></tr>
+    <tr><td class="paramname">stanza_corrente</td><td>Puntatore al contatore della stanza attuale (1-10). </td></tr>
+    <tr><td class="paramname">generali_uccisi</td><td>Puntatore al contatore degli obiettivi completati per questa missione. </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+<p>&lt; Numero di Generali da sconfiggere per vincere.</p>
+<p>&lt; Lunghezza massima del dungeon.</p>
+<ul>
+<li>Logica per forzare l'incontro con il Generale Orco. Se il numero di Generali mancanti è uguale al numero di stanze rimaste, il gioco forza l'uscita del Generale (indice 5) invece di tirare il dado. Questo impedisce al giocatore di fallire la missione solo per sfortuna coi dadi.</li>
+</ul>
+<ul>
+<li>Gestione danni variabili. il danno viene calcolato tirando un dado al momento.</li>
+</ul>
+<p>&lt; Valore da superare col dado per colpire</p>
+<ul>
+<li>Bonus Oggetto Speciale: Spada dell'Eroe. Se il giocatore possiede l'oggetto speciale e affronta il Generale, la difficoltà del combattimento si abbassa (il colpo fatale scende a 5).</li>
+</ul>
+<ul>
+<li>Verifica condizione di vittoria. Se il giocatore ha ucciso 3 generali, imposta il flag globale di completamento missione.</li>
+</ul>
 
 </div>
 </div>

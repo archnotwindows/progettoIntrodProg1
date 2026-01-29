@@ -96,9 +96,9 @@ Questo grafo mostra quali altri file includono direttamente o indirettamente que
 <div class="center"><img src="missionefinale_8h__dep__incl.png" border="0" usemap="#amissionefinale_8hdep" alt=""/></div>
 <map name="amissionefinale_8hdep" id="amissionefinale_8hdep">
 <area shape="rect" title="Header per lo scontro finale." alt="" coords="77,5,207,31"/>
-<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco." alt="" coords="5,79,129,104"/>
+<area shape="rect" href="menuMissioni_8c.html" title="Implementazione della selezione missioni e del loop di gioco principale." alt="" coords="5,79,129,104"/>
 <area shape="poly" title=" " alt="" coords="122,42,81,80,78,77,118,38"/>
-<area shape="rect" href="missionefinale_8c.html" title="Implementazione del combattimento finale." alt="" coords="154,79,282,104"/>
+<area shape="rect" href="missionefinale_8c.html" title="Implementazione del combattimento finale contro il Signore Oscuro." alt="" coords="154,79,282,104"/>
 <area shape="poly" title=" " alt="" coords="166,38,207,76,204,80,162,42"/>
 </map>
 </div>
@@ -133,20 +133,42 @@ Funzioni</h2></td></tr>
 <p>Gestisce il combattimento finale contro il Signore Oscuro. </p>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Gestisce il combattimento finale contro il Signore Oscuro.</p>
+<ul>
+<li>Le regole sono:</li>
+<li>Scudo (1) batte Spada (3)</li>
+<li>Magia (2) batte Scudo (1)</li>
+<li>Spada (3) batte Magia (2)</li>
+<li>Vince il primo che arriva a 3 vittorie.</li>
+<li><dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore (usato per azzerare la vita in caso di sconfitta). </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+<p>&lt; Array di stringhe per decodificare gli indici delle mosse in testo.</p>
+<p>&lt; Contatore vittorie <a class="el" href="structGiocatore.html" title="Rappresenta lo stato del personaggio giocante.">Giocatore</a></p>
+<p>&lt; Contatore vittorie Signore Oscuro</p>
+<p>&lt; Contatore Round corrente</p>
+<p>Loop principale dello scontro. Continua finché non si raggiungono 5 round validi O finché uno dei due contendenti non ottiene 3 vittorie (con maggioranza assoluta).</p>
+<p>Verifica condizioni di vittoria. vince_g è true se si verifica una delle tre condizioni di vantaggio.</p>
+<p>Imposta HP a 0 per Game Over. Impostando la vita a 0, al ritorno nel menuVillaggio verrà rilevata la morte del giocatore, attivando la schermata di Game Over.</p>
 <div class="dynheader">
 Questo è il grafo delle chiamate per questa funzione:</div>
 <div class="dyncontent">
 <div class="center"><img src="missionefinale_8h_a3ad4bbf8b478f335815a9688e70a3099_cgraph.png" border="0" usemap="#amissionefinale_8h_a3ad4bbf8b478f335815a9688e70a3099_cgraph" alt=""/></div>
 <map name="amissionefinale_8h_a3ad4bbf8b478f335815a9688e70a3099_cgraph" id="amissionefinale_8h_a3ad4bbf8b478f335815a9688e70a3099_cgraph">
-<area shape="rect" title="Gestisce il combattimento finale contro il Signore Oscuro." alt="" coords="5,31,152,56"/>
-<area shape="rect" href="missionefinale_8c.html#a4fdcb5d7028fdec314942a9c3e6bd519" title=" " alt="" coords="203,5,307,31"/>
-<area shape="poly" title=" " alt="" coords="152,30,189,25,189,30,152,35"/>
-<area shape="rect" href="systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="200,55,309,80"/>
-<area shape="poly" title=" " alt="" coords="152,51,187,55,186,61,152,56"/>
+<area shape="rect" title="Gestisce il combattimento finale contro il Signore Oscuro." alt="" coords="5,31,168,56"/>
+<area shape="rect" href="missionefinale_8c.html#a4fdcb5d7028fdec314942a9c3e6bd519" title="Genera la mossa dell&#39;avversario." alt="" coords="219,5,333,31"/>
+<area shape="poly" title=" " alt="" coords="168,30,205,25,205,30,169,35"/>
+<area shape="rect" href="systemclear_8c.html#ab829d2cf08617f155740c0d6876979b4" title="Pulisce la console (terminale)." alt="" coords="216,55,336,80"/>
+<area shape="poly" title=" " alt="" coords="169,51,203,55,202,61,168,56"/>
 </map>
 </div>
 
