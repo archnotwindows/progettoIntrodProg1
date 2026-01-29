@@ -1,33 +1,5 @@
-# Compilatore da utilizzare
-CC = gcc
-
-# Flag di compilazione:
-# -Wall -Wextra: Abilitano la maggior parte degli avvisi (warning) utili.
-# -std=c99: Usa lo standard C99 come richiesto dal progetto.
-# -pedantic: Assicura stretta aderenza allo standard.
+# --- IMPOSTAZIONI GENERALI ---
 CFLAGS = -Wall -Wextra -std=c99 -pedantic
-
-# Nome dell'eseguibile finale
-TARGET = Gioco
-
-# --- RILEVAMENTO SISTEMA OPERATIVO PER APERTURA FILE ---
-# Definisce il comando 'OPEN_CMD' in base al sistema operativo rilevato
-ifdef OS
-   # Windows (di solito definisce la variabile OS)
-   OPEN_CMD = start
-else
-   UNAME_S := $(shell uname -s)
-   ifeq ($(UNAME_S),Darwin)
-      # macOS
-      OPEN_CMD = open
-   else
-      # Linux / Altri Unix-like
-      OPEN_CMD = xdg-open
-   endif
-endif
-# -------------------------------------------------------
-
-# Lista di tutti i file sorgente (.c)
 SRCS = main.c \
        nuovoGioco.c \
        salvataggi.c \
@@ -42,27 +14,62 @@ SRCS = main.c \
        tabellemissioni.c \
        systemclear.c
 
-# Genera automaticamente la lista degli oggetti (.o) dai sorgenti
-OBJS = $(SRCS:.c=.o)
+# --- IMPOSTAZIONI LINUX ---
+CC_LINUX = gcc
+TARGET_LINUX = Gioco
+OBJS_LINUX = $(SRCS:.c=.o)
 
-# Regola predefinita (quella eseguita scrivendo solo "make")
-all: $(TARGET)
+# --- IMPOSTAZIONI WINDOWS ---
+# Assicurati di avere mingw installato
+CC_WIN = x86_64-w64-mingw32-gcc
+TARGET_WIN = Gioco.exe
+# Usiamo un'estensione diversa per gli oggetti Windows per non creare conflitti
+OBJS_WIN = $(SRCS:.c=.win.o)
 
-# Regola per creare l'eseguibile linkando gli oggetti
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+# --- RILEVAMENTO OS (Per comando 'make doc') ---
+ifdef OS
+   OPEN_CMD = start
+else
+   UNAME_S := $(shell uname -s)
+   ifeq ($(UNAME_S),Darwin)
+      OPEN_CMD = open
+   else
+      OPEN_CMD = xdg-open
+   endif
+endif
 
-# Regola generica per compilare ogni file .c in .o
+# --- REGOLE DI COMPILAZIONE ---
+
+# Regola di default: compila TUTTO (Linux + Windows)
+all: linux windows
+
+# 1. Compilazione Linux
+linux: $(TARGET_LINUX)
+
+$(TARGET_LINUX): $(OBJS_LINUX)
+	$(CC_LINUX) $(CFLAGS) -o $(TARGET_LINUX) $(OBJS_LINUX)
+
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC_LINUX) $(CFLAGS) -c $< -o $@
 
-# Regola per pulire i file compilati (comando: "make clean")
+# 2. Compilazione Windows
+windows: $(TARGET_WIN)
+
+$(TARGET_WIN): $(OBJS_WIN)
+	$(CC_WIN) $(CFLAGS) -o $(TARGET_WIN) $(OBJS_WIN)
+
+# Regola specifica per creare gli oggetti Windows (.win.o)
+%.win.o: %.c
+	$(CC_WIN) $(CFLAGS) -c $< -o $@
+
+# --- PULIZIA E UTILITÀ ---
+
+# Pulisce tutto (oggetti linux, oggetti windows ed eseguibili)
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f *.o *.win.o $(TARGET_LINUX) $(TARGET_WIN)
 
-# --- GENERAZIONE DOCUMENTAZIONE ---
-# Genera la documentazione con Doxygen e la apre automaticamente
+# Genera documentazione
 doc:
 	doxygen Doxyfile
-	@echo "Apro la documentazione nel browser..."
+	@echo "Apro la documentazione..."
 	$(OPEN_CMD) html/index.html
