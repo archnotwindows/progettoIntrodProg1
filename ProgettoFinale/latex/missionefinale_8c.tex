@@ -10,8 +10,7 @@ Implementazione del combattimento finale contro il Signore Oscuro.
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include "{}missionefinale.\+h"{}}\newline
 {\ttfamily \#include "{}systemclear.\+h"{}}\newline
-Grafo delle dipendenze di inclusione per missionefinale.\+c\+:
-\nopagebreak
+Grafo delle dipendenze di inclusione per missionefinale.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -61,20 +60,11 @@ Gestisce il combattimento finale contro il Signore Oscuro.
 \hline
 \end{DoxyParams}
 
-\end{DoxyItemize}\texorpdfstring{$<$}{<} Array di stringhe per decodificare gli indici delle mosse in testo.
-
-\texorpdfstring{$<$}{<} Contatore vittorie \doxylink{structGiocatore}{Giocatore}
-
-\texorpdfstring{$<$}{<} Contatore vittorie Signore Oscuro
-
-\texorpdfstring{$<$}{<} Contatore Round corrente
-
-Loop principale dello scontro. Continua finché non si raggiungono 5 round validi O finché uno dei due contendenti non ottiene 3 vittorie (con maggioranza assoluta).
+\end{DoxyItemize}Loop principale dello scontro. Continua finché non si raggiungono 5 round validi O finché uno dei due contendenti non ottiene 3 vittorie (con maggioranza assoluta).
 
 Verifica condizioni di vittoria. vince\+\_\+g è true se si verifica una delle tre condizioni di vantaggio.
 
-Imposta HP a 0 per Game Over. Impostando la vita a 0, al ritorno nel menu\+Villaggio verrà rilevata la morte del giocatore, attivando la schermata di Game Over.Questo è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+Imposta HP a 0 per Game Over. Impostando la vita a 0, al ritorno nel menu\+Villaggio verrà rilevata la morte del giocatore, attivando la schermata di Game Over.Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

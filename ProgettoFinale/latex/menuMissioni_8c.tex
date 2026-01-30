@@ -16,8 +16,7 @@ Implementazione della selezione missioni e del loop di gioco principale.
 {\ttfamily \#include "{}missionefinale.\+h"{}}\newline
 {\ttfamily \#include "{}inventario.\+h"{}}\newline
 {\ttfamily \#include "{}negozio.\+h"{}}\newline
-Grafo delle dipendenze di inclusione per menu\+Missioni.\+c\+:
-\nopagebreak
+Grafo delle dipendenze di inclusione per menu\+Missioni.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -64,15 +63,7 @@ Gestisce il menu di selezione delle missioni e il loop di esplorazione.
 \item Verifica lo stato di completamento. Risulta true solo se tutte le missioni sono state completate. Questo flag è necessario per sbloccare la missione finale.
 \end{DoxyItemize}
 
-\texorpdfstring{$<$}{<} Contatore per numerare dinamicamente le opzioni del menu.
-
 Array di mappatura opzioni -\/\texorpdfstring{$>$}{>} ID missione. Poiché le missioni spariscono dal menu una volta completate, l\textquotesingle{}opzione "{}1"{} non corrisponde sempre alla missione 1. Questo array mappa la scelta dell\textquotesingle{}utente (indice array) all\textquotesingle{}ID effettivo della missione (valore). ID 1\+: Palude, 2\+: Magione, 3\+: Grotta, 4\+: Castello Finale.
-
-\texorpdfstring{$<$}{<} Pulizia buffer
-
-\texorpdfstring{$<$}{<} Ritorna al menu precedente (Villaggio)
-
-\texorpdfstring{$<$}{<} Controllo input fuori range
 
 Recupera l\textquotesingle{}ID reale della missione dalla mappa.
 
@@ -81,20 +72,12 @@ Recupera l\textquotesingle{}ID reale della missione dalla mappa.
 \item Gestione caso speciale\+: Missione Finale. La Missione Finale ha una logica di combattimento dedicata e non usa il loop di esplorazione standard.
 \end{DoxyItemize}
 
-\texorpdfstring{$<$}{<} Tiene traccia della stanza attuale nel dungeon ~\newline
-
-
-\texorpdfstring{$<$}{<} Variabile per tracciare eventi specifici della missione.
-
 
 \begin{DoxyItemize}
 \item Controllo stato vitale. Se la vita è \texorpdfstring{$<$}{<}= 0, si esce dal menu
 \end{DoxyItemize}
 
-Verifica se la missione attuale è già stata completata in precedenza. Permette di capire se la fuga deve essere gratuita (missione già finita) o a pagamento.
-
-\texorpdfstring{$<$}{<} Ritorna al menu principaleQuesto è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+Verifica se la missione attuale è già stata completata in precedenza. Permette di capire se la fuga deve essere gratuita (missione già finita) o a pagamento.Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

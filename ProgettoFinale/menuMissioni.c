@@ -38,7 +38,7 @@ void Menu(Giocatore* giocatore_ptr) {
     
     printf("===== SELEZIONE MISSIONE =====\n");
     
-    int opzione_numero = 1; /**< Contatore per numerare dinamicamente le opzioni del menu. */
+    int opzione_numero = 1; // Contatore per numerare dinamicamente le opzioni del menu
     
     /**
      * @brief Array di mappatura opzioni -> ID missione.
@@ -91,11 +91,11 @@ void Menu(Giocatore* giocatore_ptr) {
     
     /* --- Gestione Input Utente --- */
     int scelta;
-    if(scanf("%d", &scelta) != 1) { while(getchar()!='\n'); return; } /**< Controllo input non numerico */
-    while(getchar() != '\n'); /**< Pulizia buffer */
+    if(scanf("%d", &scelta) != 1) { while(getchar()!='\n'); return; } //  Controllo input non numerico 
+    while(getchar() != '\n'); // Pulizia buffer 
     
-    if(scelta == 0) return; /**< Ritorna al menu precedente (Villaggio) */
-    if(scelta < 1 || scelta >= opzione_numero) return; /**< Controllo input fuori range */
+    if(scelta == 0) return; //  Ritorna al menu precedente (Villaggio) 
+    if(scelta < 1 || scelta >= opzione_numero) return; // Controllo input fuori range 
     
     /**
      * @brief Recupera l'ID reale della missione dalla mappa.
@@ -112,8 +112,8 @@ void Menu(Giocatore* giocatore_ptr) {
     }
 
     /* --- Inizio Loop Missione Standard --- */
-    int stanza_corrente = 1; /**< Tiene traccia della stanza attuale nel dungeon  */
-    int progressi_missione = 0; /**< Variabile per tracciare eventi specifici della missione. */
+    int stanza_corrente = 1; // Tiene traccia della stanza attuale nel dungeon  
+    int progressi_missione = 0; // Variabile per tracciare eventi specifici della missione
 
     while (true) { 
         puliscischermo();
@@ -199,7 +199,7 @@ void Menu(Giocatore* giocatore_ptr) {
                     printf("Missione gia' compiuta\n");
                 }
                 getchar();
-                return; /**< Ritorna al menu principale */
+                return; // Ritorna al menu principale 
             } else {
                 printf("Non hai abbastanza monete (50) per fuggire!\n");
                 getchar();

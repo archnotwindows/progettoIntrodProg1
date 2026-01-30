@@ -42,7 +42,7 @@ void menuVillaggio(Giocatore* giocatore_ptr) {
         int scelta;
         /* Controllo validità input: se non è un intero, pulisce il buffer e ricarica il menu */
         if(scanf("%d", &scelta) != 1) { while(getchar()!='\n'); continue; }
-        while(getchar() != '\n'); /**< Pulizia buffer */
+        while(getchar() != '\n'); // Pulizia buffer 
 
         /* Opzione 1: Vai alle Missioni */
         if (scelta == 1) {

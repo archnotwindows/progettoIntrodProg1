@@ -6,24 +6,25 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ TABELLEMISSIONI\_H}}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ }
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\_TRAPPOLA}},\ \ \ \ \ \ }
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a5eab80387c498186427f91a3c2810a6a}{TIPO\_VUOTA}}\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a62bb17a3d4493e4591a0eca9fe950a48}{TIPO\_COMBATTIMENTO}},\ \textcolor{comment}{//\ Incontro\ con\ un\ nemico}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a91c6a40e503d3b869c3f40038da08459}{TIPO\_TRAPPOLA}},\ \ \ \ \ \ \textcolor{comment}{//\ Evento\ che\ causa\ danno\ o\ penalità}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6a5eab80387c498186427f91a3c2810a6a}{TIPO\_VUOTA}}\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stanza\ senza\ eventi}}
 \DoxyCodeLine{00018\ \}\ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6}{TipoStanza}};}
 \DoxyCodeLine{00019\ }
 \DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRigaDungeon}{RigaDungeon}}\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structRigaDungeon_aa46cc4f685541f91769d32390caba714}{nome}};\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6}{TipoStanza}}\ \mbox{\hyperlink{structRigaDungeon_a29fe62a8e93b8afb5fc1a6ff8e434c61}{tipo}};\ \ \ \ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRigaDungeon_a7d2440d227290f2f3e5e91360438099f}{colpo\_fatale}};\ \ \ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRigaDungeon_ad70e9608eecbae07dae952bd7c367c5f}{danno}};\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRigaDungeon_a7e6cdf8468743f5d0cc1f50c46927d0d}{monete}};\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRigaDungeon_abf798a980ee9622bed01985e80b1887d}{is\_obiettivo}};\ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structRigaDungeon_aa46cc4f685541f91769d32390caba714}{nome}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nome\ del\ nemico\ o\ della\ trappola}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{tabellemissioni_8h_a345e14e9a00bab462630bf1978aa24a6}{TipoStanza}}\ \mbox{\hyperlink{structRigaDungeon_a29fe62a8e93b8afb5fc1a6ff8e434c61}{tipo}};\ \ \ \ \textcolor{comment}{//\ Tipo\ di\ evento\ (Combattimento\ o\ Trappola)}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRigaDungeon_a7d2440d227290f2f3e5e91360438099f}{colpo\_fatale}};\ \ \ \textcolor{comment}{//\ Difficoltà\ per\ colpire\ (nemico)\ o\ evitare\ (trappola)}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRigaDungeon_ad70e9608eecbae07dae952bd7c367c5f}{danno}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Danno\ inflitto\ in\ caso\ di\ fallimento/attacco\ nemico}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRigaDungeon_a7e6cdf8468743f5d0cc1f50c46927d0d}{monete}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ricompensa\ in\ monete\ o\ penalità\ (se\ negativo)}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRigaDungeon_abf798a980ee9622bed01985e80b1887d}{is\_obiettivo}};\ \ \ \textcolor{comment}{//\ 1=Boss/Obiettivo\ primario,\ 2=Obiettivo\ secondario,\ 0=Normale.\ }}
 \DoxyCodeLine{00031\ \};}
 \DoxyCodeLine{00032\ }
 \DoxyCodeLine{00033\ \textcolor{comment}{/*\ Tabelle\ globali\ definite\ in\ tabellemissioni.c\ */}}
-\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRigaDungeon}{RigaDungeon}}\ \mbox{\hyperlink{tabellemissioni_8h_ae00975ff9c5318f595a6e14913957e14}{TabellaPalude}}[];\ \ \ }
-\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRigaDungeon}{RigaDungeon}}\ \mbox{\hyperlink{tabellemissioni_8h_a0486295629ab9f36db65d579a3cf1e65}{TabellaMagione}}[];\ \ }
-\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRigaDungeon}{RigaDungeon}}\ \mbox{\hyperlink{tabellemissioni_8h_a48604b38b31ffeee75f40d3df1fe19b6}{TabellaGrotta}}[];\ \ \ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRigaDungeon}{RigaDungeon}}\ \mbox{\hyperlink{tabellemissioni_8h_ae00975ff9c5318f595a6e14913957e14}{TabellaPalude}}[];\ \ \ \textcolor{comment}{//\ Tabella\ incontri\ per\ la\ Palude}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRigaDungeon}{RigaDungeon}}\ \mbox{\hyperlink{tabellemissioni_8h_a0486295629ab9f36db65d579a3cf1e65}{TabellaMagione}}[];\ \ \textcolor{comment}{//\ Tabella\ incontri\ per\ la\ Magione}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRigaDungeon}{RigaDungeon}}\ \mbox{\hyperlink{tabellemissioni_8h_a48604b38b31ffeee75f40d3df1fe19b6}{TabellaGrotta}}[];\ \ \ \textcolor{comment}{//\ Tabella\ incontri\ per\ la\ Grotta}}
+\DoxyCodeLine{00037\ }
 \DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

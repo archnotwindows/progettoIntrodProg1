@@ -32,7 +32,7 @@ void negozio(Giocatore* giocatore_ptr) {
     /* Gestione input */
     int scelta;
     scanf("%d", &scelta);
-    while(getchar() != '\n'); /**< Pulizia buffer input */
+    while(getchar() != '\n'); // Pulizia buffer input 
 
     /* --- Opzione 1: Cura --- */
     if (scelta == 1) {
@@ -67,8 +67,8 @@ void negozio(Giocatore* giocatore_ptr) {
         /* Controllo saldo */
         else if (giocatore_ptr->monete >= 5) {
             giocatore_ptr->monete -= 5;
-            giocatore_ptr->attacco += 1;    /**< Incremento permanente attacco */
-            giocatore_ptr->ha_spada = true; /**< Flag inventario */
+            giocatore_ptr->attacco += 1;    // Incremento permanente attacco 
+            giocatore_ptr->ha_spada = true; // Flag inventario 
             printf("Mercante: 'Fanne buon uso!' (Spada acquistata)\n");
         } else {
             printf("Mercante: 'Torna quando sarai piu' ricco!'\n");
@@ -86,7 +86,7 @@ void negozio(Giocatore* giocatore_ptr) {
         /* Controllo saldo */
         else if (giocatore_ptr->monete >= 10) {
             giocatore_ptr->monete -= 10;
-            giocatore_ptr->ha_armatura = true; /**< Flag per riduzione danni */
+            giocatore_ptr->ha_armatura = true; // Flag per riduzione danni 
             printf("Mercante: 'Questa ti salvera' la pelle.' (Armatura acquistata)\n");
         } else {
             printf("Mercante: 'Costa troppo per te.'\n");

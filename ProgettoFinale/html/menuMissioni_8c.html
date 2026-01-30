@@ -170,23 +170,15 @@ Funzioni</h2></td></tr>
 <ul>
 <li>Verifica lo stato di completamento. Risulta true solo se tutte le missioni sono state completate. Questo flag è necessario per sbloccare la missione finale.</li>
 </ul>
-<p>&lt; Contatore per numerare dinamicamente le opzioni del menu.</p>
 <p>Array di mappatura opzioni -&gt; ID missione. Poiché le missioni spariscono dal menu una volta completate, l'opzione "1" non corrisponde sempre alla missione 1. Questo array mappa la scelta dell'utente (indice array) all'ID effettivo della missione (valore). ID 1: Palude, 2: Magione, 3: Grotta, 4: Castello Finale.</p>
-<p>&lt; Pulizia buffer</p>
-<p>&lt; Ritorna al menu precedente (Villaggio)</p>
-<p>&lt; Controllo input fuori range</p>
 <p>Recupera l'ID reale della missione dalla mappa.</p>
 <ul>
 <li>Gestione caso speciale: Missione Finale. La Missione Finale ha una logica di combattimento dedicata e non usa il loop di esplorazione standard.</li>
 </ul>
-<p>&lt; Tiene traccia della stanza attuale nel dungeon <br  />
-</p>
-<p>&lt; Variabile per tracciare eventi specifici della missione.</p>
 <ul>
 <li>Controllo stato vitale. Se la vita è &lt;= 0, si esce dal menu</li>
 </ul>
 <p>Verifica se la missione attuale è già stata completata in precedenza. Permette di capire se la fuga deve essere gratuita (missione già finita) o a pagamento.</p>
-<p>&lt; Ritorna al menu principale</p>
 <div class="dynheader">
 Questo è il grafo delle chiamate per questa funzione:</div>
 <div class="dyncontent">

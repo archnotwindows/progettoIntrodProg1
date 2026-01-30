@@ -25,18 +25,18 @@
  */
 #ifdef _WIN32       
     #include <direct.h>
-    #define POPEN _popen   /**< Apre una pipe di processo su Windows */
-    #define PCLOSE _pclose /**< Chiude la pipe su Windows */
-    #define LIST_COMMAND "dir /b salvataggi\\" /**< Comando CMD per listare file */
+    #define POPEN _popen   // Apre una pipe di processo su Windows 
+    #define PCLOSE _pclose // Chiude la pipe su Windows 
+    #define LIST_COMMAND "dir /b salvataggi\\" // Comando CMD per listare file 
     #define DIR_SEPARATOR "\\" 
-    #define MKDIR(p) _mkdir(p) /**< Funzione creazione cartella Windows */
+    #define MKDIR(p) _mkdir(p) // Funzione creazione cartella Windows 
 #else       
     #include <unistd.h>
-    #define POPEN popen    /**< Apre una pipe di processo su Unix */
-    #define PCLOSE pclose  /**< Chiude la pipe su Unix */
-    #define LIST_COMMAND "ls -1 salvataggi/"   /**< Comando Bash per listare file */
+    #define POPEN popen    // Apre una pipe di processo su Unix 
+    #define PCLOSE pclose  // Chiude la pipe su Unix 
+    #define LIST_COMMAND "ls -1 salvataggi/"   // Comando Bash per listare file 
     #define DIR_SEPARATOR "/" 
-    #define MKDIR(p) mkdir(p, 0700) /**< Funzione creazione cartella Unix (con permessi) */
+    #define MKDIR(p) mkdir(p, 0700) // Funzione creazione cartella Unix (con permessi) 
 #endif
 
 /**
@@ -218,7 +218,7 @@ void eliminaSalvataggio(int numeroDaEliminare){
  * @return true se la sequenza è stata completata, sennó false.
  */
 bool triggherTrucchi(char tasto){
-    static int c = 0; /**< Variabile statica: conserva il valore tra le chiamate della funzione */
+    static int c = 0; // Variabile statica: conserva il valore tra le chiamate della funzione 
     const char code[] = "wwssadadba "; 
     
     if (tasto == code[c]) {

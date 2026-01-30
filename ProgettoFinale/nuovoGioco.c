@@ -7,7 +7,7 @@
  * 3. L'inizializzazione di una nuova partita o il caricamento di una esistente.
  */
 
-#define _POSIX_C_SOURCE 200809L /**< Macro per garantire compatibilità POSIX  */
+#define _POSIX_C_SOURCE 200809L // Macro per garantire compatibilità POSIX  
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -59,10 +59,10 @@ void stampaMenu(bool trucchiAttivi){
  * attiva funzionalità nascoste.
  */
 void nuovoGioco(){
-    char action[100];       /**< Buffer per l'input grezzo dell'utente */
+    char action[100];       // Buffer per l'input grezzo dell'utente 
     bool trucchiAttivi = false; 
     bool uscita = false;
-    Giocatore g;            /**< Istanza temporanea del giocatore */
+    Giocatore g;            // Istanza temporanea del giocatore 
 
     while ( !uscita ){
         stampaMenu(trucchiAttivi);
@@ -141,7 +141,7 @@ void nuovoGioco(){
                         printf("\nSalvataggio caricato con successo!\n");
                         printf("Premi Invio per entrare nel Villaggio...");
                         getchar();
-                        menuVillaggio(&g); /**< Entra nel gioco con i dati caricati */
+                        menuVillaggio(&g); // Entra nel gioco con i dati caricati 
                     } else {
                         printf("Errore nel caricamento del file.\n");
                         printf("Premi Invio per continuare...");

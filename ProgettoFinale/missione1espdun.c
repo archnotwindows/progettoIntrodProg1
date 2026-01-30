@@ -30,8 +30,8 @@ static int lanciaDado() {
  * @param generali_uccisi Puntatore al contatore degli obiettivi completati per questa missione.
  */
 void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* generali_uccisi) {
-    const int OBIETTIVO_GENERALI = 3; /**< Numero di Generali da sconfiggere per vincere. */
-    const int MAX_STANZE = 10;        /**< Lunghezza massima del dungeon. */
+    const int OBIETTIVO_GENERALI = 3; // Numero di Generali da sconfiggere per vincere. 
+    const int MAX_STANZE = 10;        // Lunghezza massima del dungeon. 
     
     /* Calcolo delle probabilità residue per garantire il completamento */
     int stanze_rimanenti = MAX_STANZE - *stanza_corrente + 1;
@@ -86,7 +86,7 @@ void esplora1StanzaDungeon(Giocatore* giocatore_ptr, int* stanza_corrente, int* 
         printf("COMBATTIMENTO! Nemico: %s\n", stanza.nome);
         
         int nemico_vivo = 1;
-        int colpo_fatale = stanza.colpo_fatale; /**< Valore da superare col dado per colpire */
+        int colpo_fatale = stanza.colpo_fatale; // Valore da superare col dado per colpire 
 
         /** * @brief Bonus Oggetto Speciale: Spada dell'Eroe.
          * Se il giocatore possiede l'oggetto speciale e affronta il Generale,

@@ -8,12 +8,12 @@
 
 void Inventario(Giocatore* g) {
     printf("===== INVENTARIO EROE =====\n");        
-    printf("Salute:      %d/20\n", g->vita);        /**< punti vita default: 20 */
-    printf("Monete:      %d\n", g->monete);          /**< monete iniziali: 0   */
-    printf("Attacco:     %d (Base)\n", g->attacco);     /**< attacco base: 0     */
+    printf("Salute:      %d/20\n", g->vita);        // punti vita default: 20 
+    printf("Monete:      %d\n", g->monete);          // monete iniziali: 0   
+    printf("Attacco:     %d (Base)\n", g->attacco);     // attacco base: 0     
     
     printf("Equipaggiamento:\n");   
-    if (!g->ha_spada && !g->ha_spada_eroe && !g->ha_armatura && !g->ha_chiave) {     /**< se le variabili degli oggetti sono tutte false,  allora lo zaino è vuoto */
+    if (!g->ha_spada && !g->ha_spada_eroe && !g->ha_armatura && !g->ha_chiave) {     // se le variabili degli oggetti sono tutte false,  allora lo zaino è vuoto 
         printf("  (Zaino vuoto)\n");                                               
     } else {
         if (g->ha_spada && !g->ha_spada_eroe) printf("  - Spada di Ferro (+1 Att)\n");        

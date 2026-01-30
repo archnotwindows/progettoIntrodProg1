@@ -32,12 +32,12 @@ int mossarandom() {
  * * @param g Puntatore al giocatore (usato per azzerare la vita in caso di sconfitta).
  */
 void CombattimentoFinale(Giocatore* g) {
-    /**< Array di stringhe per decodificare gli indici delle mosse in testo. */
+    // Array di stringhe per decodificare gli indici delle mosse in testo
     char* nomi_mosse[3] = {"Scudo", "Magia", "Spada"};
     
-    int vittorie_g = 0; /**< Contatore vittorie Giocatore */
-    int vittorie_s = 0; /**< Contatore vittorie Signore Oscuro */
-    int round = 1;      /**< Contatore Round corrente */
+    int vittorie_g = 0; // Contatore vittorie Giocatore 
+    int vittorie_s = 0; // Contatore vittorie Signore Oscuro 
+    int round = 1;      // Contatore Round corrente 
 
     puliscischermo();
     printf("=== SCONTRO FINALE CON IL SIGNORE OSCURO ===\n");

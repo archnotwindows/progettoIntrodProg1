@@ -14,8 +14,7 @@ Implementazione del menu principale e gestione della sessione.
 {\ttfamily \#include "{}salvataggi.\+h"{}}\newline
 {\ttfamily \#include "{}menuvillaggio.\+h"{}}\newline
 {\ttfamily \#include "{}giocatore.\+h"{}}\newline
-Grafo delle dipendenze di inclusione per nuovo\+Gioco.\+c\+:
-\nopagebreak
+Grafo delle dipendenze di inclusione per nuovo\+Gioco.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -56,8 +55,7 @@ Implementazione del menu principale e gestione della sessione.
 \doxysubsubsection{\texorpdfstring{\_POSIX\_C\_SOURCE}{\_POSIX\_C\_SOURCE}}
 {\footnotesize\ttfamily \#define \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE~200809L}
 
-Macro per garantire compatibilità POSIX ~\newline
- 
+
 
 \doxysubsection{Documentazione delle funzioni}
 \Hypertarget{nuovoGioco_8c_a041cdf9de059ad67872189ce3cb0063c}\label{nuovoGioco_8c_a041cdf9de059ad67872189ce3cb0063c} 
@@ -76,21 +74,14 @@ Gestisce il loop del menu principale (Nuova Partita, Carica, Esci).
 \begin{DoxyItemize}
 \item Contiene il loop principale che permette di avviare il gioco o gestire i file.
 \item Gestisce se l\textquotesingle{}utente inserisce un input specifico (definito in triggher\+Trucchi), attiva funzionalità nascoste. 
-\end{DoxyItemize}\texorpdfstring{$<$}{<} Buffer per l\textquotesingle{}input grezzo dell\textquotesingle{}utente
-
-\texorpdfstring{$<$}{<} Istanza temporanea del giocatore
-
-Controllo attivazione Trucchi. Controlla se la sequenza di caratteri corrisponde alla sequenza segreta. Se sì, ricarica il loop mostrando il menu "{}\+CHEAT MODE"{}.
+\end{DoxyItemize}Controllo attivazione Trucchi. Controlla se la sequenza di caratteri corrisponde alla sequenza segreta. Se sì, ricarica il loop mostrando il menu "{}\+CHEAT MODE"{}.
 
 
 \begin{DoxyItemize}
 \item Bonus Cheat Mode. Se i trucchi sono attivi, il giocatore inizia con valori aumentati.
 \end{DoxyItemize}
 
-\texorpdfstring{$<$}{<} Entra nel gioco con i dati caricati
-
-Permette di modificare manualmente i valori del file di salvataggio.Questo è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+Permette di modificare manualmente i valori del file di salvataggio.Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -114,8 +105,7 @@ Stampa a video il menu principale.
 {\em trucchi\+Attivi} & Flag booleano\+: true se i trucchi sono stati attivati. \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

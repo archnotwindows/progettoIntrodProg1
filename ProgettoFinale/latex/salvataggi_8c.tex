@@ -16,8 +16,7 @@ Implementazione del sistema di gestione file (I/O) e persistenza dati.
 {\ttfamily \#include "{}systemclear.\+h"{}}\newline
 {\ttfamily \#include "{}giocatore.\+h"{}}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
-Grafo delle dipendenze di inclusione per salvataggi.\+c\+:
-\nopagebreak
+Grafo delle dipendenze di inclusione per salvataggi.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -85,19 +84,19 @@ Implementazione del sistema di gestione file (I/O) e persistenza dati.
 \doxysubsubsection{\texorpdfstring{LIST\_COMMAND}{LIST\_COMMAND}}
 {\footnotesize\ttfamily \#define LIST\+\_\+\+COMMAND~"{}ls -\/1 salvataggi/"{}}
 
-Comando Bash per listare file \Hypertarget{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d}\label{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d} 
+\Hypertarget{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d}\label{salvataggi_8c_a17cda852a890b03845a49ff1a8ae7f6d} 
 \index{salvataggi.c@{salvataggi.c}!MKDIR@{MKDIR}}
 \index{MKDIR@{MKDIR}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{MKDIR}{MKDIR}}
 {\footnotesize\ttfamily \#define MKDIR(\begin{DoxyParamCaption}\item[{}]{p }\end{DoxyParamCaption})~mkdir(p, 0700)}
 
-Funzione creazione cartella Unix (con permessi) \Hypertarget{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3}\label{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3} 
+\Hypertarget{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3}\label{salvataggi_8c_a4c39c7c96d7f5d1f5cd1743122d476e3} 
 \index{salvataggi.c@{salvataggi.c}!PCLOSE@{PCLOSE}}
 \index{PCLOSE@{PCLOSE}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{PCLOSE}{PCLOSE}}
 {\footnotesize\ttfamily \#define PCLOSE~pclose}
 
-Chiude la pipe su Unix \Hypertarget{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5}\label{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5} 
+\Hypertarget{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5}\label{salvataggi_8c_ab6949e8178edeb4294d893f3ee4966d5} 
 \index{salvataggi.c@{salvataggi.c}!POPEN@{POPEN}}
 \index{POPEN@{POPEN}!salvataggi.c@{salvataggi.c}}
 \doxysubsubsection{\texorpdfstring{POPEN}{POPEN}}
@@ -107,7 +106,7 @@ Chiude la pipe su Unix \Hypertarget{salvataggi_8c_ab6949e8178edeb4294d893f3ee496
 
 Blocco di compatibilità Cross-\/\+Platform. Definisce macro specifiche per i comandi di shell e le funzioni di sistema a seconda che si stia compilando su Windows (\+\_\+\+WIN32) o Unix/\+Linux/mac\+OS. 
 
-Apre una pipe di processo su Unix 
+
 
 \doxysubsection{Documentazione delle funzioni}
 \Hypertarget{salvataggi_8c_a1912cd89ae44ef137420b207769f3632}\label{salvataggi_8c_a1912cd89ae44ef137420b207769f3632} 
@@ -174,8 +173,7 @@ Restituisce il numero di salvataggi disponibili e li stampa a video.
 \begin{DoxyReturn}{Restituisce}
 Il numero totale di salvataggi trovati. 
 \end{DoxyReturn}
-Questo è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -199,8 +197,7 @@ Modifica un salvataggio (Menu Trucchi).
 {\em numero\+Salvataggio} & Indice del file da modificare. \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -228,8 +225,7 @@ Crea un nuovo salvataggio su file.
 \hline
 \end{DoxyParams}
 
-\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -260,4 +256,4 @@ Verifica l\textquotesingle{}inserimento del Konami Code.
 true se la sequenza è stata completata, sennó false. 
 \end{DoxyReturn}
 
-\end{DoxyItemize}\texorpdfstring{$<$}{<} Variabile statica\+: conserva il valore tra le chiamate della funzione
+\end{DoxyItemize}
