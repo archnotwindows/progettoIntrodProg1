@@ -1,0 +1,28 @@
+<map id="salvataggi.c" name="salvataggi.c">
+<area shape="rect" id="Node000001" title="Implementazione del sistema di gestione file (I/O) e persistenza dati." alt="" coords="449,5,551,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,72,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="449,28,291,48,86,81,85,76,290,42,449,22"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,79,167,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="450,30,181,81,180,76,449,25"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="191,79,262,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="457,33,276,80,275,75,455,28"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="623,225,705,251"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="450,27,399,37,352,52,335,62,324,73,321,87,328,103,355,134,387,160,424,182,463,198,541,220,609,231,608,236,540,225,461,203,421,186,384,165,351,138,323,105,316,87,319,71,332,58,350,47,398,31,449,22"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="337,79,433,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="483,33,417,74,414,69,480,28"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="457,79,543,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="503,31,503,65,497,65,497,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="567,79,631,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="517,29,573,68,570,73,514,33"/>
+<area shape="rect" id="Node000009" href="$salvataggi_8h.html" title="Header per la gestione del salvataggio e caricamento." alt="" coords="655,79,758,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="534,28,661,72,659,77,532,33"/>
+<area shape="rect" id="Node000010" href="$giocatore_8h.html" title="Definizione della struttura Giocatore e funzioni di inizializzazione." alt="" coords="702,152,797,177"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="551,20,612,27,678,38,736,54,758,65,773,77,780,92,780,110,768,141,763,139,774,109,775,94,769,80,755,69,734,59,676,43,611,32,551,26"/>
+<area shape="rect" id="Node000011" href="$systemclear_8h.html" title="Header per la gestione della pulizia dello schermo multipiattaforma." alt="" coords="834,79,947,104"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="551,26,821,75,820,80,550,31"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="972,79,1047,104"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="551,22,728,42,959,76,958,81,727,47,551,27"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="706,105,674,213,669,211,701,104"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="716,103,738,139,733,142,711,106"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="737,179,690,219,687,214,734,175"/>
+</map>

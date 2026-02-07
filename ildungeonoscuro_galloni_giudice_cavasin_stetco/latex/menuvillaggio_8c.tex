@@ -1,0 +1,88 @@
+\doxysection{Riferimenti per il file menuvillaggio.\+c}
+\hypertarget{menuvillaggio_8c}{}\label{menuvillaggio_8c}\index{menuvillaggio.c@{menuvillaggio.c}}
+
+
+Implementazione delle funzionalità del menu del villaggio.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}menuvillaggio.\+h"{}}\newline
+{\ttfamily \#include "{}menu\+Missioni.\+h"{}}\newline
+{\ttfamily \#include "{}inventario.\+h"{}}\newline
+{\ttfamily \#include "{}systemclear.\+h"{}}\newline
+{\ttfamily \#include "{}salvataggi.\+h"{}}\newline
+Grafo delle dipendenze di inclusione per menuvillaggio.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menuvillaggio_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menuvillaggio_8c_accd456c6d700c06e4ff1309d14d25ea3}{menu\+Villaggio}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Gestisce il loop principale del Villaggio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione delle funzionalità del menu del villaggio. 
+
+
+\begin{DoxyItemize}
+\item Questo file gestisce il villaggio, da cui il giocatore può accedere alle missioni, ripristinare la salute, gestire l\textquotesingle{}inventario, salvare la partita o uscire. 
+\end{DoxyItemize}
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{menuvillaggio_8c_accd456c6d700c06e4ff1309d14d25ea3}\label{menuvillaggio_8c_accd456c6d700c06e4ff1309d14d25ea3} 
+\index{menuvillaggio.c@{menuvillaggio.c}!menuVillaggio@{menuVillaggio}}
+\index{menuVillaggio@{menuVillaggio}!menuvillaggio.c@{menuvillaggio.c}}
+\doxysubsubsection{\texorpdfstring{menuVillaggio()}{menuVillaggio()}}
+{\footnotesize\ttfamily void menu\+Villaggio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{giocatore\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Gestisce il loop principale del Villaggio. 
+
+Gestisce il menu del villaggio.
+
+
+\begin{DoxyItemize}
+\item Questa funzione mostra un menu ciclico che permette al giocatore di prepararsi prima di una missione. Gestisce anche il controllo del "{}\+Game Over"{} al ritorno dalle missioni.
+\item 
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore alla struttura dati \doxylink{structGiocatore}{Giocatore} per modificare vita, inventario e stato missioni. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Loop infinito del villaggio. Il giocatore rimane in questo ciclo finché non sceglie di uscire (opzione 5) o muore in missione (Game Over).
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Entra nel menu di selezione missioni. Il controllo passa al modulo \doxylink{menuMissioni_8c}{menu\+Missioni.\+c}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Controllo stato vitale post-\/missione. Quando la funzione \doxylink{menuMissioni_8c_a1edc1f6ccd27be94e77587555e26e100}{Menu()} ritorna, verifichiamo se il giocatore è vivo. Se la vita è \texorpdfstring{$<$}{<}= 0, il gioco termina
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Ripristino salute. Imposta la vita del giocatore al valore massimo
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Salva lo stato corrente del gioco su file. Chiama la funzione definita in \doxylink{salvataggi_8h}{salvataggi.\+h}.
+\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menuvillaggio_8c_accd456c6d700c06e4ff1309d14d25ea3_cgraph}
+\end{center}
+\end{figure}

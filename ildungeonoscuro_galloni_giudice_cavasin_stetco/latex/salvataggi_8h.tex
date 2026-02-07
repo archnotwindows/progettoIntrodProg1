@@ -1,0 +1,220 @@
+\doxysection{Riferimenti per il file salvataggi.\+h}
+\hypertarget{salvataggi_8h}{}\label{salvataggi_8h}\index{salvataggi.h@{salvataggi.h}}
+
+
+Header per la gestione del salvataggio e caricamento.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}giocatore.\+h"{}}\newline
+Grafo delle dipendenze di inclusione per salvataggi.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{salvataggi_8h__incl}
+\end{center}
+\end{figure}
+Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{salvataggi_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{salvataggi_8h_af13b31f6b761a6b7483a9cb18af25cc4}{nuovo\+Salvataggio}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Crea un nuovo salvataggio su file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{salvataggi_8h_adab8accc64e79b6907f8ee1ff6446bf8}{lista\+Salvataggi}} ()
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di salvataggi disponibili e li stampa a video. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{salvataggi_8h_ae79c8c63dfe9c92a31b7f08dcc2a5682}{carica\+Dati\+Salvataggio}} (int n, \mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Carica i dati da un file di salvataggio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{salvataggi_8h_a7ecaf03e8313ad042451696951604c70}{elimina\+Salvataggio}} (int n)
+\begin{DoxyCompactList}\small\item\em Elimina un file di salvataggio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{salvataggi_8h_adcbe1cec44c829d397f5130a8204f18b}{modifica\+Salvataggio}} (int n)
+\begin{DoxyCompactList}\small\item\em Modifica un salvataggio (Menu Trucchi). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{salvataggi_8h_a0b197621f869405211a8975e3d56e5f9}{triggher\+Trucchi}} (char tasto)
+\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}inserimento del Konami Code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Header per la gestione del salvataggio e caricamento. 
+
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{salvataggi_8h_ae79c8c63dfe9c92a31b7f08dcc2a5682}\label{salvataggi_8h_ae79c8c63dfe9c92a31b7f08dcc2a5682} 
+\index{salvataggi.h@{salvataggi.h}!caricaDatiSalvataggio@{caricaDatiSalvataggio}}
+\index{caricaDatiSalvataggio@{caricaDatiSalvataggio}!salvataggi.h@{salvataggi.h}}
+\doxysubsubsection{\texorpdfstring{caricaDatiSalvataggio()}{caricaDatiSalvataggio()}}
+{\footnotesize\ttfamily int carica\+Dati\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Salvataggio,  }\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Carica i dati da un file di salvataggio. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em n} & Indice del salvataggio scelto. \\
+\hline
+{\em g} & Puntatore alla struttura \doxylink{structGiocatore}{Giocatore} da popolare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se successo, 0 se errore.
+\end{DoxyReturn}
+Carica i dati da un file di salvataggio.
+
+
+\begin{DoxyParams}{Parametri}
+{\em numero\+Salvataggio} & Indice del file nella lista (1-\/based). \\
+\hline
+{\em g} & Puntatore alla struct \doxylink{structGiocatore}{Giocatore} da popolare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se il caricamento ha successo, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{salvataggi_8h_a7ecaf03e8313ad042451696951604c70}\label{salvataggi_8h_a7ecaf03e8313ad042451696951604c70} 
+\index{salvataggi.h@{salvataggi.h}!eliminaSalvataggio@{eliminaSalvataggio}}
+\index{eliminaSalvataggio@{eliminaSalvataggio}!salvataggi.h@{salvataggi.h}}
+\doxysubsubsection{\texorpdfstring{eliminaSalvataggio()}{eliminaSalvataggio()}}
+{\footnotesize\ttfamily void elimina\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Da\+Eliminare }\end{DoxyParamCaption})}
+
+
+
+Elimina un file di salvataggio. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em n} & Indice del salvataggio da eliminare.\\
+\hline
+\end{DoxyParams}
+Elimina un file di salvataggio.
+
+
+\begin{DoxyParams}{Parametri}
+{\em numero\+Da\+Eliminare} & Indice del file da cancellare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{salvataggi_8h_adab8accc64e79b6907f8ee1ff6446bf8}\label{salvataggi_8h_adab8accc64e79b6907f8ee1ff6446bf8} 
+\index{salvataggi.h@{salvataggi.h}!listaSalvataggi@{listaSalvataggi}}
+\index{listaSalvataggi@{listaSalvataggi}!salvataggi.h@{salvataggi.h}}
+\doxysubsubsection{\texorpdfstring{listaSalvataggi()}{listaSalvataggi()}}
+{\footnotesize\ttfamily int lista\+Salvataggi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Restituisce il numero di salvataggi disponibili e li stampa a video. 
+
+\begin{DoxyReturn}{Restituisce}
+Numero di file trovati.
+\end{DoxyReturn}
+Restituisce il numero di salvataggi disponibili e li stampa a video.
+
+\begin{DoxyReturn}{Restituisce}
+Il numero totale di salvataggi trovati. 
+\end{DoxyReturn}
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{salvataggi_8h_adab8accc64e79b6907f8ee1ff6446bf8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{salvataggi_8h_adcbe1cec44c829d397f5130a8204f18b}\label{salvataggi_8h_adcbe1cec44c829d397f5130a8204f18b} 
+\index{salvataggi.h@{salvataggi.h}!modificaSalvataggio@{modificaSalvataggio}}
+\index{modificaSalvataggio@{modificaSalvataggio}!salvataggi.h@{salvataggi.h}}
+\doxysubsubsection{\texorpdfstring{modificaSalvataggio()}{modificaSalvataggio()}}
+{\footnotesize\ttfamily void modifica\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{numero\+Salvataggio }\end{DoxyParamCaption})}
+
+
+
+Modifica un salvataggio (Menu Trucchi). 
+
+
+\begin{DoxyParams}{Parametri}
+{\em n} & Indice del salvataggio da modificare.\\
+\hline
+\end{DoxyParams}
+Modifica un salvataggio (Menu Trucchi).
+
+
+\begin{DoxyParams}{Parametri}
+{\em numero\+Salvataggio} & Indice del file da modificare. \\
+\hline
+\end{DoxyParams}
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{salvataggi_8h_adcbe1cec44c829d397f5130a8204f18b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{salvataggi_8h_af13b31f6b761a6b7483a9cb18af25cc4}\label{salvataggi_8h_af13b31f6b761a6b7483a9cb18af25cc4} 
+\index{salvataggi.h@{salvataggi.h}!nuovoSalvataggio@{nuovoSalvataggio}}
+\index{nuovoSalvataggio@{nuovoSalvataggio}!salvataggi.h@{salvataggi.h}}
+\doxysubsubsection{\texorpdfstring{nuovoSalvataggio()}{nuovoSalvataggio()}}
+{\footnotesize\ttfamily void nuovo\+Salvataggio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Crea un nuovo salvataggio su file. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em g} & Puntatore allo stato del giocatore da salvare.\\
+\hline
+\end{DoxyParams}
+Crea un nuovo salvataggio su file.
+
+
+\begin{DoxyItemize}
+\item Il nome del file viene generato automaticamente usando il timestamp corrente (con il formato\+: GG-\/\+MM-\/\+AAAA\+\_\+\+HH-\/\+MM-\/\+SS).
+\item Scrive i dati della struct \doxylink{structGiocatore}{Giocatore} in formato testo semplice. 
+\begin{DoxyParams}{Parametri}
+{\em g} & Puntatore ai dati del giocatore da salvare. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{salvataggi_8h_af13b31f6b761a6b7483a9cb18af25cc4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{salvataggi_8h_a0b197621f869405211a8975e3d56e5f9}\label{salvataggi_8h_a0b197621f869405211a8975e3d56e5f9} 
+\index{salvataggi.h@{salvataggi.h}!triggherTrucchi@{triggherTrucchi}}
+\index{triggherTrucchi@{triggherTrucchi}!salvataggi.h@{salvataggi.h}}
+\doxysubsubsection{\texorpdfstring{triggherTrucchi()}{triggherTrucchi()}}
+{\footnotesize\ttfamily bool triggher\+Trucchi (\begin{DoxyParamCaption}\item[{char}]{tasto }\end{DoxyParamCaption})}
+
+
+
+Verifica l\textquotesingle{}inserimento del Konami Code. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em tasto} & Carattere appena digitato. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+true se il codice è completo, false altrimenti.
+\end{DoxyReturn}
+Verifica l\textquotesingle{}inserimento del Konami Code.
+
+
+\begin{DoxyItemize}
+\item Sequenza segreta\+: "{}wwssadadba "{}
+\item 
+\begin{DoxyParams}{Parametri}
+{\em tasto} & Il carattere appena inserito dall\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+true se la sequenza è stata completata, sennó false. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}

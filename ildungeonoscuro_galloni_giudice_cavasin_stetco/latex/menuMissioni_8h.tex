@@ -1,0 +1,85 @@
+\doxysection{Riferimenti per il file menu\+Missioni.\+h}
+\hypertarget{menuMissioni_8h}{}\label{menuMissioni_8h}\index{menuMissioni.h@{menuMissioni.h}}
+
+
+Header per il selettore delle missioni.  
+
+
+{\ttfamily \#include "{}giocatore.\+h"{}}\newline
+Grafo delle dipendenze di inclusione per menu\+Missioni.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{menuMissioni_8h__incl}
+\end{center}
+\end{figure}
+Questo grafo mostra quali altri file includono direttamente o indirettamente questo file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{menuMissioni_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menuMissioni_8h_a1edc1f6ccd27be94e77587555e26e100}{Menu}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Gestisce il menu di selezione delle missioni e il loop di esplorazione. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Header per il selettore delle missioni. 
+
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{menuMissioni_8h_a1edc1f6ccd27be94e77587555e26e100}\label{menuMissioni_8h_a1edc1f6ccd27be94e77587555e26e100} 
+\index{menuMissioni.h@{menuMissioni.h}!Menu@{Menu}}
+\index{Menu@{Menu}!menuMissioni.h@{menuMissioni.h}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily void Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{giocatore\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Gestisce il menu di selezione delle missioni e il loop di esplorazione. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore al giocatore.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item La funzione verifica quali missioni sono state completate per mostrare dinamicamente le opzioni. Una volta selezionata una missione, entra in un loop che la gestisce fino al completamento.
+\item 
+\begin{DoxyParams}{Parametri}
+{\em giocatore\+\_\+ptr} & Puntatore alla struttura dati \doxylink{structGiocatore}{Giocatore}. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Verifica lo stato di completamento. Risulta true solo se tutte le missioni sono state completate. Questo flag è necessario per sbloccare la missione finale.
+\end{DoxyItemize}
+
+Array di mappatura opzioni -\/\texorpdfstring{$>$}{>} ID missione. Poiché le missioni spariscono dal menu una volta completate, l\textquotesingle{}opzione "{}1"{} non corrisponde sempre alla missione 1. Questo array mappa la scelta dell\textquotesingle{}utente (indice array) all\textquotesingle{}ID effettivo della missione (valore). ID 1\+: Palude, 2\+: Magione, 3\+: Grotta, 4\+: Castello Finale.
+
+Recupera l\textquotesingle{}ID reale della missione dalla mappa.
+
+
+\begin{DoxyItemize}
+\item Gestione caso speciale\+: Missione Finale. La Missione Finale ha una logica di combattimento dedicata e non usa il loop di esplorazione standard.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Controllo stato vitale. Se la vita è \texorpdfstring{$<$}{<}= 0, si esce dal menu
+\end{DoxyItemize}
+
+Verifica se la missione attuale è già stata completata in precedenza. Permette di capire se la fuga deve essere gratuita (missione già finita) o a pagamento.Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menuMissioni_8h_a1edc1f6ccd27be94e77587555e26e100_cgraph}
+\end{center}
+\end{figure}
